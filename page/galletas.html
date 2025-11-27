@@ -2,20 +2,135 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Galletas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galletas Caseras - Nuestra Tienda</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../css/catalogo.css">
 </head>
 <body>
-    <h1>Galletas</h1>
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">
+                <a href="../index.html">
+                    <h2>SweetDelights</h2>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="pasteles.html">Pasteles</a></li>
+                <li><a href="donas.html">Donas</a></li>
+                <li><a href="bebidas.html">Bebidas</a></li>
+                <li><a href="galletas.html" class="active">Galletas</a></li>
+                <li><a href="../contactos.html">Contáctanos</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <nav>
-    <button onclick="location.href='../index.html'">Inicio</button>
-    <button onclick="location.href='../productos.html'">Productos</button>
-    <button onclick="location.href='../ubicacion.html'">Ubicación</button>
-    <button onclick="location.href='../contactos.html'">Contactos</button>
-</nav>
+    <main class="main-catalogo">
+        <section class="hero-producto">
+            <div class="container">
+                <h1>Nuestras Galletas</h1>
+                <p>Galletas recién horneadas, crujientes por fuera y suaves por dentro</p>
+            </div>
+        </section>
 
-    
-    <p>Aquí puedes agregar las galletas disponibles.</p>
+        <section class="productos-grid">
+            <div class="container">
+                <div class="grid-productos">
+                    <!-- Galleta 1 -->
+                    <div class="producto-card">
+                        <div class="producto-imagen">
+                            <img src="../imagenes/galletas/galleta-chispas.jpg" alt="Galleta con Chispas">
+                            <span class="badge nuevo">Nuevo</span>
+                        </div>
+                        <div class="producto-info">
+                            <h3>Galleta con Chispas</h3>
+                            <p>Clásica galleta con chispas de chocolate semidulce</p>
+                            <div class="producto-precio">$1.50</div>
+                            <button class="btn-carrito">Añadir al Carrito</button>
+                        </div>
+                    </div>
 
+                    <!-- Galleta 2 -->
+                    <div class="producto-card">
+                        <div class="producto-imagen">
+                            <img src="../imagenes/galletas/galleta-avena.jpg" alt="Galleta de Avena">
+                            <span class="badge popular">Popular</span>
+                        </div>
+                        <div class="producto-info">
+                            <h3>Galleta de Avena</h3>
+                            <p>Con pasas y nueces, saludable y deliciosa</p>
+                            <div class="producto-precio">$1.75</div>
+                            <button class="btn-carrito">Añadir al Carrito</button>
+                        </div>
+                    </div>
+
+                    <!-- Galleta 3 -->
+                    <div class="producto-card">
+                        <div class="producto-imagen">
+                            <img src="../imagenes/galletas/galleta-jengibre.jpg" alt="Galleta de Jengibre">
+                        </div>
+                        <div class="producto-info">
+                            <h3>Galleta de Jengibre</h3>
+                            <p>Especiada y decorada con glaseado real</p>
+                            <div class="producto-precio">$2.00</div>
+                            <button class="btn-carrito">Añadir al Carrito</button>
+                        </div>
+                    </div>
+
+                    <!-- Galleta 4 -->
+                    <div class="producto-card">
+                        <div class="producto-imagen">
+                            <img src="../imagenes/galletas/galleta-mantequilla.jpg" alt="Galleta de Mantequilla">
+                            <span class="badge oferta">Oferta</span>
+                        </div>
+                        <div class="producto-info">
+                            <h3>Galleta de Mantequilla</h3>
+                            <p>Shortbread clásico, mantecosa y delicada</p>
+                            <div class="producto-precio">
+                                <span class="precio-original">$2.25</span>
+                                <span class="precio-oferta">$1.80</span>
+                            </div>
+                            <button class="btn-carrito">Añadir al Carrito</button>
+                        </div>
+                    </div>
+
+                    <!-- Galleta 5 -->
+                    <div class="producto-card">
+                        <div class="producto-imagen">
+                            <img src="../imagenes/galletas/galleta-coco.jpg" alt="Galleta de Coco">
+                        </div>
+                        <div class="producto-info">
+                            <h3>Galleta de Coco</h3>
+                            <p>Rellena de dulce de leche y coco rallado</p>
+                            <div class="producto-precio">$2.50</div>
+                            <button class="btn-carrito">Añadir al Carrito</button>
+                        </div>
+                    </div>
+
+                    <!-- Galleta 6 -->
+                    <div class="producto-card">
+                        <div class="producto-imagen">
+                            <img src="../imagenes/galletas/galleta-doble-chocolate.jpg" alt="Galleta Doble Chocolate">
+                        </div>
+                        <div class="producto-info">
+                            <h3>Doble Chocolate</h3>
+                            <p>Masa de chocolate con chispas blancas y oscuras</p>
+                            <div class="producto-precio">$2.00</div>
+                            <button class="btn-carrito">Añadir al Carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 SweetDelights. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../js/JS catalogo.js"></script>
 </body>
 </html>

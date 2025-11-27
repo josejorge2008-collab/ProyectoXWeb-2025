@@ -2,21 +2,135 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Donas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donas Deliciosas - Nuestra Tienda</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../css/catalogo.css">
 </head>
 <body>
-    <h1>Donas</h1>
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">
+                <a href="../index.html">
+                    <h2>SweetDelights</h2>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="pasteles.html">Pasteles</a></li>
+                <li><a href="donas.html" class="active">Donas</a></li>
+                <li><a href="bebidas.html">Bebidas</a></li>
+                <li><a href="galletas.html">Galletas</a></li>
+                <li><a href="../contactos.html">Contáctanos</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <nav>
-    <button onclick="location.href='../index.html'">Inicio</button>
-    <button onclick="location.href='../productos.html'">Productos</button>
-    <button onclick="location.href='../ubicacion.html'">Ubicación</button>
-    <button onclick="location.href='../contactos.html'">Contactos</button>
-</nav>
+    <main class="main-catalogo">
+        <section class="hero-producto">
+            <div class="container">
+                <h1>Nuestras Donas</h1>
+                <p>Deliciosas donas glaseadas, rellenas y decoradas para todos los gustos</p>
+            </div>
+        </section>
 
+        <section class="productos-grid">
+            <div class="container">
+                <div class="grid-productos">
+                    <!-- Dona 1 -->
+                    <div class="producto-card">
+                        <div class="producto-imagen">
+                            <img src="../imagenes/donas/dona-glaseada.jpg" alt="Dona Glaseada">
+                            <span class="badge nuevo">Nuevo</span>
+                        </div>
+                        <div class="producto-info">
+                            <h3>Dona Glaseada Clásica</h3>
+                            <p>Suave dona cubierta con glaseado blanco brillante</p>
+                            <div class="producto-precio">$2.50</div>
+                            <button class="btn-carrito">Añadir al Carrito</button>
+                        </div>
+                    </div>
 
-    
-    <p>Aquí puedes agregar las donas disponibles.</p>
+                    <!-- Dona 2 -->
+                    <div class="producto-card">
+                        <div class="producto-imagen">
+                            <img src="../imagenes/donas/dona-chocolate.jpg" alt="Dona de Chocolate">
+                            <span class="badge popular">Popular</span>
+                        </div>
+                        <div class="producto-info">
+                            <h3>Dona de Chocolate</h3>
+                            <p>Cubierta con chocolate belga y sprinkles coloridos</p>
+                            <div class="producto-precio">$3.00</div>
+                            <button class="btn-carrito">Añadir al Carrito</button>
+                        </div>
+                    </div>
 
+                    <!-- Dona 3 -->
+                    <div class="producto-card">
+                        <div class="producto-imagen">
+                            <img src="../imagenes/donas/dona-rellena.jpg" alt="Dona Rellena">
+                        </div>
+                        <div class="producto-info">
+                            <h3>Dona Rellena de Crema</h3>
+                            <p>Rellena de suave crema pastelera con azúcar glass</p>
+                            <div class="producto-precio">$3.50</div>
+                            <button class="btn-carrito">Añadir al Carrito</button>
+                        </div>
+                    </div>
+
+                    <!-- Dona 4 -->
+                    <div class="producto-card">
+                        <div class="producto-imagen">
+                            <img src="../imagenes/donas/dona-maple.jpg" alt="Dona de Maple">
+                            <span class="badge oferta">Oferta</span>
+                        </div>
+                        <div class="producto-info">
+                            <h3>Dona de Maple</h3>
+                            <p>Cubierta con glaseado de maple y tocino crujiente</p>
+                            <div class="producto-precio">
+                                <span class="precio-original">$4.00</span>
+                                <span class="precio-oferta">$3.25</span>
+                            </div>
+                            <button class="btn-carrito">Añadir al Carrito</button>
+                        </div>
+                    </div>
+
+                    <!-- Dona 5 -->
+                    <div class="producto-card">
+                        <div class="producto-imagen">
+                            <img src="../imagenes/donas/dona-frutas.jpg" alt="Dona con Frutas">
+                        </div>
+                        <div class="producto-info">
+                            <h3>Dona Tropical</h3>
+                            <p>Decorada con frutas frescas y coco rallado</p>
+                            <div class="producto-precio">$3.75</div>
+                            <button class="btn-carrito">Añadir al Carrito</button>
+                        </div>
+                    </div>
+
+                    <!-- Dona 6 -->
+                    <div class="producto-card">
+                        <div class="producto-imagen">
+                            <img src="../imagenes/donas/dona-matcha.jpg" alt="Dona Matcha">
+                        </div>
+                        <div class="producto-info">
+                            <h3>Dona de Matcha</h3>
+                            <p>Sabor único de té verde matcha con glaseado blanco</p>
+                            <div class="producto-precio">$3.50</div>
+                            <button class="btn-carrito">Añadir al Carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 SweetDelights. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../js/JS catalogo.js"></script>
 </body>
 </html>

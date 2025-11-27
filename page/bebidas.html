@@ -2,21 +2,135 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Bebidas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bebidas Refrescantes - Nuestra Tienda</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../css/catalogo.css">
 </head>
 <body>
-    <h1>Bebidas</h1>
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">
+                <a href="../index.html">
+                    <h2>SweetDelights</h2>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="pasteles.html">Pasteles</a></li>
+                <li><a href="donas.html">Donas</a></li>
+                <li><a href="bebidas.html" class="active">Bebidas</a></li>
+                <li><a href="galletas.html">Galletas</a></li>
+                <li><a href="../contactos.html">Contáctanos</a></li>
+            </ul>
+        </nav>
+    </header>
 
-   <nav>
-    <button onclick="location.href='../index.html'">Inicio</button>
-    <button onclick="location.href='../productos.html'">Productos</button>
-    <button onclick="location.href='../ubicacion.html'">Ubicación</button>
-    <button onclick="location.href='../contactos.html'">Contactos</button>
-</nav>
+    <main class="main-catalogo">
+        <section class="hero-producto">
+            <div class="container">
+                <h1>Nuestras Bebidas</h1>
+                <p>Refrescantes bebidas para acompañar tus postres favoritos</p>
+            </div>
+        </section>
 
+        <section class="productos-grid">
+            <div class="container">
+                <div class="grid-productos">
+                    <!-- Bebida 1 -->
+                    <div class="producto-card">
+                        <div class="producto-imagen">
+                            <img src="../imagenes/bebidas/cafe-latte.jpg" alt="Café Latte">
+                            <span class="badge nuevo">Nuevo</span>
+                        </div>
+                        <div class="producto-info">
+                            <h3>Café Latte</h3>
+                            <p>Suave café con leche vaporizada y espuma cremosa</p>
+                            <div class="producto-precio">$4.50</div>
+                            <button class="btn-carrito">Añadir al Carrito</button>
+                        </div>
+                    </div>
 
-    
-    <p>Aquí puedes agregar las bebidas disponibles.</p>
+                    <!-- Bebida 2 -->
+                    <div class="producto-card">
+                        <div class="producto-imagen">
+                            <img src="../imagenes/bebidas/capuchino.jpg" alt="Capuchino">
+                            <span class="badge popular">Popular</span>
+                        </div>
+                        <div class="producto-info">
+                            <h3>Capuchino Clásico</h3>
+                            <p>Balance perfecto entre espresso, leche y espuma</p>
+                            <div class="producto-precio">$4.00</div>
+                            <button class="btn-carrito">Añadir al Carrito</button>
+                        </div>
+                    </div>
 
+                    <!-- Bebida 3 -->
+                    <div class="producto-card">
+                        <div class="producto-imagen">
+                            <img src="../imagenes/bebidas/te-verde.jpg" alt="Té Verde">
+                        </div>
+                        <div class="producto-info">
+                            <h3>Té Verde Matcha</h3>
+                            <p>Té verde japonés batido tradicionalmente</p>
+                            <div class="producto-precio">$5.00</div>
+                            <button class="btn-carrito">Añadir al Carrito</button>
+                        </div>
+                    </div>
+
+                    <!-- Bebida 4 -->
+                    <div class="producto-card">
+                        <div class="producto-imagen">
+                            <img src="../imagenes/bebidas/smoothie-frutas.jpg" alt="Smoothie de Frutas">
+                            <span class="badge oferta">Oferta</span>
+                        </div>
+                        <div class="producto-info">
+                            <h3>Smoothie Tropical</h3>
+                            <p>Mezcla de mango, piña y banana con yogurt</p>
+                            <div class="producto-precio">
+                                <span class="precio-original">$6.50</span>
+                                <span class="precio-oferta">$5.25</span>
+                            </div>
+                            <button class="btn-carrito">Añadir al Carrito</button>
+                        </div>
+                    </div>
+
+                    <!-- Bebida 5 -->
+                    <div class="producto-card">
+                        <div class="producto-imagen">
+                            <img src="../imagenes/bebidas/chocolate-caliente.jpg" alt="Chocolate Caliente">
+                        </div>
+                        <div class="producto-info">
+                            <h3>Chocolate Caliente</h3>
+                            <p>Creemos chocolate belga con malvaviscos</p>
+                            <div class="producto-precio">$4.75</div>
+                            <button class="btn-carrito">Añadir al Carrito</button>
+                        </div>
+                    </div>
+
+                    <!-- Bebida 6 -->
+                    <div class="producto-card">
+                        <div class="producto-imagen">
+                            <img src="../imagenes/bebidas/limonada.jpg" alt="Limonada Fresca">
+                        </div>
+                        <div class="producto-info">
+                            <h3>Limonada de Fresa</h3>
+                            <p>Refrescante limonada con puré de fresas naturales</p>
+                            <div class="producto-precio">$3.50</div>
+                            <button class="btn-carrito">Añadir al Carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 SweetDelights. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../js/JS catalogo.js"></script>
 </body>
 </html>
