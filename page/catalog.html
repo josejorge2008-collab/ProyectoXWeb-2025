@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Productos - Nombre Empresa</title>
+    <link rel="stylesheet" href="../assets/css/catalog.css">
+</head>
+<body>
+    <!-- Header (según tu Figma) -->
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">
+                <h2>Logo</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="catalog.html" class="active">Catálogo</a></li>
+                <li><a href="contact.html">Contáctanos</a></li>
+            </ul>
+            <div class="user-actions">
+                <button class="btn-login">Iniciar Sesión</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section Catálogo -->
+    <section class="catalog-hero">
+        <div class="hero-content">
+            <h1>Nuestro Catálogo</h1>
+            <p>Descubre nuestra selección exclusiva de productos</p>
+        </div>
+    </section>
+
+    <!-- Filtros -->
+    <section class="filters-section">
+        <div class="container">
+            <div class="filters">
+                <select class="filter-select">
+                    <option value="">Todas las categorías</option>
+                    <option value="electronica">Electrónica</option>
+                    <option value="hogar">Hogar</option>
+                    <option value="deportes">Deportes</option>
+                </select>
+                <select class="filter-select">
+                    <option value="">Ordenar por</option>
+                    <option value="precio">Precio</option>
+                    <option value="popularidad">Popularidad</option>
+                </select>
+                <div class="search-box">
+                    <input type="text" placeholder="Buscar productos..." class="search-input">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Grid de Productos -->
+    <section class="products-section">
+        <div class="container">
+            <div class="products-grid">
+                <!-- Producto 1 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../assets/images/catalog/producto1.jpg" alt="Producto 1">
+                        <span class="product-badge">Nuevo</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Nombre del Producto</h3>
+                        <p class="product-description">Descripción breve del producto y sus características principales.</p>
+                        <div class="product-price">$99.99</div>
+                        <button class="btn-add-cart">Añadir al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- Producto 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../assets/images/catalog/producto2.jpg" alt="Producto 2">
+                        <span class="product-badge popular">Popular</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Producto Premium</h3>
+                        <p class="product-description">Excelente calidad y durabilidad garantizada.</p>
+                        <div class="product-price">$149.99</div>
+                        <button class="btn-add-cart">Añadir al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- Producto 3 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../assets/images/catalog/producto3.jpg" alt="Producto 3">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Producto Estándar</h3>
+                        <p class="product-description">Perfecto para uso diario y ocasiones especiales.</p>
+                        <div class="product-price">$79.99</div>
+                        <button class="btn-add-cart">Añadir al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- Producto 4 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../assets/images/catalog/producto4.jpg" alt="Producto 4">
+                        <span class="product-badge offer">Oferta</span>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Producto en Oferta</h3>
+                        <p class="product-description">Aprovecha esta oportunidad única.</p>
+                        <div class="product-price">
+                            <span class="original-price">$120.00</span>
+                            <span class="discount-price">$89.99</span>
+                        </div>
+                        <button class="btn-add-cart">Añadir al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- Más productos... -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Nombre Empresa. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/catalog.js"></script>
+</body>
+</html>
