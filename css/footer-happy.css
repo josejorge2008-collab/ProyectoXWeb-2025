@@ -1,0 +1,151 @@
+/* Footer Estilo Profesional - Happy Smile - ARCHIVO NUEVO */
+.footer-profesional {
+    background: #2c3e50;
+    color: white;
+    padding: 3rem 0 1rem;
+    margin-top: 4rem;
+}
+
+.footer-contenido {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+
+.footer-info h3 {
+    color: #667eea;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.footer-ano {
+    color: #bbb;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.footer-separador {
+    height: 2px;
+    background: linear-gradient(90deg, #667eea, transparent);
+    margin: 1.5rem 0;
+}
+
+.footer-contacto h4 {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.footer-whatsapp {
+    color: #25D366;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+}
+
+.footer-ubicacion {
+    color: #bbb;
+    margin-bottom: 1.5rem;
+}
+
+.footer-aviso {
+    background: rgba(255,255,255,0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+    border-left: 4px solid #667eea;
+}
+
+.footer-aviso strong {
+    color: #ff6b6b;
+}
+
+.footer-suscripcion h4 {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.form-suscripcion {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.input-suscripcion {
+    flex: 1;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255,255,255,0.9);
+}
+
+.btn-suscripcion {
+    background: #667eea;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.btn-suscripcion:hover {
+    background: #5a6fd8;
+}
+
+.footer-enlaces h4 {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.footer-lista {
+    list-style: none;
+}
+
+.footer-lista li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-lista a {
+    color: #bbb;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-lista a:hover {
+    color: #667eea;
+}
+
+.footer-final {
+    border-top: 1px solid #34495e;
+    padding-top: 1.5rem;
+    text-align: center;
+    color: #bbb;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .footer-info h3 {
+        font-size: 1.5rem;
+    }
+    
+    .form-suscripcion {
+        flex-direction: column;
+    }
+}
