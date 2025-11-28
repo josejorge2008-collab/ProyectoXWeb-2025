@@ -108,6 +108,7 @@ body {
     .logo h2 {
         font-size: 1.5rem;
     }
+<<<<<<< HEAD
 }
 
 /* FOOTER PROFESIONAL HAPPY SMILE - AÑADE ESTOS ESTILOS */
@@ -331,4 +332,6 @@ body {
     .footer-legal {
         justify-content: center;
     }
+=======
+>>>>>>> 2a157477ae7212249a026956ad709156b95e41f4
 }
