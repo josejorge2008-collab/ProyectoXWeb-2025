@@ -38,9 +38,21 @@ body {
     margin: 0 auto;
 }
 
-.logo h2 {
+/* Logo Styles */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo-img {
+    height: 40px;
+    width: auto;
+}
+
+.logo-text {
     color: #667eea;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: 700;
     letter-spacing: 1px;
 }
@@ -48,6 +60,9 @@ body {
 .logo a {
     text-decoration: none;
     color: inherit;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .nav-menu {
@@ -105,7 +120,11 @@ body {
         font-size: 0.8rem;
     }
     
-    .logo h2 {
-        font-size: 1.5rem;
+    .logo-img {
+        height: 35px;
+    }
+    
+    .logo-text {
+        font-size: 1.3rem;
     }
 }

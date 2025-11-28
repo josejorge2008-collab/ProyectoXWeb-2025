@@ -2,22 +2,93 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Contactos</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contáctanos - Happy Smile</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/contactos.css">
 </head>
 <body>
-    <h1>Contactos</h1>
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="imagenes/logo-happy-smile.png" alt="Happy Smile" class="logo-img">
+                    <span class="logo-text">Happy Smile</span>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="page/pasteles.html">Pasteles</a></li>
+                <li><a href="page/donas.html">Donas</a></li>
+                <li><a href="page/bebidas.html">Bebidas</a></li>
+                <li><a href="page/galletas.html">Galletas</a></li>
+                <li><a href="contactos.html" class="active">Contáctanos</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <!-- MISMO MENÚ -->
-    <nav>
-        <button onclick="location.href='index.html'">Inicio</button>
-        <button onclick="location.href='productos.html'">Productos</button>
-        <button onclick="location.href='ubicacion.html'">Ubicación</button>
-        <button onclick="location.href='contactos.html'">Contactos</button>
-    </nav>
+    <main class="main-contacto">
+        <section class="hero-contacto">
+            <div class="container">
+                <h1>CONTÁCTANOS</h1>
+                <p>Estamos aquí para atenderte y hacer tu experiencia más dulce</p>
+            </div>
+        </section>
 
-    
-    <p>Información de contacto.</p>
+        <section class="contacto-contenido">
+            <div class="container">
+                <div class="contacto-grid">
+                    <div class="info-contacto">
+                        <h2>Información de Contacto</h2>
+                        <div class="contacto-item">
+                            <h3>📍 Dirección</h3>
+                            <p>Av. Principal #123<br>Centro Ciudad</p>
+                        </div>
+                        <div class="contacto-item">
+                            <h3>📞 Teléfono</h3>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                        <div class="contacto-item">
+                            <h3>✉️ Email</h3>
+                            <p>info@happysmile.com</p>
+                        </div>
+                        <div class="contacto-item">
+                            <h3>🕒 Horario</h3>
+                            <p>Lunes a Viernes: 8:00 AM - 8:00 PM<br>
+                               Sábados: 9:00 AM - 6:00 PM<br>
+                               Domingos: 10:00 AM - 4:00 PM</p>
+                        </div>
+                    </div>
 
+                    <div class="formulario-contacto">
+                        <h2>Envíanos un Mensaje</h2>
+                        <form class="form-contacto">
+                            <div class="form-group">
+                                <input type="text" placeholder="Tu nombre completo" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" placeholder="Tu correo electrónico" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" placeholder="Asunto del mensaje" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea placeholder="Tu mensaje..." rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn-enviar">ENVIAR MENSAJE</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Happy Smile. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/JS contactos.js"></script>
 </body>
 </html>
