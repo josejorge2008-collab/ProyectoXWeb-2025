@@ -1,151 +1,158 @@
-/* Footer Estilo Profesional - Happy Smile - ARCHIVO NUEVO */
-.footer-profesional {
-    background: #2c3e50;
+/* Footer IDÉNTICO a la referencia - ARCHIVO NUEVO */
+.footer-happy {
+    background: #1a1a1a;
     color: white;
-    padding: 3rem 0 1rem;
-    margin-top: 4rem;
+    padding: 40px 20px 20px;
+    font-family: Arial, sans-serif;
 }
 
-.footer-contenido {
+.footer-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
 }
 
-.footer-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 3rem;
-    margin-bottom: 2rem;
+.footer-brand {
+    text-align: center;
+    margin-bottom: 30px;
 }
 
-.footer-info h3 {
-    color: #667eea;
-    font-size: 1.8rem;
-    margin-bottom: 0.5rem;
-    font-weight: 700;
+.footer-brand h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #ffffff;
 }
 
-.footer-ano {
-    color: #bbb;
-    font-size: 1rem;
-    margin-bottom: 1.5rem;
+.footer-year {
+    font-size: 16px;
+    color: #cccccc;
+    margin-bottom: 20px;
 }
 
-.footer-separador {
-    height: 2px;
-    background: linear-gradient(90deg, #667eea, transparent);
-    margin: 1.5rem 0;
+.footer-divider {
+    height: 1px;
+    background: #333;
+    margin: 20px 0;
 }
 
-.footer-contacto h4 {
-    color: #fff;
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
+.footer-contact {
+    text-align: center;
+    margin-bottom: 25px;
 }
 
-.footer-whatsapp {
+.footer-contact h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.whatsapp-link {
+    display: block;
+    font-size: 18px;
     color: #25D366;
-    font-weight: 600;
-    font-size: 1.1rem;
-    margin: 0.5rem 0;
+    font-weight: bold;
+    margin: 10px 0;
+    text-decoration: none;
 }
 
-.footer-ubicacion {
-    color: #bbb;
-    margin-bottom: 1.5rem;
+.location {
+    color: #cccccc;
+    font-size: 16px;
 }
 
-.footer-aviso {
-    background: rgba(255,255,255,0.1);
-    padding: 1rem;
-    border-radius: 8px;
-    margin: 1.5rem 0;
-    border-left: 4px solid #667eea;
-}
-
-.footer-aviso strong {
-    color: #ff6b6b;
-}
-
-.footer-suscripcion h4 {
-    color: #fff;
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-}
-
-.form-suscripcion {
-    display: flex;
-    gap: 0.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.input-suscripcion {
-    flex: 1;
-    padding: 0.8rem;
-    border: none;
+.important-notice {
+    background: #2a2a2a;
+    padding: 15px;
     border-radius: 5px;
-    background: rgba(255,255,255,0.9);
+    margin: 20px 0;
+    border-left: 4px solid #ff4444;
 }
 
-.btn-suscripcion {
-    background: #667eea;
+.important-notice strong {
+    color: #ff4444;
+}
+
+.footer-suscribe {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.footer-suscribe h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.footer-suscribe p {
+    color: #cccccc;
+    margin-bottom: 15px;
+}
+
+.subscribe-form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.subscribe-input {
+    flex: 1;
+    padding: 10px 15px;
+    border: 1px solid #444;
+    border-radius: 4px;
+    background: #2a2a2a;
+    color: white;
+}
+
+.subscribe-input::placeholder {
+    color: #888;
+}
+
+.subscribe-btn {
+    background: #444;
     color: white;
     border: none;
-    padding: 0.8rem 1.5rem;
-    border-radius: 5px;
+    padding: 10px 20px;
+    border-radius: 4px;
     cursor: pointer;
-    font-weight: 600;
-    transition: background 0.3s;
 }
 
-.btn-suscripcion:hover {
-    background: #5a6fd8;
+.footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin: 30px 0;
 }
 
-.footer-enlaces h4 {
-    color: #fff;
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-}
-
-.footer-lista {
-    list-style: none;
-}
-
-.footer-lista li {
-    margin-bottom: 0.5rem;
-}
-
-.footer-lista a {
-    color: #bbb;
+.footer-links a {
+    color: #cccccc;
     text-decoration: none;
-    transition: color 0.3s;
+    font-size: 14px;
 }
 
-.footer-lista a:hover {
-    color: #667eea;
+.footer-links a:hover {
+    color: white;
 }
 
-.footer-final {
-    border-top: 1px solid #34495e;
-    padding-top: 1.5rem;
+.footer-copyright {
     text-align: center;
-    color: #bbb;
+    color: #888;
+    font-size: 14px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-    .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
+    .footer-links {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
     }
     
-    .footer-info h3 {
-        font-size: 1.5rem;
-    }
-    
-    .form-suscripcion {
+    .subscribe-form {
         flex-direction: column;
     }
 }
