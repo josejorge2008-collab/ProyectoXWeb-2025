@@ -1,108 +1,120 @@
-/* Footer IDÉNTICO a la referencia - ARCHIVO NUEVO */
+/* Footer Happy Smile - Estilo profesional con contenido de referencia */
 .footer-happy {
-    background: #1a1a1a;
+    background: #2c3e50;
     color: white;
-    padding: 40px 20px 20px;
-    font-family: Arial, sans-serif;
+    padding: 3rem 0 1rem;
+    margin-top: 4rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .footer-container {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
+/* Marca */
 .footer-brand {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 2rem;
 }
 
 .footer-brand h2 {
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: #ffffff;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #667eea;
+    margin-bottom: 0.5rem;
 }
 
-.footer-year {
-    font-size: 16px;
-    color: #cccccc;
-    margin-bottom: 20px;
-}
-
+/* Línea separadora */
 .footer-divider {
-    height: 1px;
-    background: #333;
-    margin: 20px 0;
+    height: 2px;
+    background: linear-gradient(90deg, #667eea, #764ba2, transparent);
+    margin: 2rem 0;
 }
 
+/* Contacto */
 .footer-contact {
     text-align: center;
-    margin-bottom: 25px;
+    margin-bottom: 2rem;
 }
 
 .footer-contact h3 {
-    font-size: 18px;
-    margin-bottom: 15px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
     color: #ffffff;
 }
 
 .whatsapp-link {
     display: block;
-    font-size: 18px;
+    font-size: 1.4rem;
     color: #25D366;
     font-weight: bold;
-    margin: 10px 0;
+    margin: 1rem 0;
     text-decoration: none;
+    background: rgba(37, 211, 102, 0.1);
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    border: 2px solid #25D366;
 }
 
 .location {
     color: #cccccc;
-    font-size: 16px;
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
 }
 
+/* Aviso importante */
 .important-notice {
-    background: #2a2a2a;
-    padding: 15px;
-    border-radius: 5px;
-    margin: 20px 0;
-    border-left: 4px solid #ff4444;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin: 2rem 0;
+    border-left: 4px solid #ff6b6b;
+    backdrop-filter: blur(10px);
 }
 
 .important-notice strong {
-    color: #ff4444;
+    color: #ff6b6b;
+    font-size: 1.1rem;
 }
 
-.footer-suscribe {
+/* Suscripción */
+.footer-subscribe {
     text-align: center;
-    margin: 30px 0;
+    margin: 2.5rem 0;
 }
 
-.footer-suscribe h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
+.footer-subscribe h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
     color: #ffffff;
 }
 
-.footer-suscribe p {
+.footer-subscribe p {
     color: #cccccc;
-    margin-bottom: 15px;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
 }
 
 .subscribe-form {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 0.5rem;
     max-width: 400px;
     margin: 0 auto;
 }
 
 .subscribe-input {
     flex: 1;
-    padding: 10px 15px;
-    border: 1px solid #444;
-    border-radius: 4px;
-    background: #2a2a2a;
-    color: white;
+    padding: 0.8rem 1rem;
+    border: 2px solid #667eea;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    font-size: 1rem;
 }
 
 .subscribe-input::placeholder {
@@ -110,49 +122,75 @@
 }
 
 .subscribe-btn {
-    background: #444;
+    background: #667eea;
     color: white;
     border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
     cursor: pointer;
+    transition: background 0.3s ease;
 }
 
+.subscribe-btn:hover {
+    background: #5a6fd8;
+}
+
+/* Enlaces */
 .footer-links {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 30px;
-    margin: 30px 0;
+    gap: 2rem;
+    margin: 2rem 0;
 }
 
 .footer-links a {
     color: #cccccc;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
 }
 
 .footer-links a:hover {
-    color: white;
+    color: #667eea;
+    background: rgba(102, 126, 234, 0.1);
 }
 
+/* Copyright */
 .footer-copyright {
     text-align: center;
     color: #888;
-    font-size: 14px;
-    padding-top: 20px;
-    border-top: 1px solid #333;
+    font-size: 0.9rem;
+    padding-top: 2rem;
+    border-top: 1px solid #34495e;
+    line-height: 1.5;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
+    .footer-brand h2 {
+        font-size: 2rem;
+    }
+    
+    .whatsapp-link {
+        font-size: 1.1rem;
+        padding: 0.6rem 1rem;
+    }
+    
     .footer-links {
         flex-direction: column;
-        gap: 15px;
+        gap: 1rem;
         text-align: center;
     }
     
     .subscribe-form {
         flex-direction: column;
+    }
+    
+    .important-notice {
+        padding: 1rem;
     }
 }

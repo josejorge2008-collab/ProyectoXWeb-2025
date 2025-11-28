@@ -133,59 +133,103 @@
     </footer>
 
     <script src="../js/JS catalogo.js"></script>
-<!-- AÑADE ESTO ANTES DEL CIERRE DEL BODY -->
-<link rel="stylesheet" href="../css/footer-happy.css">
-
-<footer class="footer-happy">
+<!-- FOOTER PROFESIONAL HAPPY SMILE - AÑADE ESTO -->
+<footer class="footer-profesional">
     <div class="footer-container">
-        <!-- Marca y año -->
-        <div class="footer-brand">
-            <h2>Happy Smile</h2>
-            <div class="footer-year">1978</div>
+        <div class="footer-content">
+            <!-- Información de contacto -->
+            <div class="footer-section footer-contact">
+                <h3>Contacto</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Medellín, Antioquia, Colombia</p>
+                <p><i class="fas fa-phone"></i> +57 321 423 9806</p>
+                <p><i class="fas fa-envelope"></i> info@happysmile.com</p>
+                <p><i class="fas fa-clock"></i> Lunes a Sábado: 8:00 AM - 8:00 PM</p>
+                
+                <div class="footer-social">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <!-- Enlaces rápidos -->
+            <div class="footer-section footer-links">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="page/pasteles.html">Catálogo</a></li>
+                    <li><a href="#">Servicios</a></li>
+                    <li><a href="contactos.html">Contáctanos</a></li>
+                    <li><a href="#">Sobre Nosotros</a></li>
+                    <li><a href="#">Preguntas Frecuentes</a></li>
+                </ul>
+            </div>
+            
+            <!-- Newsletter -->
+            <div class="footer-section footer-newsletter">
+                <h3>Newsletter</h3>
+                <p>Suscríbete para recibir ofertas exclusivas y novedades</p>
+                <form class="newsletter-form">
+                    <input type="email" class="newsletter-input" placeholder="Tu correo electrónico" required>
+                    <button type="submit" class="newsletter-btn">Suscribir</button>
+                </form>
+            </div>
         </div>
-
-        <div class="footer-divider"></div>
-
-        <!-- Contacto y WhatsApp -->
-        <div class="footer-contact">
-            <h3>ESCRIBENOS PARA REALIZAR UN PEDIDO</h3>
-            <a href="https://wa.me/3214239806" class="whatsapp-link">DOMICILIOS POR WHATSAPP 3214239806</a>
-            <div class="location">Medellín- Antioquia</div>
-        </div>
-
-        <!-- Aviso importante -->
-        <div class="important-notice">
-            <strong>AVISO IMPORTANTE:</strong> Ten en cuenta a la hora de realizar tu compra a través de la Web o WhatsApp que nuestros domicilios no son con entrega inmediata, debido a la planeación de distribución que nuestro equipo debe realizar.
-        </div>
-
-        <!-- Suscripción -->
-        <div class="footer-suscribe">
-            <h3>SUSCRÍBETE</h3>
-            <p>Recibe información de la marca y ofertas especiales</p>
-            <form class="subscribe-form">
-                <input type="email" class="subscribe-input" placeholder="Ingresa aquí tu correo" required>
-                <button type="submit" class="subscribe-btn">Suscribir</button>
-            </form>
-        </div>
-
-        <!-- Enlaces -->
-        <div class="footer-links">
-            <a href="#">Políticas y términos del uso</a>
-            <a href="#">Historia de la marca</a>
-            <a href="#">Acerca de</a>
-            <a href="#">Sedes</a>
-            <a href="#">Franquicia</a>
-        </div>
-
-        <!-- Copyright -->
-        <div class="footer-copyright">
-            © 2025 Happy Smile<br>
-            licenciada de Shopify
+        
+        <div class="footer-bottom">
+            <div class="footer-logo">
+                <span class="footer-logo-text">Happy Smile</span>
+            </div>
+            
+            <div class="footer-legal">
+                <a href="#">Política de Privacidad</a>
+                <a href="#">Términos y Condiciones</a>
+                <a href="#">Política de Cookies</a>
+            </div>
+            
+            <div class="footer-copyright">
+                © 2025 Happy Smile. Todos los derechos reservados.
+            </div>
         </div>
     </div>
 </footer>
 
-<script src="../js/footer-scripts.js"></script>
-<!-- FIN DE LO QUE AÑADES -->
+<!-- Botón flotante de WhatsApp -->
+<a href="https://wa.me/573214239806" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<script>
+    // Script para el formulario de newsletter
+    document.addEventListener('DOMContentLoaded', function() {
+        const newsletterForm = document.querySelector('.newsletter-form');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const input = this.querySelector('.newsletter-input');
+                const button = this.querySelector('.newsletter-btn');
+                
+                if (input.value.trim()) {
+                    const originalText = button.textContent;
+                    button.textContent = '¡Gracias!';
+                    button.style.background = '#4CAF50';
+                    
+                    setTimeout(() => {
+                        button.textContent = originalText;
+                        button.style.background = '';
+                        input.value = '';
+                    }, 3000);
+                }
+            });
+        }
+    });
+</script>
+<!-- FIN DEL FOOTER -->
+ <!-- Todo lo que ya tienes... -->
+    
+    <!-- AÑADE ESTA LÍNEA PARA LOS ICONOS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </body>
 </html>
