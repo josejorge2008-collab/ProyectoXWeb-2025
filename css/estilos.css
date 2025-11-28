@@ -38,21 +38,9 @@ body {
     margin: 0 auto;
 }
 
-/* Logo Styles */
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.logo-img {
-    height: 40px;
-    width: auto;
-}
-
-.logo-text {
+.logo h2 {
     color: #667eea;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: 700;
     letter-spacing: 1px;
 }
@@ -60,9 +48,6 @@ body {
 .logo a {
     text-decoration: none;
     color: inherit;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
 }
 
 .nav-menu {
@@ -120,91 +105,7 @@ body {
         font-size: 0.8rem;
     }
     
-    .logo-img {
-        height: 35px;
-    }
-    
-    .logo-text {
-        font-size: 1.3rem;
-    }
-}
-/* ===== ESTILOS DEL FOOTER ===== */
-.footer {
-    background: #2c3e50;
-    color: white;
-    text-align: center;
-    padding: 1.5rem 0;
-    margin-top: 3rem;
-    width: 100%;
-}
-
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-}
-
-.footer p {
-    opacity: 0.8;
-    font-size: 0.9rem;
-    margin: 0;
-}
-
-.footer-links {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin-top: 1rem;
-    flex-wrap: wrap;
-}
-
-.footer-links a {
-    color: white;
-    text-decoration: none;
-    opacity: 0.7;
-    transition: opacity 0.3s ease;
-    font-size: 0.85rem;
-}
-
-.footer-links a:hover {
-    opacity: 1;
-    text-decoration: underline;
-}
-
-.footer-social {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 1rem;
-}
-
-.footer-social a {
-    color: white;
-    text-decoration: none;
-    opacity: 0.7;
-    transition: all 0.3s ease;
-    padding: 0.5rem;
-}
-
-.footer-social a:hover {
-    opacity: 1;
-    transform: translateY(-2px);
-}
-
-/* Responsive para el footer */
-@media (max-width: 768px) {
-    .footer {
-        padding: 1rem 0;
-        margin-top: 2rem;
-    }
-    
-    .footer-links {
-        gap: 1rem;
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .footer-social {
-        gap: 0.5rem;
+    .logo h2 {
+        font-size: 1.5rem;
     }
 }
