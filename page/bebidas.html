@@ -3,29 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bebidas Refrescantes - Happy Smile</title>
+    <title>Bebidas - Happy Smile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../css/estilos.css">
     <link rel="stylesheet" href="../css/catalogo.css">
+    <link rel="icon" href="../img/icono.png" type="image/png">
 </head>
 <body>
-    <header class="header">
-        <nav class="nav">
-            <div class="logo">
-                <a href="../index.html">
-                    <img src="../imagenes/logo-happy-smile.png" alt="Happy Smile" class="logo-img">
-                    <span class="logo-text">Happy Smile</span>
-                </a>
+    <!-- Header Rectangular con Menú -->
+<header class="header-rectangular">
+    <div class="container">
+        <div class="header-contenido">
+            <!-- Logo con icono -->
+            <div class="logo-contenedor">
+                <div class="logo-icono">
+                    <img src="../img/icono.png" alt="Happy Smile Icono" class="logo-img">
+                </div>
+                <div class="logo-texto">
+                    <h1 class="logo-titulo">Happy Smile</h1>
+                </div>
             </div>
-            <ul class="nav-menu">
-                <li><a href="../index.html">Inicio</a></li>
-                <li><a href="pasteles.html">Pasteles</a></li>
-                <li><a href="donas.html">Donas</a></li>
-                <li><a href="bebidas.html" class="active">Bebidas</a></li>
-                <li><a href="galletas.html">Galletas</a></li>
-                <li><a href="../contactos.html">Contáctanos</a></li>
-            </ul>
-        </nav>
-    </header>
+            
+            <!-- Menú de Navegación Principal -->
+            <nav class="menu-navegacion">
+                <ul class="menu-lista">
+                    <li class="menu-item"><a href="../index.html" class="menu-link">INICIO</a></li>
+                    <li class="menu-item"><a href="pasteles.html" class="menu-link">PASTELES</a></li>
+                    <li class="menu-item"><a href="donas.html" class="menu-link">DONAS</a></li>
+                    <li class="menu-item"><a href="bebidas.html" class="menu-link">BEBIDAS</a></li>
+                    <li class="menu-item"><a href="galletas.html" class="menu-link">GALLETAS</a></li>
+                    <li class="menu-item"><a href="../contactos.html" class="menu-link">CONTÁCTANOS</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
 
     <main class="main-catalogo">
         <section class="hero-producto">
@@ -121,116 +133,102 @@
                             <button class="btn-carrito">AÑADIR AL CARRITO</button>
                         </div>
                     </div>
+
+                    <!-- Bebida 7 -->
+                    <div class="producto-card">
+                        <div class="producto-imagen">
+                            <img src="../imagenes/bebidas/jugo-naranja.jpg" alt="Jugo de Naranja">
+                        </div>
+                        <div class="producto-info">
+                            <h3>Jugo de Naranja Natural</h3>
+                            <p>Recién exprimido, fuente de vitamina C</p>
+                            <div class="producto-precio">$3.00</div>
+                            <button class="btn-carrito">AÑADIR AL CARRITO</button>
+                        </div>
+                    </div>
+
+                    <!-- Bebida 8 -->
+                    <div class="producto-card">
+                        <div class="producto-imagen">
+                            <img src="../imagenes/bebidas/frappuccino.jpg" alt="Frappuccino">
+                        </div>
+                        <div class="producto-info">
+                            <h3>Frappuccino de Caramelo</h3>
+                            <p>Bebida fría con café, hielo y salsa de caramelo</p>
+                            <div class="producto-precio">$5.50</div>
+                            <button class="btn-carrito">AÑADIR AL CARRITO</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 Happy Smile. Todos los derechos reservados.</p>
-        </div>
-    </footer>
-
-    <script src="../js/JS catalogo.js"></script>
-<!-- FOOTER PROFESIONAL HAPPY SMILE - AÑADE ESTO -->
-<footer class="footer-profesional">
-    <div class="footer-container">
-        <div class="footer-content">
-            <!-- Información de contacto -->
-            <div class="footer-section footer-contact">
-                <h3>Contacto</h3>
-                <p><i class="fas fa-map-marker-alt"></i> Medellín, Antioquia, Colombia</p>
-                <p><i class="fas fa-phone"></i> +57 321 423 9806</p>
-                <p><i class="fas fa-envelope"></i> info@happysmile.com</p>
-                <p><i class="fas fa-clock"></i> Lunes a Sábado: 8:00 AM - 8:00 PM</p>
+    <!-- Footer Profesional -->
+    <footer class="footer-profesional">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section footer-contact">
+                    <h3>Contacto</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Medellín, Antioquia, Colombia</p>
+                    <p><i class="fas fa-phone"></i> +57 321 423 9806</p>
+                    <p><i class="fas fa-envelope"></i> info@happysmile.com</p>
+                    <p><i class="fas fa-clock"></i> Lunes a Sábado: 8:00 AM - 8:00 PM</p>
+                    
+                    <div class="footer-social">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
                 
-                <div class="footer-social">
-                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                <div class="footer-section footer-links">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li><a href="pasteles.html">Pasteles</a></li>
+                        <li><a href="donas.html">Donas</a></li>
+                        <li><a href="bebidas.html">Bebidas</a></li>
+                        <li><a href="galletas.html">Galletas</a></li>
+                        <li><a href="../contactos.html">Contactos</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section footer-newsletter">
+                    <h3>Newsletter</h3>
+                    <p>Suscríbete para recibir ofertas exclusivas</p>
+                    <form class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Tu correo electrónico" required>
+                        <button type="submit" class="newsletter-btn">Suscribir</button>
+                    </form>
                 </div>
             </div>
             
-            <!-- Enlaces rápidos -->
-            <div class="footer-section footer-links">
-                <h3>Enlaces Rápidos</h3>
-                <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="page/pasteles.html">Catálogo</a></li>
-                    <li><a href="#">Servicios</a></li>
-                    <li><a href="contactos.html">Contáctanos</a></li>
-                    <li><a href="#">Sobre Nosotros</a></li>
-                    <li><a href="#">Preguntas Frecuentes</a></li>
-                </ul>
-            </div>
-            
-            <!-- Newsletter -->
-            <div class="footer-section footer-newsletter">
-                <h3>Newsletter</h3>
-                <p>Suscríbete para recibir ofertas exclusivas y novedades</p>
-                <form class="newsletter-form">
-                    <input type="email" class="newsletter-input" placeholder="Tu correo electrónico" required>
-                    <button type="submit" class="newsletter-btn">Suscribir</button>
-                </form>
-            </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <div class="footer-logo">
-                <span class="footer-logo-text">Happy Smile</span>
-            </div>
-            
-            <div class="footer-legal">
-                <a href="#">Política de Privacidad</a>
-                <a href="#">Términos y Condiciones</a>
-                <a href="#">Política de Cookies</a>
-            </div>
-            
-            <div class="footer-copyright">
-                © 2025 Happy Smile. Todos los derechos reservados.
-            </div>
-        </div>
-    </div>
-</footer>
-
-<!-- Botón flotante de WhatsApp -->
-<a href="https://wa.me/573214239806" class="whatsapp-float" target="_blank">
-    <i class="fab fa-whatsapp"></i>
-</a>
-
-<script>
-    // Script para el formulario de newsletter
-    document.addEventListener('DOMContentLoaded', function() {
-        const newsletterForm = document.querySelector('.newsletter-form');
-        if (newsletterForm) {
-            newsletterForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                const input = this.querySelector('.newsletter-input');
-                const button = this.querySelector('.newsletter-btn');
+            <div class="footer-bottom">
+                <div class="footer-logo">
+                    <span class="footer-logo-text">Happy Smile</span>
+                </div>
                 
-                if (input.value.trim()) {
-                    const originalText = button.textContent;
-                    button.textContent = '¡Gracias!';
-                    button.style.background = '#4CAF50';
-                    
-                    setTimeout(() => {
-                        button.textContent = originalText;
-                        button.style.background = '';
-                        input.value = '';
-                    }, 3000);
-                }
-            });
-        }
-    });
-</script>
-<!-- FIN DEL FOOTER -->
-    <!-- Todo lo que ya tienes... -->
+                <div class="footer-legal">
+                    <a href="#">Política de Privacidad</a>
+                    <a href="#">Términos y Condiciones</a>
+                    <a href="#">Política de Cookies</a>
+                </div>
+                
+                <div class="footer-copyright">
+                    © 2025 Happy Smile. Todos los derechos reservados.
+                </div>
+            </div>
+        </div>
+    </footer>
     
-    <!-- AÑADE ESTA LÍNEA PARA LOS ICONOS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <a href="https://wa.me/573214239806" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="../js/JS catalogo.js"></script>
+    <script src="../js/footer-scripts.js"></script>
 </body>
 </html>

@@ -9,22 +9,38 @@
     <link rel="icon" href="img/icono.png" type="image/png">
 </head>
 <body>
-    <!-- Header Profesional -->
-    <header class="header-profesional">
+    <!-- Header Rectangular con Menú -->
+    <header class="header-rectangular">
         <div class="container">
-            <div class="header-content">
-                <h1 class="logo">Happy Smile</h1>
-                <p class="tagline">Importants Antenna!</p>
+            <div class="header-contenido">
+                <!-- Logo con icono -->
+                <div class="logo-contenedor">
+                    <div class="logo-icono">
+                        <img src="img/icono.png" alt="Happy Smile Icono" class="logo-img">
+                    </div>
+                    <div class="logo-texto">
+                        <h1 class="logo-titulo">Happy Smile</h1>
+                    </div>
+                </div>
+                
+                <!-- Menú de Navegación -->
+                <nav class="menu-navegacion">
+                    <ul class="menu-lista">
+                        <li class="menu-item"><a href="index.html" class="menu-link activo">INICIO</a></li>
+                        <li class="menu-item"><a href="productos.html" class="menu-link">PRODUCTOS</a></li>
+                        <li class="menu-item"><a href="ubicacion.html" class="menu-link">UBICACIÓN</a></li>
+                        <li class="menu-item"><a href="contactos.html" class="menu-link">CONTACTO</a></li>
+                    </ul>
+                </nav>
             </div>
         </div>
     </header>
 
-    <!-- Sección INICIO -->
-    <section class="inicio-profesional">
+    <!-- Sección Bienvenida -->
+    <section class="bienvenida-section">
         <div class="container">
-            <div class="inicio-content">
-                <h2 class="inicio-titulo">INICIO</h2>
-                <p class="inicio-bienvenida">Bienvenido a nuestra reposición</p>
+            <div class="bienvenida-content">
+                <h2 class="bienvenida-titulo">Bienvenido a nuestra reposición</h2>
             </div>
         </div>
     </section>
@@ -32,7 +48,7 @@
     <!-- Línea divisoria -->
     <div class="linea-divisoria"></div>
 
-    <!-- Productos Horizontales con Imágenes -->
+    <!-- Productos Horizontales -->
     <section class="productos-horizontales">
         <div class="container">
             <div class="productos-grid">
@@ -44,7 +60,7 @@
                     </div>
                     <div class="producto-info">
                         <h3 class="producto-titulo">PASTELES</h3>
-                        <p class="producto-desc">DONAS GALLETAS Carrera y oyérmelo</p>
+                        <p class="producto-desc">DONAS GALLETAS: Correo y ojemplo</p>
                     </div>
                 </a>
 
@@ -56,7 +72,7 @@
                     </div>
                     <div class="producto-info">
                         <h3 class="producto-titulo">DONAS</h3>
-                        <p class="producto-desc">GALLETAS Carrera y oyérmelo</p>
+                        <p class="producto-desc">GALLETAS: Correo y ojemplo</p>
                     </div>
                 </a>
 
@@ -68,7 +84,7 @@
                     </div>
                     <div class="producto-info">
                         <h3 class="producto-titulo">BEBIDAS</h3>
-                        <p class="producto-desc">Necesitarles compañeros</p>
+                        <p class="producto-desc">Necesitados compañeros</p>
                     </div>
                 </a>
 
@@ -80,7 +96,7 @@
                     </div>
                     <div class="producto-info">
                         <h3 class="producto-titulo">GALLETAS</h3>
-                        <p class="producto-desc">Carrera y oyérmelo</p>
+                        <p class="producto-desc">Correo y ojemplo</p>
                     </div>
                 </a>
             </div>
@@ -90,59 +106,45 @@
     <!-- Línea divisoria -->
     <div class="linea-divisoria"></div>
 
-    <!-- Footer Profesional -->
-    <footer class="footer-profesional">
+    <!-- Footer según boceto -->
+    <footer class="footer-boceto">
         <div class="container">
-            <div class="footer-grid">
+            <div class="footer-contenido">
                 <!-- Contacto -->
                 <div class="footer-columna">
-                    <h4 class="footer-titulo">Contacto</h4>
-                    <p><i class="fas fa-map-marker-alt"></i> Medellín, Antioquia</p>
-                    <p><i class="fas fa-phone"></i> +57 321 423 9806</p>
-                    <p><i class="fas fa-envelope"></i> info@happysmile.com</p>
-                    <p><i class="fas fa-clock"></i> Lunes a Sábado: 8AM - 8PM</p>
+                    <h3 class="footer-titulo">Contacto</h3>
+                    <p class="footer-texto">Medidas. Antoques</p>
+                    <p class="footer-texto">+57 321 425 3006</p>
+                    <p class="footer-texto">info@happysmile.com</p>
+                    <p class="footer-texto">Lunes a sábado: 8:00 - 18:00</p>
                 </div>
 
                 <!-- Enlaces -->
                 <div class="footer-columna">
-                    <h4 class="footer-titulo">Enlaces</h4>
+                    <h3 class="footer-titulo">Enlaces</h3>
                     <ul class="footer-lista">
                         <li><a href="index.html">Inicio</a></li>
                         <li><a href="productos.html">Productos</a></li>
                         <li><a href="ubicacion.html">Ubicación</a></li>
-                        <li><a href="contactos.html">Contactos</a></li>
                     </ul>
                 </div>
 
                 <!-- Newsletter -->
                 <div class="footer-columna">
-                    <h4 class="footer-titulo">Newsletter</h4>
-                    <p class="footer-texto">Suscribete para recibir ofertas estudiantes y necesitaba</p>
-                    <form class="newsletter-form">
-                        <input type="email" class="newsletter-input" placeholder="Tu correo" required>
-                        <button type="submit" class="newsletter-btn">
-                            <i class="fas fa-paper-plane"></i> Suscribir
-                        </button>
-                    </form>
-                </div>
-            </div>
-
-            <!-- Copyright -->
-            <div class="footer-bottom">
-                <div class="footer-copyright">
-                    © 2025 Happy Smile. Todos los derechos reservados.
-                    <span class="footer-links">
-                        <a href="#">Política de Privacidad</a> | 
-                        <a href="#">Términos y Condiciones</a> | 
-                        <a href="#">Política de Cookies</a>
-                    </span>
+                    <h3 class="footer-titulo">Newsletter</h3>
+                    <p class="footer-texto">Su nombre para visitar clientes estudiantes y necesitaba</p>
+                    <div class="newsletter-botones">
+                        <button class="newsletter-btn">El común</button>
+                        <button class="newsletter-btn">Se recomienda</button>
+                        <button class="newsletter-btn">Recerca</button>
+                    </div>
                 </div>
             </div>
         </div>
     </footer>
 
     <!-- Botón WhatsApp -->
-    <a href="https://wa.me/573214239806" class="whatsapp-btn" target="_blank">
+    <a href="https://wa.me/573214253006" class="whatsapp-btn" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
