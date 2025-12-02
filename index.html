@@ -2,28 +2,150 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Inicio</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Smile - Repostería</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/inicio.css">
     <link rel="icon" href="img/icono.png" type="image/png">
 </head>
 <body>
-    <h1>Página de Resposteria : Happy Smile </h1>
+    <!-- Header Profesional -->
+    <header class="header-profesional">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="logo">Happy Smile</h1>
+                <p class="tagline">Importants Antenna!</p>
+            </div>
+        </div>
+    </header>
 
-    <button onclick="location.href='index.html'">Inicio</button>
-    <button onclick="location.href='productos.html'">Productos</button>
-    <button onclick="location.href='ubicacion.html'">Ubicación</button>
-    <button onclick="location.href='contactos.html'">Contactos</button>
+    <!-- Sección INICIO -->
+    <section class="inicio-profesional">
+        <div class="container">
+            <div class="inicio-content">
+                <h2 class="inicio-titulo">INICIO</h2>
+                <p class="inicio-bienvenida">Bienvenido a nuestra reposición</p>
+            </div>
+        </div>
+    </section>
 
-    <!-- 🔽 NUEVO GRUPO DE BOTONES (SECCIÓN DE PRODUCTOS) -->
-   <div class="sub-menu">
-    <button onclick="location.href='page/pasteles.html'">PASTELES</button>
-    <button onclick="location.href='page/donas.html'">DONAS</button>
-    <button onclick="location.href='page/bebidas.html'">BEBIDAS</button>
-    <button onclick="location.href='page/galletas.html'">GALLETAS</button>
-</div>
+    <!-- Línea divisoria -->
+    <div class="linea-divisoria"></div>
 
+    <!-- Productos Horizontales con Imágenes -->
+    <section class="productos-horizontales">
+        <div class="container">
+            <div class="productos-grid">
+                <!-- Pasteles -->
+                <a href="page/pasteles.html" class="producto-card">
+                    <div class="producto-imagen">
+                        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Pasteles">
+                        <div class="imagen-overlay"></div>
+                    </div>
+                    <div class="producto-info">
+                        <h3 class="producto-titulo">PASTELES</h3>
+                        <p class="producto-desc">DONAS GALLETAS Carrera y oyérmelo</p>
+                    </div>
+                </a>
 
+                <!-- Donas -->
+                <a href="page/donas.html" class="producto-card">
+                    <div class="producto-imagen">
+                        <img src="https://images.unsplash.com/photo-1551106652-a5bcf4b29ab6?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Donas">
+                        <div class="imagen-overlay"></div>
+                    </div>
+                    <div class="producto-info">
+                        <h3 class="producto-titulo">DONAS</h3>
+                        <p class="producto-desc">GALLETAS Carrera y oyérmelo</p>
+                    </div>
+                </a>
 
+                <!-- Bebidas -->
+                <a href="page/bebidas.html" class="producto-card">
+                    <div class="producto-imagen">
+                        <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Bebidas">
+                        <div class="imagen-overlay"></div>
+                    </div>
+                    <div class="producto-info">
+                        <h3 class="producto-titulo">BEBIDAS</h3>
+                        <p class="producto-desc">Necesitarles compañeros</p>
+                    </div>
+                </a>
 
+                <!-- Galletas -->
+                <a href="page/galletas.html" class="producto-card">
+                    <div class="producto-imagen">
+                        <img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Galletas">
+                        <div class="imagen-overlay"></div>
+                    </div>
+                    <div class="producto-info">
+                        <h3 class="producto-titulo">GALLETAS</h3>
+                        <p class="producto-desc">Carrera y oyérmelo</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Línea divisoria -->
+    <div class="linea-divisoria"></div>
+
+    <!-- Footer Profesional -->
+    <footer class="footer-profesional">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Contacto -->
+                <div class="footer-columna">
+                    <h4 class="footer-titulo">Contacto</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Medellín, Antioquia</p>
+                    <p><i class="fas fa-phone"></i> +57 321 423 9806</p>
+                    <p><i class="fas fa-envelope"></i> info@happysmile.com</p>
+                    <p><i class="fas fa-clock"></i> Lunes a Sábado: 8AM - 8PM</p>
+                </div>
+
+                <!-- Enlaces -->
+                <div class="footer-columna">
+                    <h4 class="footer-titulo">Enlaces</h4>
+                    <ul class="footer-lista">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="productos.html">Productos</a></li>
+                        <li><a href="ubicacion.html">Ubicación</a></li>
+                        <li><a href="contactos.html">Contactos</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="footer-columna">
+                    <h4 class="footer-titulo">Newsletter</h4>
+                    <p class="footer-texto">Suscribete para recibir ofertas estudiantes y necesitaba</p>
+                    <form class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Tu correo" required>
+                        <button type="submit" class="newsletter-btn">
+                            <i class="fas fa-paper-plane"></i> Suscribir
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    © 2025 Happy Smile. Todos los derechos reservados.
+                    <span class="footer-links">
+                        <a href="#">Política de Privacidad</a> | 
+                        <a href="#">Términos y Condiciones</a> | 
+                        <a href="#">Política de Cookies</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botón WhatsApp -->
+    <a href="https://wa.me/573214239806" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="js/inicio.js"></script>
 </body>
 </html>
