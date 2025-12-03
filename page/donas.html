@@ -10,35 +10,29 @@
     <link rel="icon" href="../img/icono.png" type="image/png">
 </head>
 <body>
-    <!-- Header Rectangular con Menú -->
-<header class="header-rectangular">
-    <div class="container">
-        <div class="header-contenido">
-            <!-- Logo con icono -->
-            <div class="logo-contenedor">
-                <div class="logo-icono">
-                    <img src="../img/icono.png" alt="Happy Smile Icono" class="logo-img">
-                </div>
-                <div class="logo-texto">
-                    <h1 class="logo-titulo">Happy Smile</h1>
-                </div>
-            </div>
-            
-            <!-- Menú de Navegación Principal -->
-            <nav class="menu-navegacion">
-                <ul class="menu-lista">
-                    <li class="menu-item"><a href="../index.html" class="menu-link">INICIO</a></li>
-                    <li class="menu-item"><a href="pasteles.html" class="menu-link">PASTELES</a></li>
-                    <li class="menu-item"><a href="donas.html" class="menu-link">DONAS</a></li>
-                    <li class="menu-item"><a href="bebidas.html" class="menu-link">BEBIDAS</a></li>
-                    <li class="menu-item"><a href="galletas.html" class="menu-link">GALLETAS</a></li>
-                    <li class="menu-item"><a href="../contactos.html" class="menu-link">CONTÁCTANOS</a></li>
-                </ul>
-            </nav>
+<header class="header-fixed">
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/icono.png" alt="Logo Repostería" width="50">
+                <span>Sweet Delights</span>
+            </a>
         </div>
-    </div>
+        <ul class="nav-menu">
+            <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+            <li><a href="productos.html"><i class="fas fa-store"></i> Productos</a></li>
+            <li><a href="checkout.html"><i class="fas fa-shopping-cart"></i> Carrito</a></li>
+            <li><a href="ubicacion.html"><i class="fas fa-map-marker-alt"></i> Ubicación</a></li>
+            <li><a href="contactos.html"><i class="fas fa-phone"></i> Contacto</a></li>
+        </ul>
+        
+        <!-- CONTADOR DEL CARRITO -->
+        <div class="cart-counter">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="cart-count">0</span>
+        </div>
+    </nav>
 </header>
-
     <main class="main-catalogo">
         <section class="hero-producto">
             <div class="container">

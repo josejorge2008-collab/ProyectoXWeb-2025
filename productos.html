@@ -2,119 +2,228 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Productos</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Proyecto X Repostería</title>
+    
+    <!-- TUS ESTILOS + CHECKOUT -->
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/checkout.css">
+    <link rel="icon" href="img/icono.png">
+    
+    <!-- ICONOS (Font Awesome) - COPIA ESTO -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* ESTILOS INLINE PARA MANTENER TU ESTÉTICA */
+        :root {
+            --rosa: #ffc8dd;
+            --azul: #a2d2ff;
+            --rosa-oscuro: #ff9ebb;
+            --azul-oscuro: #7bb5ff;
+            --texto: #333;
+            --fondo: #fff9fc;
+        }
+    </style>
 </head>
 <body>
-    <h1>Productos</h1>
+    <!-- HEADER (igual que tu sitio) -->
+    <header class="header-fixed">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="img/icono.png" alt="Logo Repostería" width="50">
+                    <span>Sweet Delights</span>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="productos.html"><i class="fas fa-store"></i> Productos</a></li>
+                <li><a href="checkout.html" class="active"><i class="fas fa-shopping-cart"></i> Carrito</a></li>
+                <li><a href="ubicacion.html"><i class="fas fa-map-marker-alt"></i> Ubicación</a></li>
+                <li><a href="contactos.html"><i class="fas fa-phone"></i> Contacto</a></li>
+            </ul>
+            
+            <!-- CONTADOR DEL CARRITO -->
+            <div class="cart-counter">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cart-count">0</span>
+            </div>
+        </nav>
+    </header>
 
-    <!-- MISMO MENÚ -->
-    <nav>
-        <button onclick="location.href='index.html'">Inicio</button>
-        <button onclick="location.href='productos.html'">Productos</button>
-        <button onclick="location.href='ubicacion.html'">Ubicación</button>
-        <button onclick="location.href='contactos.html'">Contactos</button>
-    </nav>
+    <main class="checkout-container">
+        <!-- PROGRESO DEL PEDIDO -->
+        <div class="checkout-progress">
+            <div class="progress-step active">
+                <div class="step-number">1</div>
+                <span>Carrito</span>
+            </div>
+            <div class="progress-step">
+                <div class="step-number">2</div>
+                <span>Pago</span>
+            </div>
+            <div class="progress-step">
+                <div class="step-number">3</div>
+                <span>Confirmación</span>
+            </div>
+        </div>
 
-    
-    <p>Aquí van tus productos.</p>
-<!-- FOOTER PROFESIONAL HAPPY SMILE - AÑADE ESTO -->
-<footer class="footer-profesional">
-    <div class="footer-container">
-        <div class="footer-content">
-            <!-- Información de contacto -->
-            <div class="footer-section footer-contact">
-                <h3>Contacto</h3>
-                <p><i class="fas fa-map-marker-alt"></i> Medellín, Antioquia, Colombia</p>
-                <p><i class="fas fa-phone"></i> +57 321 423 9806</p>
-                <p><i class="fas fa-envelope"></i> info@happysmile.com</p>
-                <p><i class="fas fa-clock"></i> Lunes a Sábado: 8:00 AM - 8:00 PM</p>
+        <div class="checkout-grid">
+            <!-- COLUMNA IZQUIERDA: LISTADO DE PRODUCTOS -->
+            <div class="order-summary">
+                <h2><i class="fas fa-receipt"></i> Tu Pedido</h2>
                 
-                <div class="footer-social">
-                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                <div class="order-items" id="order-items">
+                    <!-- ITEMS DINÁMICOS (se llenan con JS) -->
+                    <div class="order-item">
+                        <img src="img/pastel-ejemplo.jpg" alt="Pastel de Chocolate">
+                        <div class="item-details">
+                            <h4>Pastel de Chocolate Premium</h4>
+                            <p class="item-desc">Con chips de chocolate y crema belga</p>
+                            <div class="item-controls">
+                                <button class="qty-btn minus"><i class="fas fa-minus"></i></button>
+                                <span class="qty">1</span>
+                                <button class="qty-btn plus"><i class="fas fa-plus"></i></button>
+                                <span class="item-price">$280.00</span>
+                            </div>
+                        </div>
+                        <button class="remove-item"><i class="fas fa-trash"></i></button>
+                    </div>
+                    
+                    <div class="order-item">
+                        <img src="img/dona-ejemplo.jpg" alt="Donas Glaseadas">
+                        <div class="item-details">
+                            <h4>Donas Glaseadas (6 pz)</h4>
+                            <p class="item-desc">Variedad: chocolate, fresa, vainilla</p>
+                            <div class="item-controls">
+                                <button class="qty-btn minus"><i class="fas fa-minus"></i></button>
+                                <span class="qty">1</span>
+                                <button class="qty-btn plus"><i class="fas fa-plus"></i></button>
+                                <span class="item-price">$120.00</span>
+                            </div>
+                        </div>
+                        <button class="remove-item"><i class="fas fa-trash"></i></button>
+                    </div>
+                </div>
+                
+                <!-- RESUMEN DE PRECIOS -->
+                <div class="price-summary">
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <span id="subtotal">$400.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Envío</span>
+                        <span id="shipping">$35.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Descuento</span>
+                        <span id="discount">-$20.00</span>
+                    </div>
+                    <div class="summary-row total">
+                        <strong>Total</strong>
+                        <strong id="total">$415.00</strong>
+                    </div>
+                </div>
+                
+                <!-- CÓDIGO DE DESCUENTO -->
+                <div class="discount-code">
+                    <input type="text" placeholder="Código de descuento" id="discount-input">
+                    <button class="btn-apply">Aplicar</button>
                 </div>
             </div>
-            
-            <!-- Enlaces rápidos -->
-            <div class="footer-section footer-links">
-                <h3>Enlaces Rápidos</h3>
-                <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="page/pasteles.html">Catálogo</a></li>
-                    <li><a href="#">Servicios</a></li>
-                    <li><a href="contactos.html">Contáctanos</a></li>
-                    <li><a href="#">Sobre Nosotros</a></li>
-                    <li><a href="#">Preguntas Frecuentes</a></li>
-                </ul>
-            </div>
-            
-            <!-- Newsletter -->
-            <div class="footer-section footer-newsletter">
-                <h3>Newsletter</h3>
-                <p>Suscríbete para recibir ofertas exclusivas y novedades</p>
-                <form class="newsletter-form">
-                    <input type="email" class="newsletter-input" placeholder="Tu correo electrónico" required>
-                    <button type="submit" class="newsletter-btn">Suscribir</button>
-                </form>
-            </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <div class="footer-logo">
-                <span class="footer-logo-text">Happy Smile</span>
-            </div>
-            
-            <div class="footer-legal">
-                <a href="#">Política de Privacidad</a>
-                <a href="#">Términos y Condiciones</a>
-                <a href="#">Política de Cookies</a>
-            </div>
-            
-            <div class="footer-copyright">
-                © 2025 Happy Smile. Todos los derechos reservados.
-            </div>
-        </div>
-    </div>
-</footer>
 
-<!-- Botón flotante de WhatsApp -->
-<a href="https://wa.me/573214239806" class="whatsapp-float" target="_blank">
-    <i class="fab fa-whatsapp"></i>
-</a>
-
-<script>
-    // Script para el formulario de newsletter
-    document.addEventListener('DOMContentLoaded', function() {
-        const newsletterForm = document.querySelector('.newsletter-form');
-        if (newsletterForm) {
-            newsletterForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                const input = this.querySelector('.newsletter-input');
-                const button = this.querySelector('.newsletter-btn');
+            <!-- COLUMNA DERECHA: PAGO CON QR -->
+            <div class="payment-section">
+                <h2><i class="fas fa-qrcode"></i> Pago con QR</h2>
                 
-                if (input.value.trim()) {
-                    const originalText = button.textContent;
-                    button.textContent = '¡Gracias!';
-                    button.style.background = '#4CAF50';
+                <div class="payment-methods">
+                    <div class="method-option active" data-method="qr">
+                        <i class="fas fa-qrcode"></i>
+                        <span>Pago con QR</span>
+                    </div>
+                    <div class="method-option" data-method="card">
+                        <i class="fas fa-credit-card"></i>
+                        <span>Tarjeta</span>
+                    </div>
+                    <div class="method-option" data-method="cash">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <span>Efectivo</span>
+                    </div>
+                </div>
+                
+                <!-- QR PARA PAGO -->
+                <div class="qr-payment active">
+                    <div class="qr-container">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://proyectoxweb.netlify.app/pago-confirmado&format=svg&color=ffc8dd&bgcolor=ffffff" 
+                             alt="QR de Pago" 
+                             class="qr-code">
+                        <div class="qr-instructions">
+                            <h4><i class="fas fa-mobile-alt"></i> Cómo pagar:</h4>
+                            <ol>
+                                <li>Abre la app de tu banco</li>
+                                <li>Selecciona "Pagar con QR"</li>
+                                <li>Escanea este código</li>
+                                <li>Confirma el pago de <strong>$415.00</strong></li>
+                            </ol>
+                        </div>
+                    </div>
                     
-                    setTimeout(() => {
-                        button.textContent = originalText;
-                        button.style.background = '';
-                        input.value = '';
-                    }, 3000);
-                }
-            });
-        }
-    });
-</script>
-<!-- FIN DEL FOOTER -->
-  <!-- Todo lo que ya tienes... -->
-    
-    <!-- AÑADE ESTA LÍNEA PARA LOS ICONOS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+                    <!-- BANCOS SOPORTADOS -->
+                    <div class="supported-banks">
+                        <h5><i class="fas fa-university"></i> Bancos soportados:</h5>
+                        <div class="bank-logos">
+                            <span>BBVA</span>
+                            <span>Santander</span>
+                            <span>Banorte</span>
+                            <span>HSBC</span>
+                            <span>Scotia</span>
+                        </div>
+                    </div>
+                    
+                    <!-- INFORMACIÓN DE PAGO -->
+                    <div class="payment-info">
+                        <div class="info-box">
+                            <i class="fas fa-shield-alt"></i>
+                            <div>
+                                <h5>Pago 100% Seguro</h5>
+                                <p>Tu información está encriptada</p>
+                            </div>
+                        </div>
+                        <div class="info-box">
+                            <i class="fas fa-bolt"></i>
+                            <div>
+                                <h5>Confirmación Inmediata</h5>
+                                <p>Recibirás un correo al completar</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- BOTÓN DE CONFIRMACIÓN -->
+                <button class="confirm-payment-btn">
+                    <i class="fas fa-lock"></i> Confirmar y Pagar $415.00
+                </button>
+                
+                <!-- GARANTÍAS -->
+                <div class="guarantees">
+                    <p><i class="fas fa-check-circle"></i> Garantía de satisfacción</p>
+                    <p><i class="fas fa-truck"></i> Delivery en 30-45 min</p>
+                    <p><i class="fas fa-headset"></i> Soporte 24/7</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER (usa tu footer actual) -->
+    <footer class="happy-footer">
+        <div class="footer-content">
+            <p>© 2024 Proyecto X Repostería. Todos los derechos reservados.</p>
+            <p>Delivery de felicidad en cada bocado 🎂</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="js/checkout.js"></script>
 </body>
 </html>

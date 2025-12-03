@@ -8,24 +8,29 @@
     <link rel="stylesheet" href="css/contactos.css">
 </head>
 <body>
-    <header class="header">
-        <nav class="nav">
-            <div class="logo">
-                <a href="index.html">
-                    <img src="imagenes/logo-happy-smile.png" alt="Happy Smile" class="logo-img">
-                    <span class="logo-text">Happy Smile</span>
-                </a>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="page/pasteles.html">Pasteles</a></li>
-                <li><a href="page/donas.html">Donas</a></li>
-                <li><a href="page/bebidas.html">Bebidas</a></li>
-                <li><a href="page/galletas.html">Galletas</a></li>
-                <li><a href="contactos.html" class="active">Contáctanos</a></li>
-            </ul>
-        </nav>
-    </header>
+    <header class="header-fixed">
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/icono.png" alt="Logo Repostería" width="50">
+                <span>Sweet Delights</span>
+            </a>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+            <li><a href="productos.html"><i class="fas fa-store"></i> Productos</a></li>
+            <li><a href="checkout.html"><i class="fas fa-shopping-cart"></i> Carrito</a></li>
+            <li><a href="ubicacion.html"><i class="fas fa-map-marker-alt"></i> Ubicación</a></li>
+            <li><a href="contactos.html"><i class="fas fa-phone"></i> Contacto</a></li>
+        </ul>
+        
+        <!-- CONTADOR DEL CARRITO -->
+        <div class="cart-counter">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="cart-count">0</span>
+        </div>
+    </nav>
+</header>
 
     <main class="main-contacto">
         <section class="hero-contacto">
