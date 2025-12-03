@@ -1,53 +1,85 @@
-// menu-mobile.js - Menú hamburguesa para móviles
+// menu-mobile.js - Menú responsive para móviles
+
 document.addEventListener('DOMContentLoaded', function() {
-    // Crear botón hamburguesa si no existe
-    if (!document.querySelector('.hamburger')) {
-        const navbar = document.querySelector('.navbar');
-        if (navbar) {
-            const hamburger = document.createElement('div');
-            hamburger.className = 'hamburger';
-            hamburger.innerHTML = `
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            `;
-            
-            // Insertar antes del menú
-            const navMenu = document.querySelector('.nav-menu');
-            if (navMenu) {
-                navbar.insertBefore(hamburger, navMenu);
+    console.log('📱 Menú móvil inicializado');
+    
+    // ===== ELEMENTOS DEL DOM =====
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    if (!hamburger || !navMenu) {
+        console.warn('Elementos del menú móvil no encontrados');
+        return;
+    }
+    
+    // ===== TOGGLE MENÚ =====
+    hamburger.addEventListener('click', function() {
+        // Toggle menú
+        navMenu.classList.toggle('active');
+        hamburger.classList.toggle('active');
+        
+        // Animación de hamburguesa a X
+        const bars = hamburger.querySelectorAll('.bar');
+        if (hamburger.classList.contains('active')) {
+            bars[0].style.transform = 'rotate(-45deg) translate(-5px, 6px)';
+            bars[1].style.opacity = '0';
+            bars[2].style.transform = 'rotate(45deg) translate(-5px, -6px)';
+        } else {
+            bars[0].style.transform = 'none';
+            bars[1].style.opacity = '1';
+            bars[2].style.transform = 'none';
+        }
+    });
+    
+    // ===== CERRAR MENÚ AL HACER CLIC EN ENLACE =====
+    navMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                hamburger.classList.remove('active');
                 
-                // Funcionalidad
-                hamburger.addEventListener('click', function() {
-                    this.classList.toggle('active');
-                    navMenu.classList.toggle('active');
-                    
-                    // Animación de las barras
-                    const bars = this.querySelectorAll('.bar');
-                    if (this.classList.contains('active')) {
-                        bars[0].style.transform = 'rotate(-45deg) translate(-5px, 6px)';
-                        bars[1].style.opacity = '0';
-                        bars[2].style.transform = 'rotate(45deg) translate(-5px, -6px)';
-                    } else {
-                        bars[0].style.transform = 'none';
-                        bars[1].style.opacity = '1';
-                        bars[2].style.transform = 'none';
-                    }
-                });
+                // Restaurar barras
+                const bars = hamburger.querySelectorAll('.bar');
+                bars[0].style.transform = 'none';
+                bars[1].style.opacity = '1';
+                bars[2].style.transform = 'none';
+            }
+        });
+    });
+    
+    // ===== CERRAR MENÚ AL HACER CLIC FUERA =====
+    document.addEventListener('click', function(e) {
+        if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+            if (navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                hamburger.classList.remove('active');
                 
-                // Cerrar menú al hacer clic en enlace
-                navMenu.querySelectorAll('a').forEach(link => {
-                    link.addEventListener('click', () => {
-                        hamburger.classList.remove('active');
-                        navMenu.classList.remove('active');
-                        // Restaurar barras
-                        const bars = hamburger.querySelectorAll('.bar');
-                        bars[0].style.transform = 'none';
-                        bars[1].style.opacity = '1';
-                        bars[2].style.transform = 'none';
-                    });
-                });
+                // Restaurar barras
+                const bars = hamburger.querySelectorAll('.bar');
+                bars[0].style.transform = 'none';
+                bars[1].style.opacity = '1';
+                bars[2].style.transform = 'none';
             }
         }
+    });
+    
+    // ===== DETECTAR ANCHO DE PANTALLA =====
+    function checkScreenSize() {
+        if (window.innerWidth > 768) {
+            // En pantallas grandes, asegurar que el menú esté visible
+            navMenu.classList.remove('active');
+            hamburger.classList.remove('active');
+            
+            const bars = hamburger.querySelectorAll('.bar');
+            bars[0].style.transform = 'none';
+            bars[1].style.opacity = '1';
+            bars[2].style.transform = 'none';
+        }
     }
+    
+    // Verificar tamaño al cargar y al redimensionar
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
+    
+    console.log('✅ Menú móvil listo');
 });

@@ -1,110 +1,109 @@
-// inicio.js - VERSIÓN CORREGIDA Y OPTIMIZADA
+// inicio.js - Funcionalidades para la página de inicio
+
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('✅ Página de inicio cargada correctamente');
+    console.log('🏠 Página de inicio cargada');
     
-    // ===== CORRECCIÓN: ESPERAR A QUE EXISTAN ELEMENTOS =====
-    function safeQuerySelector(selector) {
-        const element = document.querySelector(selector);
-        if (!element) {
-            console.warn(`⚠️ Elemento no encontrado: ${selector}`);
-            return null;
-        }
-        return element;
+    // ===== ANIMACIÓN DE ENTRADA =====
+    const hero = document.querySelector('.hero');
+    if (hero) {
+        hero.style.animation = 'fadeIn 1s ease';
     }
     
-    // ===== MENÚ MÓVIL (si no tienes) =====
-    const menuToggle = safeQuerySelector('.menu-toggle');
-    const navMenu = safeQuerySelector('.nav-menu');
-    
-    if (menuToggle && navMenu) {
-        menuToggle.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
-            this.classList.toggle('active');
-        });
-    }
-    
-    // ===== ANIMACIÓN DE SCROLL SUAVE =====
-    const links = document.querySelectorAll('a[href^="#"]');
-    links.forEach(link => {
-        link.addEventListener('click', function(e) {
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
+    // ===== CONTADOR ANIMADO =====
+    function iniciarContadorAnimado() {
+        const contadores = document.querySelectorAll('.contador');
+        contadores.forEach(contador => {
+            const objetivo = parseInt(contador.dataset.objetivo);
+            const duracion = 2000; // 2 segundos
+            const incremento = objetivo / (duracion / 16); // 60fps
+            let actual = 0;
             
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                e.preventDefault();
-                window.scrollTo({
-                    top: targetElement.offsetTop - 100,
-                    behavior: 'smooth'
-                });
-            }
+            const timer = setInterval(() => {
+                actual += incremento;
+                if (actual >= objetivo) {
+                    contador.textContent = objetivo + '+';
+                    clearInterval(timer);
+                } else {
+                    contador.textContent = Math.floor(actual);
+                }
+            }, 16);
         });
-    });
-    
-    // ===== CONTADOR DE PRODUCTOS (ejemplo) =====
-    const contadorProductos = safeQuerySelector('.contador-productos');
-    if (contadorProductos) {
-        // Simular carga de datos
-        setTimeout(() => {
-            contadorProductos.textContent = '25+';
-            contadorProductos.style.color = '#ff6b8b';
-        }, 1000);
     }
     
-    // ===== DETECCIÓN DE ERRORES =====
-    window.addEventListener('error', function(e) {
-        console.error('❌ Error detectado:', e.message);
-        // Puedes enviar esto a un servicio de monitoreo
-    });
+    // ===== EFECTO SCROLL SUAVE =====
+    function setupScrollSuave() {
+        const enlaces = document.querySelectorAll('a[href^="#"]');
+        enlaces.forEach(enlace => {
+            enlace.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href === '#') return;
+                
+                const objetivo = document.querySelector(href);
+                if (objetivo) {
+                    e.preventDefault();
+                    window.scrollTo({
+                        top: objetivo.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    }
     
-    // ===== INICIALIZACIÓN COMPLETA =====
-    console.log('✨ Script de inicio inicializado correctamente');
+    // ===== ANIMACIÓN AL SCROLL =====
+    function setupAnimacionScroll() {
+        const elementos = document.querySelectorAll('.categoria-card, .producto-card');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        elementos.forEach(el => observer.observe(el));
+    }
+    
+    // ===== TESTIMONIOS CARRUSEL (si agregas después) =====
+    function setupCarruselTestimonios() {
+        const carrusel = document.querySelector('.carrusel-testimonios');
+        if (!carrusel) return;
+        
+        const testimonios = carrusel.querySelectorAll('.testimonio');
+        let indiceActual = 0;
+        
+        function mostrarTestimonio(indice) {
+            testimonios.forEach((testimonio, i) => {
+                testimonio.classList.remove('active');
+                if (i === indice) {
+                    testimonio.classList.add('active');
+                }
+            });
+        }
+        
+        // Auto-avanzar cada 5 segundos
+        setInterval(() => {
+            indiceActual = (indiceActual + 1) % testimonios.length;
+            mostrarTestimonio(indiceActual);
+        }, 5000);
+    }
+    
+    // ===== INICIALIZAR TODO =====
+    function init() {
+        setupScrollSuave();
+        setupAnimacionScroll();
+        iniciarContadorAnimado();
+        setupCarruselTestimonios();
+        
+        // Añadir clase loaded para transiciones
+        setTimeout(() => {
+            document.body.classList.add('loaded');
+        }, 100);
+        
+        console.log('✅ Inicio inicializado correctamente');
+    }
+    
+    // Iniciar
+    init();
 });
-
-// ===== FUNCIONES GLOBALES ÚTILES =====
-function mostrarMensaje(mensaje, tipo = 'info') {
-    const colores = {
-        'success': '#4CAF50',
-        'error': '#F44336',
-        'info': '#2196F3',
-        'warning': '#FF9800'
-    };
-    
-    const div = document.createElement('div');
-    div.textContent = mensaje;
-    div.style.cssText = `
-        position: fixed;
-        top: 120px;
-        right: 20px;
-        padding: 15px 25px;
-        background: ${colores[tipo] || '#2196F3'};
-        color: white;
-        border-radius: 8px;
-        z-index: 10000;
-        animation: slideIn 0.3s ease;
-    `;
-    
-    document.body.appendChild(div);
-    
-    setTimeout(() => {
-        div.style.animation = 'slideOut 0.3s ease';
-        setTimeout(() => div.remove(), 300);
-    }, 3000);
-}
-
-// Añadir animaciones CSS si no existen
-if (!document.querySelector('#estilos-dinamicos')) {
-    const style = document.createElement('style');
-    style.id = 'estilos-dinamicos';
-    style.textContent = `
-        @keyframes slideIn {
-            from { transform: translateX(100%); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
-        }
-        @keyframes slideOut {
-            from { transform: translateX(0); opacity: 1; }
-            to { transform: translateX(100%); opacity: 0; }
-        }
-    `;
-    document.head.appendChild(style);
-}

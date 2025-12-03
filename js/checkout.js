@@ -1,98 +1,91 @@
-// checkout.js - Funcionalidad completa del checkout
+// checkout.js - Funcionalidades para la página de checkout
 
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('✅ Checkout cargado');
+    console.log('💳 Checkout inicializado');
     
-    // ===== DATOS DEL CARRITO (simulado) =====
-    let cart = [
-        {
-            id: 1,
-            name: "Pastel de Chocolate Premium",
-            description: "Con chips de chocolate y crema belga",
-            price: 280.00,
-            quantity: 1,
-            image: "img/pastel-ejemplo.jpg"
-        },
-        {
-            id: 2,
-            name: "Donas Glaseadas (6 pz)",
-            description: "Variedad: chocolate, fresa, vainilla",
-            price: 120.00,
-            quantity: 1,
-            image: "img/dona-ejemplo.jpg"
-        }
-    ];
-    
-    const shippingCost = 35.00;
-    const discount = 20.00;
+    // ===== CARRITO DESDE LOCALSTORAGE =====
+    let carrito = JSON.parse(localStorage.getItem('carritoSweetDelights')) || [];
     
     // ===== ELEMENTOS DEL DOM =====
-    const orderItemsContainer = document.getElementById('order-items');
+    const orderItems = document.getElementById('order-items');
     const subtotalElement = document.getElementById('subtotal');
     const shippingElement = document.getElementById('shipping');
     const discountElement = document.getElementById('discount');
     const totalElement = document.getElementById('total');
-    const cartCountElement = document.getElementById('cart-count');
     const confirmBtn = document.querySelector('.confirm-payment-btn');
+    const discountInput = document.getElementById('discount-input');
+    const applyBtn = document.querySelector('.btn-apply');
+    const methodOptions = document.querySelectorAll('.method-option');
     
-    // ===== FUNCIONES DE CÁLCULO =====
-    function calculateSubtotal() {
-        return cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+    // ===== CONSTANTES =====
+    const COSTO_ENVIO = 35.00;
+    let descuentoAplicado = 20.00; // Descuento por defecto
+    
+    // ===== CALCULAR TOTALES =====
+    function calcularSubtotal() {
+        return carrito.reduce((total, item) => total + (item.precio * item.cantidad), 0);
     }
     
-    function calculateTotal() {
-        const subtotal = calculateSubtotal();
-        return subtotal + shippingCost - discount;
-    }
-    
-    function updateCartCount() {
-        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-        if (cartCountElement) {
-            cartCountElement.textContent = totalItems;
-        }
+    function calcularTotal() {
+        const subtotal = calcularSubtotal();
+        return subtotal + COSTO_ENVIO - descuentoAplicado;
     }
     
     // ===== RENDERIZAR ITEMS DEL CARRITO =====
-    function renderCartItems() {
-        if (!orderItemsContainer) return;
+    function renderizarItemsCarrito() {
+        if (!orderItems || carrito.length === 0) {
+            if (orderItems) {
+                orderItems.innerHTML = `
+                    <div class="carrito-vacio">
+                        <i class="fas fa-shopping-cart"></i>
+                        <h3>Tu carrito está vacío</h3>
+                        <p>Agrega productos desde nuestra tienda</p>
+                        <a href="./productos.html" class="btn">Ver Productos</a>
+                    </div>
+                `;
+            }
+            actualizarTotales();
+            return;
+        }
         
-        orderItemsContainer.innerHTML = '';
+        orderItems.innerHTML = '';
         
-        cart.forEach(item => {
+        carrito.forEach((item, index) => {
             const itemElement = document.createElement('div');
             itemElement.className = 'order-item';
-            itemElement.dataset.id = item.id;
+            itemElement.dataset.index = index;
             
             itemElement.innerHTML = `
-                <img src="${item.image}" alt="${item.name}">
+                <img src="${item.imagen || './img/placeholder.jpg'}" alt="${item.nombre}">
                 <div class="item-details">
-                    <h4>${item.name}</h4>
-                    <p class="item-desc">${item.description}</p>
+                    <h4>${item.nombre}</h4>
+                    <p>${item.descripcion || 'Delicioso producto de repostería'}</p>
                     <div class="item-controls">
                         <button class="qty-btn minus"><i class="fas fa-minus"></i></button>
-                        <span class="qty">${item.quantity}</span>
+                        <span class="qty">${item.cantidad}</span>
                         <button class="qty-btn plus"><i class="fas fa-plus"></i></button>
-                        <span class="item-price">$${(item.price * item.quantity).toFixed(2)}</span>
+                        <span class="item-price">$${(item.precio * item.cantidad).toFixed(2)}</span>
                     </div>
                 </div>
-                <button class="remove-item"><i class="fas fa-trash"></i></button>
+                <button class="remove-item" data-index="${index}">
+                    <i class="fas fa-trash"></i>
+                </button>
             `;
             
-            orderItemsContainer.appendChild(itemElement);
+            orderItems.appendChild(itemElement);
         });
         
-        updateTotals();
-        updateCartCount();
+        actualizarTotales();
     }
     
     // ===== ACTUALIZAR TOTALES =====
-    function updateTotals() {
-        const subtotal = calculateSubtotal();
-        const total = calculateTotal();
+    function actualizarTotales() {
+        const subtotal = calcularSubtotal();
+        const total = calcularTotal();
         
         if (subtotalElement) subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
-        if (shippingElement) shippingElement.textContent = `$${shippingCost.toFixed(2)}`;
-        if (discountElement) discountElement.textContent = `-$${discount.toFixed(2)}`;
+        if (shippingElement) shippingElement.textContent = `$${COSTO_ENVIO.toFixed(2)}`;
+        if (discountElement) discountElement.textContent = `-$${descuentoAplicado.toFixed(2)}`;
         if (totalElement) totalElement.textContent = `$${total.toFixed(2)}`;
         
         // Actualizar botón de confirmación
@@ -100,230 +93,296 @@ document.addEventListener('DOMContentLoaded', function() {
             confirmBtn.innerHTML = `<i class="fas fa-lock"></i> Confirmar y Pagar $${total.toFixed(2)}`;
         }
         
-        // Actualizar instrucciones del QR
-        const qrTotal = document.querySelector('.qr-instructions strong');
-        if (qrTotal) {
-            qrTotal.textContent = `$${total.toFixed(2)}`;
+        // Actualizar monto en instrucciones QR
+        const qrAmount = document.querySelector('.amount');
+        if (qrAmount) {
+            qrAmount.textContent = `$${total.toFixed(2)} MXN`;
         }
+        
+        // Actualizar QR con nuevo monto
+        actualizarQRCode(total);
     }
     
-    // ===== MANEJAR CAMBIOS DE CANTIDAD =====
-    function setupQuantityControls() {
-        orderItemsContainer.addEventListener('click', function(e) {
+    // ===== ACTUALIZAR QR CODE =====
+    function actualizarQRCode(monto) {
+        const qrImg = document.querySelector('.qr-code');
+        if (!qrImg) return;
+        
+        const datosQR = `https://proyectoxweb.netlify.app/confirmacion?monto=${monto}&fecha=${Date.now()}`;
+        qrImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(datosQR)}&format=svg&color=ffc8dd&bgcolor=ffffff`;
+    }
+    
+    // ===== MANEJAR CANTIDADES =====
+    function setupControlesCantidad() {
+        if (!orderItems) return;
+        
+        orderItems.addEventListener('click', function(e) {
             const itemElement = e.target.closest('.order-item');
             if (!itemElement) return;
             
-            const itemId = parseInt(itemElement.dataset.id);
-            const item = cart.find(i => i.id === itemId);
+            const index = parseInt(itemElement.dataset.index);
+            const item = carrito[index];
+            
             if (!item) return;
             
             // Botón menos
             if (e.target.closest('.minus')) {
-                if (item.quantity > 1) {
-                    item.quantity--;
-                    renderCartItems();
+                if (item.cantidad > 1) {
+                    item.cantidad--;
+                } else {
+                    // Si la cantidad es 1, preguntar si eliminar
+                    if (confirm('¿Eliminar este producto del carrito?')) {
+                        carrito.splice(index, 1);
+                    }
                 }
+                guardarYActualizar();
             }
             
             // Botón más
             if (e.target.closest('.plus')) {
-                item.quantity++;
-                renderCartItems();
+                item.cantidad++;
+                guardarYActualizar();
             }
             
             // Eliminar item
             if (e.target.closest('.remove-item')) {
                 if (confirm('¿Eliminar este producto del carrito?')) {
-                    cart = cart.filter(i => i.id !== itemId);
-                    renderCartItems();
+                    carrito.splice(index, 1);
+                    guardarYActualizar();
                 }
             }
         });
     }
     
+    // ===== GUARDAR Y ACTUALIZAR =====
+    function guardarYActualizar() {
+        localStorage.setItem('carritoSweetDelights', JSON.stringify(carrito));
+        renderizarItemsCarrito();
+        actualizarContadorCarrito();
+    }
+    
+    // ===== ACTUALIZAR CONTADOR CARRITO =====
+    function actualizarContadorCarrito() {
+        const totalItems = carrito.reduce((total, item) => total + item.cantidad, 0);
+        const contadores = document.querySelectorAll('#cart-count');
+        
+        contadores.forEach(contador => {
+            contador.textContent = totalItems;
+        });
+    }
+    
     // ===== MÉTODOS DE PAGO =====
-    function setupPaymentMethods() {
-        const methodOptions = document.querySelectorAll('.method-option');
-        const qrPayment = document.querySelector('.qr-payment');
+    function setupMetodosPago() {
+        if (!methodOptions.length) return;
         
         methodOptions.forEach(option => {
             option.addEventListener('click', function() {
-                // Remover clase active de todos
+                // Remover active de todos
                 methodOptions.forEach(opt => opt.classList.remove('active'));
                 // Agregar al clickeado
                 this.classList.add('active');
                 
                 // Mostrar sección correspondiente
-                const method = this.dataset.method;
-                if (method === 'qr') {
-                    qrPayment.classList.add('active');
-                } else {
-                    qrPayment.classList.remove('active');
-                }
+                const metodo = this.dataset.method;
+                const secciones = document.querySelectorAll('.payment-section > div');
+                
+                secciones.forEach(seccion => {
+                    seccion.style.display = 'none';
+                    if (seccion.classList.contains(`${metodo}-payment`)) {
+                        seccion.style.display = 'block';
+                    }
+                });
             });
         });
     }
     
     // ===== CÓDIGO DE DESCUENTO =====
-    function setupDiscountCode() {
-        const discountInput = document.getElementById('discount-input');
-        const applyBtn = document.querySelector('.btn-apply');
+    function setupCodigoDescuento() {
+        if (!applyBtn || !discountInput) return;
         
-        if (applyBtn && discountInput) {
-            applyBtn.addEventListener('click', function() {
-                const code = discountInput.value.trim();
-                
-                if (code === '') {
-                    alert('Por favor ingresa un código');
-                    return;
-                }
-                
-                // Simular validación de código
-                if (code.toUpperCase() === 'DULCE10') {
-                    alert('🎉 ¡Código aplicado! Obtienes $10 de descuento adicional');
-                } else {
-                    alert('❌ Código inválido o expirado');
-                }
-                
-                discountInput.value = '';
-            });
-            
-            // Permitir Enter
-            discountInput.addEventListener('keypress', function(e) {
-                if (e.key === 'Enter') {
-                    applyBtn.click();
-                }
-            });
+        applyBtn.addEventListener('click', aplicarDescuento);
+        discountInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                aplicarDescuento();
+            }
+        });
+    }
+    
+    function aplicarDescuento() {
+        const codigo = discountInput.value.trim().toUpperCase();
+        
+        if (!codigo) {
+            mostrarMensaje('Por favor ingresa un código', 'error');
+            return;
+        }
+        
+        // Códigos válidos
+        const codigosValidos = {
+            'DULCE10': 10,
+            'SWEET20': 20,
+            'REPOSTERIA': 15,
+            'DELIVERY': 25
+        };
+        
+        if (codigosValidos[codigo]) {
+            descuentoAplicado = codigosValidos[codigo];
+            mostrarMensaje(`🎉 ¡Código aplicado! Descuento de $${descuentoAplicado} aplicado`, 'exito');
+            discountInput.value = '';
+            actualizarTotales();
+        } else {
+            mostrarMensaje('❌ Código inválido o expirado', 'error');
+            discountInput.value = '';
         }
     }
     
     // ===== CONFIRMAR PAGO =====
-    function setupPaymentConfirmation() {
+    function setupConfirmarPago() {
         if (!confirmBtn) return;
         
         confirmBtn.addEventListener('click', function() {
-            // Validar que haya items
-            if (cart.length === 0) {
-                alert('🛒 Tu carrito está vacío');
+            // Validar carrito
+            if (carrito.length === 0) {
+                mostrarMensaje('🛒 Tu carrito está vacío', 'error');
+                return;
+            }
+            
+            // Validar método de pago seleccionado
+            const metodoSeleccionado = document.querySelector('.method-option.active');
+            if (!metodoSeleccionado) {
+                mostrarMensaje('Por favor selecciona un método de pago', 'error');
                 return;
             }
             
             // Mostrar loading
-            const originalText = this.innerHTML;
+            const textoOriginal = this.innerHTML;
             this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Procesando pago...';
             this.disabled = true;
             
-            // Simular procesamiento de pago
+            // Simular procesamiento
             setTimeout(() => {
-                // Éxito
+                // Crear resumen del pedido
+                const resumenPedido = {
+                    id: Date.now(),
+                    fecha: new Date().toISOString(),
+                    items: carrito,
+                    subtotal: calcularSubtotal(),
+                    envio: COSTO_ENVIO,
+                    descuento: descuentoAplicado,
+                    total: calcularTotal(),
+                    metodo: metodoSeleccionado.dataset.method,
+                    estado: 'completado'
+                };
+                
+                // Guardar pedido en localStorage
+                const pedidosAnteriores = JSON.parse(localStorage.getItem('pedidosSweetDelights')) || [];
+                pedidosAnteriores.push(resumenPedido);
+                localStorage.setItem('pedidosSweetDelights', JSON.stringify(pedidosAnteriores));
+                
+                // Limpiar carrito
+                carrito = [];
+                localStorage.removeItem('carritoSweetDelights');
+                actualizarContadorCarrito();
+                
+                // Mostrar éxito
                 this.innerHTML = '<i class="fas fa-check"></i> ¡Pago Completado!';
                 this.style.background = 'linear-gradient(135deg, #4CAF50, #45a049)';
                 
-                // Mostrar mensaje de éxito
-                showNotification('🎉 ¡Pedido confirmado! Recibirás un correo con los detalles.', 'success');
+                mostrarMensaje('🎉 ¡Pedido confirmado! Recibirás un correo con los detalles.', 'exito');
                 
                 // Redireccionar después de 2 segundos
                 setTimeout(() => {
-                    window.location.href = 'index.html?order=success';
+                    window.location.href = `../confirmacion.html?pedido=${resumenPedido.id}`;
                 }, 2000);
-                
-                // Aquí normalmente enviarías los datos a tu backend
-                console.log('Pedido procesado:', {
-                    cart: cart,
-                    total: calculateTotal(),
-                    timestamp: new Date().toISOString()
-                });
                 
             }, 2000);
         });
     }
     
-    // ===== NOTIFICACIÓN =====
-    function showNotification(message, type = 'info') {
-        const notification = document.createElement('div');
-        notification.className = 'notification';
-        notification.innerHTML = `
-            <div class="notification-content ${type}">
-                ${message}
+    // ===== MOSTRAR MENSAJE =====
+    function mostrarMensaje(mensaje, tipo = 'info') {
+        const mensajeDiv = document.createElement('div');
+        mensajeDiv.className = 'mensaje-flotante';
+        mensajeDiv.innerHTML = `
+            <div class="mensaje-contenido ${tipo}">
+                <i class="fas fa-${tipo === 'exito' ? 'check-circle' : tipo === 'error' ? 'exclamation-circle' : 'info-circle'}"></i>
+                <span>${mensaje}</span>
             </div>
         `;
         
-        // Estilos básicos para la notificación
-        notification.style.cssText = `
+        // Estilos
+        mensajeDiv.style.cssText = `
             position: fixed;
-            top: 100px;
+            top: 120px;
             right: 20px;
             z-index: 10000;
             animation: slideInRight 0.3s ease;
         `;
         
-        document.body.appendChild(notification);
+        document.body.appendChild(mensajeDiv);
         
         // Remover después de 4 segundos
         setTimeout(() => {
-            notification.style.animation = 'slideOutRight 0.3s ease';
-            setTimeout(() => notification.remove(), 300);
+            mensajeDiv.style.animation = 'slideOutRight 0.3s ease';
+            setTimeout(() => mensajeDiv.remove(), 300);
         }, 4000);
     }
     
-    // ===== INICIALIZACIÓN =====
+    // ===== INICIALIZAR =====
     function init() {
-        renderCartItems();
-        setupQuantityControls();
-        setupPaymentMethods();
-        setupDiscountCode();
-        setupPaymentConfirmation();
+        renderizarItemsCarrito();
+        setupControlesCantidad();
+        setupMetodosPago();
+        setupCodigoDescuento();
+        setupConfirmarPago();
+        actualizarContadorCarrito();
         
-        console.log('✨ Checkout inicializado');
+        // Añadir estilos para mensajes
+        if (!document.querySelector('#estilos-mensajes')) {
+            const estilo = document.createElement('style');
+            estilo.id = 'estilos-mensajes';
+            estilo.textContent = `
+                .mensaje-contenido {
+                    padding: 15px 25px;
+                    border-radius: 10px;
+                    color: white;
+                    font-weight: 500;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+                }
+                .mensaje-contenido.exito {
+                    background: linear-gradient(135deg, #4CAF50, #45a049);
+                }
+                .mensaje-contenido.error {
+                    background: linear-gradient(135deg, #F44336, #d32f2f);
+                }
+                .mensaje-contenido.info {
+                    background: linear-gradient(135deg, #2196F3, #1976D2);
+                }
+                .carrito-vacio {
+                    text-align: center;
+                    padding: 40px 20px;
+                }
+                .carrito-vacio i {
+                    font-size: 3rem;
+                    color: var(--border);
+                    margin-bottom: 20px;
+                }
+                .carrito-vacio h3 {
+                    color: var(--texto-claro);
+                    margin-bottom: 10px;
+                }
+                .carrito-vacio .btn {
+                    margin-top: 20px;
+                }
+            `;
+            document.head.appendChild(estilo);
+        }
+        
+        console.log('✅ Checkout listo. Productos en carrito:', carrito.length);
     }
     
     // Iniciar
     init();
-    
-    // ===== ANIMACIONES CSS ADICIONALES =====
-    if (!document.querySelector('#checkout-animations')) {
-        const style = document.createElement('style');
-        style.id = 'checkout-animations';
-        style.textContent = `
-            @keyframes slideInRight {
-                from { transform: translateX(100%); opacity: 0; }
-                to { transform: translateX(0); opacity: 1; }
-            }
-            
-            @keyframes slideOutRight {
-                from { transform: translateX(0); opacity: 1; }
-                to { transform: translateX(100%); opacity: 0; }
-            }
-            
-            .notification-content {
-                padding: 15px 25px;
-                border-radius: 10px;
-                color: white;
-                font-weight: 500;
-                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            }
-            
-            .notification-content.success {
-                background: linear-gradient(135deg, #4CAF50, #45a049);
-            }
-            
-            .notification-content.error {
-                background: linear-gradient(135deg, #F44336, #d32f2f);
-            }
-            
-            .notification-content.info {
-                background: linear-gradient(135deg, #2196F3, #1976D2);
-            }
-            
-            .fa-spinner {
-                animation: spin 1s linear infinite;
-            }
-            
-            @keyframes spin {
-                0% { transform: rotate(0deg); }
-                100% { transform: rotate(360deg); }
-            }
-        `;
-        document.head.appendChild(style);
-    }
 });
