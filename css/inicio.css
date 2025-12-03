@@ -432,3 +432,89 @@ body {
         right: 20px;
     }
 }
+/* ===== RESPONSIVE DESIGN - CORRECCIONES ===== */
+
+/* TABLETS */
+@media (max-width: 1024px) {
+    .container {
+        width: 95% !important;
+        padding: 15px !important;
+    }
+    
+    .nav-menu {
+        gap: 15px !important;
+        font-size: 14px !important;
+    }
+}
+
+/* MÓVILES */
+@media (max-width: 768px) {
+    body {
+        padding-top: 80px !important;
+    }
+    
+    /* HEADER MÓVIL */
+    .navbar {
+        padding: 10px 15px !important;
+    }
+    
+    .nav-menu {
+        position: fixed !important;
+        top: 80px !important;
+        left: -100% !important;
+        width: 100% !important;
+        height: calc(100vh - 80px) !important;
+        background: white !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        padding-top: 40px !important;
+        transition: 0.3s !important;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05) !important;
+    }
+    
+    .nav-menu.active {
+        left: 0 !important;
+    }
+    
+    .nav-menu li {
+        margin: 15px 0 !important;
+    }
+    
+    /* BOTÓN MENÚ HAMBURGUESA (si no tienes) */
+    .hamburger {
+        display: block !important;
+        cursor: pointer;
+        margin-left: auto;
+    }
+    
+    .hamburger .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        background-color: #333;
+        transition: 0.3s;
+    }
+    
+    /* CARDS EN MÓVIL */
+    .producto-card, .categoria-card {
+        width: 100% !important;
+        margin-bottom: 20px !important;
+    }
+}
+
+/* MÓVILES PEQUEÑOS */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 24px !important;
+    }
+    
+    h2 {
+        font-size: 20px !important;
+    }
+    
+    .btn {
+        padding: 10px 20px !important;
+        font-size: 14px !important;
+    }
+}

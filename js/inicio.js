@@ -1,99 +1,110 @@
-// Utilidades para Happy Smile
+// inicio.js - VERSIÓN CORREGIDA Y OPTIMIZADA
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('Happy Smile - Página profesional cargada');
+    console.log('✅ Página de inicio cargada correctamente');
     
-    // ===== EFECTOS PARA PRODUCTOS =====
-    const productos = document.querySelectorAll('.producto-card');
+    // ===== CORRECCIÓN: ESPERAR A QUE EXISTAN ELEMENTOS =====
+    function safeQuerySelector(selector) {
+        const element = document.querySelector(selector);
+        if (!element) {
+            console.warn(`⚠️ Elemento no encontrado: ${selector}`);
+            return null;
+        }
+        return element;
+    }
     
-    productos.forEach(producto => {
-        // Efecto hover 3D
-        producto.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-12px) scale(1.03)';
-            this.style.boxShadow = '0 25px 50px rgba(255, 107, 107, 0.25)';
-        });
-        
-        producto.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) scale(1)';
-            this.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.08)';
-        });
-        
-        // Efecto click
-        producto.addEventListener('click', function() {
-            console.log('Navegando a producto: ' + this.href);
-        });
-    });
+    // ===== MENÚ MÓVIL (si no tienes) =====
+    const menuToggle = safeQuerySelector('.menu-toggle');
+    const navMenu = safeQuerySelector('.nav-menu');
     
-    // ===== NEWSLETTER =====
-    const newsletterForm = document.querySelector('.newsletter-form');
-    if (newsletterForm) {
-        newsletterForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const input = this.querySelector('.newsletter-input');
-            const button = this.querySelector('.newsletter-btn');
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            this.classList.toggle('active');
+        });
+    }
+    
+    // ===== ANIMACIÓN DE SCROLL SUAVE =====
+    const links = document.querySelectorAll('a[href^="#"]');
+    links.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
             
-            if (input.value.trim()) {
-                // Guardar email
-                localStorage.setItem('newsletterEmail', input.value);
-                
-                // Efecto visual
-                const originalText = button.innerHTML;
-                button.innerHTML = '<i class="fas fa-check"></i> ¡Suscrito!';
-                button.style.background = '#2ecc71';
-                button.disabled = true;
-                
-                // Reset después de 3 segundos
-                setTimeout(() => {
-                    button.innerHTML = originalText;
-                    button.style.background = '';
-                    button.disabled = false;
-                    input.value = '';
-                    alert('¡Gracias por suscribirte a Happy Smile!');
-                }, 3000);
-            }
-        });
-    }
-    
-    // ===== CONTADOR DE VISITAS =====
-    if (!localStorage.getItem('visitasHS')) {
-        localStorage.setItem('visitasHS', 1);
-    } else {
-        let visitas = parseInt(localStorage.getItem('visitasHS'));
-        localStorage.setItem('visitasHS', visitas + 1);
-    }
-    
-    // ===== AÑO ACTUAL EN FOOTER =====
-    const copyright = document.querySelector('.footer-copyright');
-    if (copyright) {
-        const currentYear = new Date().getFullYear();
-        copyright.innerHTML = copyright.innerHTML.replace('2025', currentYear);
-    }
-    
-    // ===== WHATSAPP BUTTON ANIMATION =====
-    const whatsappBtn = document.querySelector('.whatsapp-btn');
-    if (whatsappBtn) {
-        // Animación inicial
-        setTimeout(() => {
-            whatsappBtn.style.transform = 'scale(1.1)';
-            setTimeout(() => {
-                whatsappBtn.style.transform = 'scale(1)';
-            }, 300);
-        }, 1000);
-    }
-    
-    // ===== SMOOTH SCROLL =====
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            if (href === '#' || href.includes('.html')) return;
-            
-            e.preventDefault();
-            const target = document.querySelector(href);
-            if (target) {
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                e.preventDefault();
                 window.scrollTo({
-                    top: target.offsetTop - 80,
+                    top: targetElement.offsetTop - 100,
                     behavior: 'smooth'
                 });
             }
         });
     });
+    
+    // ===== CONTADOR DE PRODUCTOS (ejemplo) =====
+    const contadorProductos = safeQuerySelector('.contador-productos');
+    if (contadorProductos) {
+        // Simular carga de datos
+        setTimeout(() => {
+            contadorProductos.textContent = '25+';
+            contadorProductos.style.color = '#ff6b8b';
+        }, 1000);
+    }
+    
+    // ===== DETECCIÓN DE ERRORES =====
+    window.addEventListener('error', function(e) {
+        console.error('❌ Error detectado:', e.message);
+        // Puedes enviar esto a un servicio de monitoreo
+    });
+    
+    // ===== INICIALIZACIÓN COMPLETA =====
+    console.log('✨ Script de inicio inicializado correctamente');
 });
+
+// ===== FUNCIONES GLOBALES ÚTILES =====
+function mostrarMensaje(mensaje, tipo = 'info') {
+    const colores = {
+        'success': '#4CAF50',
+        'error': '#F44336',
+        'info': '#2196F3',
+        'warning': '#FF9800'
+    };
+    
+    const div = document.createElement('div');
+    div.textContent = mensaje;
+    div.style.cssText = `
+        position: fixed;
+        top: 120px;
+        right: 20px;
+        padding: 15px 25px;
+        background: ${colores[tipo] || '#2196F3'};
+        color: white;
+        border-radius: 8px;
+        z-index: 10000;
+        animation: slideIn 0.3s ease;
+    `;
+    
+    document.body.appendChild(div);
+    
+    setTimeout(() => {
+        div.style.animation = 'slideOut 0.3s ease';
+        setTimeout(() => div.remove(), 300);
+    }, 3000);
+}
+
+// Añadir animaciones CSS si no existen
+if (!document.querySelector('#estilos-dinamicos')) {
+    const style = document.createElement('style');
+    style.id = 'estilos-dinamicos';
+    style.textContent = `
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        @keyframes slideOut {
+            from { transform: translateX(0); opacity: 1; }
+            to { transform: translateX(100%); opacity: 0; }
+        }
+    `;
+    document.head.appendChild(style);
+}

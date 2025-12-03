@@ -3,39 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Smile - Repostería</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Proyecto X - Repostería & Delivery</title>
+    
+    <!-- CORRECCIÓN RUTAS CSS -->
+    <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/inicio.css">
+    <link rel="stylesheet" href="css/footer-happy.css">
+    
+    <!-- FAVICON FUNCIONANDO -->
     <link rel="icon" href="img/icono.png" type="image/png">
+    
+    <!-- GOOGLE FONTS (si usas) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header Rectangular con Menú -->
-    <header class="header-rectangular">
-        <div class="container">
-            <div class="header-contenido">
-                <!-- Logo con icono -->
-                <div class="logo-contenedor">
-                    <div class="logo-icono">
-                        <img src="img/icono.png" alt="Happy Smile Icono" class="logo-img">
-                    </div>
-                    <div class="logo-texto">
-                        <h1 class="logo-titulo">Happy Smile</h1>
-                    </div>
-                </div>
-                
-                <!-- Menú de Navegación -->
-                <nav class="menu-navegacion">
-                    <ul class="menu-lista">
-                        <li class="menu-item"><a href="index.html" class="menu-link activo">INICIO</a></li>
-                        <li class="menu-item"><a href="productos.html" class="menu-link">PRODUCTOS</a></li>
-                        <li class="menu-item"><a href="ubicacion.html" class="menu-link">UBICACIÓN</a></li>
-                        <li class="menu-item"><a href="contactos.html" class="menu-link">CONTACTO</a></li>
-                    </ul>
-                </nav>
+    <!-- HEADER CORREGIDO -->
+    <header class="header-fixed">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <!-- Asegura que la ruta sea correcta -->
+                    <img src="./img/icono.png" alt="Logo Repostería" width="50">
+                </a>
             </div>
-        </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="page/pasteles.html">Pasteles</a></li>
+                <li><a href="page/donas.html">Donas</a></li>
+                <li><a href="page/galletas.html">Galletas</a></li>
+                <li><a href="page/bebidas.html">Bebidas</a></li>
+                <li><a href="ubicacion.html">Ubicación</a></li>
+                <li><a href="contactos.html">Contacto</a></li>
+            </ul>
+        </nav>
     </header>
-
+    <!-- Resto de tu contenido... -->
     <!-- Sección Bienvenida -->
     <section class="bienvenida-section">
         <div class="container">
