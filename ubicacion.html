@@ -3,126 +3,474 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <base href="/">
-    <title>Ubicación - Sweet Delights</title>
+    <title>Happy Smile - Ubicación</title>
     
-    <link rel="stylesheet" href="./css/estilos.css">
-    <link rel="stylesheet" href="./css/ubicacion.css">
+    <!-- Fuentes de Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- Iconos Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" href="./img/icono.png">
+    
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/ubicacion.css">
+    <link rel="stylesheet" href="css/footer-happy.css">
 </head>
 <body>
-    <header class="header-fixed">
-        <nav class="navbar">
-            <div class="logo">
-                <a href="./index.html">
-                    <img src="./img/icono.png" alt="Logo" width="50">
-                    <span>Sweet Delights</span>
+    <!-- Header y Navegación -->
+    <header class="header-main">
+        <div class="container header-content">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-smile"></i>
+                </div>
+                <div class="logo-text">
+                    Happy<span>Smile</span>
+                </div>
+            </a>
+            
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav class="nav-main" id="mainNav">
+                <a href="index.html" class="nav-link">
+                    <i class="fas fa-home"></i> Inicio
+                </a>
+                <a href="pasteles.html" class="nav-link">
+                    <i class="fas fa-birthday-cake"></i> Pasteles
+                </a>
+                <a href="donas.html" class="nav-link">
+                    <i class="fas fa-donut"></i> Donas
+                </a>
+                <a href="galletas.html" class="nav-link">
+                    <i class="fas fa-cookie-bite"></i> Galletas
+                </a>
+                <a href="bebidas.html" class="nav-link">
+                    <i class="fas fa-coffee"></i> Bebidas
+                </a>
+                <a href="productos.html" class="nav-link">
+                    <i class="fas fa-store"></i> Tienda
+                </a>
+            </nav>
+            
+            <div class="header-actions">
+                <a href="checkout.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
                 </a>
             </div>
-            
-            <ul class="nav-menu">
-                <li><a href="./index.html"><i class="fas fa-home"></i> Inicio</a></li>
-                <li><a href="./productos.html"><i class="fas fa-store"></i> Productos</a></li>
-                <li><a href="./checkout.html"><i class="fas fa-shopping-cart"></i> Carrito</a></li>
-                <li><a href="./ubicacion.html" class="active"><i class="fas fa-map-marker-alt"></i> Ubicación</a></li>
-                <li><a href="./contactos.html"><i class="fas fa-phone"></i> Contacto</a></li>
-            </ul>
-            
-            <div class="cart-counter">
-                <i class="fas fa-shopping-cart"></i>
-                <span id="cart-count">0</span>
-            </div>
-            
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </nav>
+        </div>
     </header>
 
-    <main class="ubicacion-container">
-        <h1><i class="fas fa-map-marked-alt"></i> Nuestra Ubicación</h1>
-        
-        <div class="ubicacion-grid">
-            <div class="mapa-section">
-                <div class="mapa-container">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.888598728546!2d-99.167662!3d19.427025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff35f5bd1563%3A0x6c366f0e2de02ff7!2sEl%20%C3%81ngel%20de%20la%20Independencia!5e0!3m2!1ses!2smx!4v1700000000000!5m2!1ses!2smx" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
+    <!-- Header Ubicación -->
+    <section class="location-header">
+        <div class="container">
+            <h1>Nuestra Ubicación</h1>
+            <p class="location-description">Encuéntranos fácilmente y visítanos en nuestro local principal. ¡Te estamos esperando!</p>
+        </div>
+    </section>
+
+    <!-- Ubicación -->
+    <section class="section location-section">
+        <div class="container">
+            <div class="location-grid">
+                <!-- Mapa -->
+                <div class="map-container-large">
+                    <!-- En un proyecto real aquí iría un mapa de Google Maps -->
+                    <div class="map-placeholder">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <h3>Happy Smile - Sucursal Principal</h3>
+                        <p>Av. Dulces 123, Col. Delicias</p>
+                        <p>Ciudad de México, CP 06100</p>
+                        <a href="https://maps.google.com" class="btn btn-primary mt-md" target="_blank">
+                            <i class="fas fa-external-link-alt"></i> Abrir en Google Maps
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Información de tiendas -->
+                <div class="stores-info">
+                    <div class="store-card">
+                        <div class="store-header">
+                            <div>
+                                <h3 class="store-name">Sucursal Principal</h3>
+                                <p class="store-address">Av. Dulces 123, Col. Delicias</p>
+                            </div>
+                            <span class="store-status status-open">
+                                <i class="fas fa-circle"></i> Abierto
+                            </span>
+                        </div>
+                        
+                        <div class="store-details">
+                            <div class="detail-item">
+                                <i class="fas fa-clock detail-icon"></i>
+                                <div class="detail-text">
+                                    <strong>Horario:</strong> Lunes a Viernes: 8:00 - 20:00 hrs<br>
+                                    Sábados y Domingos: 9:00 - 18:00 hrs
+                                </div>
+                            </div>
+                            
+                            <div class="detail-item">
+                                <i class="fas fa-phone detail-icon"></i>
+                                <div class="detail-text">
+                                    <strong>Teléfono:</strong> 
+                                    <a href="tel:+525551234567" class="detail-link">(55) 5123-4567</a>
+                                </div>
+                            </div>
+                            
+                            <div class="detail-item">
+                                <i class="fas fa-envelope detail-icon"></i>
+                                <div class="detail-text">
+                                    <strong>Email:</strong> 
+                                    <a href="mailto:principal@happysmile.com" class="detail-link">principal@happysmile.com</a>
+                                </div>
+                            </div>
+                            
+                            <div class="detail-item">
+                                <i class="fas fa-info-circle detail-icon"></i>
+                                <div class="detail-text">
+                                    <strong>Servicios:</strong> Venta local, recolección de pedidos, degustaciones, eventos especiales.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="store-actions">
+                            <a href="https://maps.google.com/?q=Av.+Dulces+123,+Ciudad+Delicias" class="directions-btn" target="_blank">
+                                <i class="fas fa-directions"></i> Cómo llegar
+                            </a>
+                            <a href="tel:+525551234567" class="call-btn">
+                                <i class="fas fa-phone-alt"></i> Llamar ahora
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="store-card">
+                        <div class="store-header">
+                            <div>
+                                <h3 class="store-name">Sucursal Norte</h3>
+                                <p class="store-address">Blvd. del Azúcar 456, Col. Dulzura</p>
+                            </div>
+                            <span class="store-status status-open">
+                                <i class="fas fa-circle"></i> Abierto
+                            </span>
+                        </div>
+                        
+                        <div class="store-details">
+                            <div class="detail-item">
+                                <i class="fas fa-clock detail-icon"></i>
+                                <div class="detail-text">
+                                    <strong>Horario:</strong> Lunes a Sábado: 9:00 - 19:00 hrs<br>
+                                    Domingo: 10:00 - 16:00 hrs
+                                </div>
+                            </div>
+                            
+                            <div class="detail-item">
+                                <i class="fas fa-phone detail-icon"></i>
+                                <div class="detail-text">
+                                    <strong>Teléfono:</strong> 
+                                    <a href="tel:+525558765432" class="detail-link">(55) 5876-5432</a>
+                                </div>
+                            </div>
+                            
+                            <div class="detail-item">
+                                <i class="fas fa-envelope detail-icon"></i>
+                                <div class="detail-text">
+                                    <strong>Email:</strong> 
+                                    <a href="mailto:norte@happysmile.com" class="detail-link">norte@happysmile.com</a>
+                                </div>
+                            </div>
+                            
+                            <div class="detail-item">
+                                <i class="fas fa-info-circle detail-icon"></i>
+                                <div class="detail-text">
+                                    <strong>Servicios:</strong> Venta local, recolección de pedidos, área de cafetería.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="store-actions">
+                            <a href="https://maps.google.com/?q=Blvd.+del+Azúcar+456,+Col.+Dulzura" class="directions-btn" target="_blank">
+                                <i class="fas fa-directions"></i> Cómo llegar
+                            </a>
+                            <a href="tel:+525558765432" class="call-btn">
+                                <i class="fas fa-phone-alt"></i> Llamar ahora
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
             
-            <div class="info-section">
-                <div class="info-card">
-                    <h3><i class="fas fa-store"></i> Nuestra Tienda</h3>
-                    <p><strong>Dirección:</strong> Av. Paseo de la Reforma s/n, Juárez, Cuauhtémoc, CDMX</p>
-                    <p><strong>Colonia:</strong> Juárez</p>
-                    <p><strong>C.P.:</strong> 06600</p>
+            <!-- Horarios de atención -->
+            <div class="hours-container">
+                <h2 class="hours-title">Horarios de Atención por Sucursal</h2>
+                <table class="hours-table">
+                    <tr>
+                        <td class="day-cell">Lunes a Viernes</td>
+                        <td class="time-cell">Sucursal Principal: 8:00 - 20:00 hrs</td>
+                        <td class="time-cell">Sucursal Norte: 9:00 - 19:00 hrs</td>
+                    </tr>
+                    <tr>
+                        <td class="day-cell">Sábado</td>
+                        <td class="time-cell">Sucursal Principal: 9:00 - 18:00 hrs</td>
+                        <td class="time-cell">Sucursal Norte: 9:00 - 19:00 hrs</td>
+                    </tr>
+                    <tr>
+                        <td class="day-cell">Domingo</td>
+                        <td class="time-cell">Sucursal Principal: 9:00 - 18:00 hrs</td>
+                        <td class="time-cell">Sucursal Norte: 10:00 - 16:00 hrs</td>
+                    </tr>
+                    <tr>
+                        <td class="day-cell">Días Festivos</td>
+                        <td class="time-cell time-closed">Consultar horarios especiales</td>
+                        <td class="time-cell time-closed">Consultar horarios especiales</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <!-- Indicaciones de transporte -->
+            <div class="directions-container">
+                <h2 class="directions-title">Cómo Llegar a Nuestra Sucursal Principal</h2>
+                
+                <div class="transport-options">
+                    <div class="transport-option">
+                        <i class="fas fa-subway transport-icon"></i>
+                        <div class="transport-name">Metro</div>
+                        <div class="transport-details">Estación "Delicias" Línea 3<br>5 min caminando</div>
+                    </div>
+                    
+                    <div class="transport-option">
+                        <i class="fas fa-bus transport-icon"></i>
+                        <div class="transport-name">Metrobús</div>
+                        <div class="transport-details">Línea 4, Estación "Azucarera"<br>3 min caminando</div>
+                    </div>
+                    
+                    <div class="transport-option">
+                        <i class="fas fa-car transport-icon"></i>
+                        <div class="transport-name">Auto</div>
+                        <div class="transport-details">Estacionamiento gratuito<br>Disponible en el local</div>
+                    </div>
+                    
+                    <div class="transport-option">
+                        <i class="fas fa-bicycle transport-icon"></i>
+                        <div class="transport-name">Bicicleta</div>
+                        <div class="transport-details">Estación ECOBICI más cercana<br>a 100 metros</div>
+                    </div>
                 </div>
                 
-                <div class="info-card">
-                    <h3><i class="fas fa-clock"></i> Horarios</h3>
-                    <p><strong>Lunes a Viernes:</strong> 8:00 AM - 10:00 PM</p>
-                    <p><strong>Sábados:</strong> 9:00 AM - 11:00 PM</p>
-                    <p><strong>Domingos:</strong> 9:00 AM - 9:00 PM</p>
+                <div class="parking-info">
+                    <h3><i class="fas fa-parking"></i> Estacionamiento</h3>
+                    <p>Contamos con estacionamiento gratuito para nuestros clientes con capacidad para 15 vehículos. El acceso es por la calle lateral (Calle Postres).</p>
                 </div>
                 
-                <div class="info-card">
-                    <h3><i class="fas fa-truck"></i> Zonas de Delivery</h3>
+                <div class="accessibility-info">
+                    <h3><i class="fas fa-wheelchair"></i> Accesibilidad</h3>
+                    <p>Nuestras instalaciones son completamente accesibles para personas con movilidad reducida. Contamos con rampas de acceso, puertas amplias y baños adaptados.</p>
+                </div>
+            </div>
+            
+            <!-- Área de cobertura -->
+            <div class="coverage-section">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="text-center mb-lg">Área de Cobertura de Delivery</h3>
+                        <div class="grid grid-3">
+                            <div class="text-center">
+                                <div class="coverage-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <h4>Zona Central</h4>
+                                <p>Delicias, Azucarera, Postres, Confitería</p>
+                            </div>
+                            
+                            <div class="text-center">
+                                <div class="coverage-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <h4>Tiempo de Entrega</h4>
+                                <p>45-60 minutos estándar<br>20-30 minutos express</p>
+                            </div>
+                            
+                            <div class="text-center">
+                                <div class="coverage-icon">
+                                    <i class="fas fa-truck"></i>
+                                </div>
+                                <h4>Costo de Envío</h4>
+                                <p>$25 - Envío estándar<br>$45 - Envío express</p>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center mt-xl">
+                            <a href="productos.html" class="btn btn-primary btn-large">
+                                <i class="fas fa-shopping-bag"></i> Ordenar Ahora
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-main">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="index.html" class="logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-smile"></i>
+                        </div>
+                        <div class="logo-text">
+                            Happy<span>Smile</span>
+                        </div>
+                    </a>
+                    <p class="footer-tagline">Endulzando momentos desde 2020. Repostería fresca y deliciosa entregada a tu puerta.</p>
+                    <div class="footer-social">
+                        <p class="social-title">Síguenos en:</p>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon-link facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-icon-link instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="social-icon-link twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="social-icon-link tiktok">
+                                <i class="fab fa-tiktok"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Enlaces Rápidos</h3>
                     <ul>
-                        <li>Cuauhtémoc</li>
-                        <li>Miguel Hidalgo</li>
-                        <li>Benito Juárez</li>
-                        <li>Álvaro Obregón</li>
-                        <li>Coyoacán</li>
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Inicio</a></li>
+                        <li><a href="productos.html"><i class="fas fa-chevron-right"></i> Productos</a></li>
+                        <li><a href="pasteles.html"><i class="fas fa-chevron-right"></i> Pasteles</a></li>
+                        <li><a href="donas.html"><i class="fas fa-chevron-right"></i> Donas</a></li>
+                        <li><a href="galletas.html"><i class="fas fa-chevron-right"></i> Galletas</a></li>
+                        <li><a href="bebidas.html"><i class="fas fa-chevron-right"></i> Bebidas</a></li>
                     </ul>
-                    <p class="delivery-time"><i class="fas fa-bolt"></i> Entrega en 30-45 minutos</p>
                 </div>
                 
-                <div class="info-card">
-                    <h3><i class="fas fa-phone"></i> Contacto Rápido</h3>
-                    <p><strong>Teléfono:</strong> 55 1234 5678</p>
-                    <p><strong>WhatsApp:</strong> 55 8765 4321</p>
-                    <p><strong>Email:</strong> hola@sweetdelights.com</p>
-                    <a href="./contactos.html" class="btn-contacto">Enviar Mensaje</a>
+                <div class="footer-contact">
+                    <h3>Contacto</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt contact-icon"></i>
+                            <div>
+                                <p class="contact-text">Av. Dulces 123, Ciudad Delicias</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone contact-icon"></i>
+                            <div>
+                                <a href="tel:+525551234567" class="contact-link">(55) 5123-4567</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope contact-icon"></i>
+                            <div>
+                                <a href="mailto:hola@happysmile.com" class="contact-link">hola@happysmile.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock contact-icon"></i>
+                            <div>
+                                <p class="contact-text">Lun-Vie: 8:00 - 20:00<br>Sab-Dom: 9:00 - 18:00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <h3>Newsletter</h3>
+                    <p class="footer-tagline">Suscríbete para recibir promociones y novedades</p>
+                    <form class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Tu correo electrónico" required>
+                        <button type="submit" class="newsletter-btn">
+                            <i class="fas fa-paper-plane"></i> Suscribirse
+                        </button>
+                    </form>
+                    <p class="newsletter-disclaimer">No compartimos tu información con terceros.</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2024 Happy Smile. Todos los derechos reservados.</p>
+                <div class="footer-legal">
+                    <a href="#" class="legal-link">Términos y Condiciones</a>
+                    <a href="#" class="legal-link">Política de Privacidad</a>
+                    <a href="#" class="legal-link">Aviso Legal</a>
                 </div>
             </div>
         </div>
         
-        <div class="instrucciones">
-            <h3><i class="fas fa-car"></i> Cómo Llegar</h3>
-            <div class="instrucciones-grid">
-                <div class="transporte">
-                    <h4><i class="fas fa-subway"></i> Metro</h4>
-                    <p>Estación Insurgentes (Línea 1)</p>
-                    <p>5 minutos caminando</p>
-                </div>
-                <div class="transporte">
-                    <h4><i class="fas fa-bus"></i> Metrobús</h4>
-                    <p>Estación Reforma (Línea 7)</p>
-                    <p>3 minutos caminando</p>
-                </div>
-                <div class="transporte">
-                    <h4><i class="fas fa-parking"></i> Estacionamiento</h4>
-                    <p>Disponible en la zona</p>
-                    <p>$30 pesos por hora</p>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <footer class="happy-footer">
-        <div class="footer-content">
-            <p>© 2024 Sweet Delights. Ven a visitarnos o pide delivery.</p>
-        </div>
+        <!-- Botón WhatsApp Flotante -->
+        <a href="https://wa.me/525551234567" class="whatsapp-float" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+            <span class="whatsapp-tooltip">¡Escríbenos!</span>
+        </a>
+        
+        <!-- Botón Volver Arriba -->
+        <a href="#" class="back-to-top">
+            <i class="fas fa-chevron-up"></i>
+        </a>
     </footer>
 
-    <script src="./js/carrito.js"></script>
-    <script src="./js/menu-mobile.js"></script>
+    <!-- Scripts -->
+    <script src="js/menu-mobile.js"></script>
+    <script src="js/ubicacion.js"></script>
+    <script src="js/footer-scripts.js"></script>
+    
+    <script>
+        // Simulación de estado de tienda (abierto/cerrado)
+        function updateStoreStatus() {
+            const now = new Date();
+            const hour = now.getHours();
+            const day = now.getDay(); // 0 = Domingo, 1 = Lunes, etc.
+            
+            const statusElements = document.querySelectorAll('.store-status');
+            
+            statusElements.forEach(status => {
+                const storeName = status.closest('.store-card').querySelector('.store-name').textContent;
+                
+                let isOpen = false;
+                
+                if (storeName.includes('Principal')) {
+                    if (day >= 1 && day <= 5) { // Lunes a Viernes
+                        isOpen = hour >= 8 && hour < 20;
+                    } else if (day === 6) { // Sábado
+                        isOpen = hour >= 9 && hour < 18;
+                    } else { // Domingo
+                        isOpen = hour >= 9 && hour < 18;
+                    }
+                } else if (storeName.includes('Norte')) {
+                    if (day >= 1 && day <= 6) { // Lunes a Sábado
+                        isOpen = hour >= 9 && hour < 19;
+                    } else { // Domingo
+                        isOpen = hour >= 10 && hour < 16;
+                    }
+                }
+                
+                if (isOpen) {
+                    status.className = 'store-status status-open';
+                    status.innerHTML = '<i class="fas fa-circle"></i> Abierto';
+                } else {
+                    status.className = 'store-status status-closed';
+                    status.innerHTML = '<i class="fas fa-circle"></i> Cerrado';
+                }
+            });
+        }
+        
+        // Actualizar estado al cargar la página
+        updateStoreStatus();
+        
+        // Actualizar cada minuto
+        setInterval(updateStoreStatus, 60000);
+    </script>
 </body>
 </html>

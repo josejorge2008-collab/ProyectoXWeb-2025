@@ -3,139 +3,505 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <base href="/">
-    <title>Donas - Sweet Delights</title>
+    <title>Happy Smile - Donas</title>
     
-    <link rel="stylesheet" href="../css/estilos.css">
-    <link rel="stylesheet" href="../css/catalogo.css">
+    <!-- Fuentes de Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- Iconos Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" href="../img/icono.png">
+    
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/catalogo.css">
+    <link rel="stylesheet" href="css/footer-happy.css">
 </head>
 <body>
-    <header class="header-fixed">
-        <nav class="navbar">
-            <div class="logo">
-                <a href="../index.html">
-                    <img src="../img/icono.png" alt="Logo" width="50">
-                    <span>Sweet Delights</span>
+    <!-- Header y Navegación -->
+    <header class="header-main">
+        <div class="container header-content">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-smile"></i>
+                </div>
+                <div class="logo-text">
+                    Happy<span>Smile</span>
+                </div>
+            </a>
+            
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav class="nav-main" id="mainNav">
+                <a href="index.html" class="nav-link">
+                    <i class="fas fa-home"></i> Inicio
+                </a>
+                <a href="pasteles.html" class="nav-link">
+                    <i class="fas fa-birthday-cake"></i> Pasteles
+                </a>
+                <a href="donas.html" class="nav-link active">
+                    <i class="fas fa-donut"></i> Donas
+                </a>
+                <a href="galletas.html" class="nav-link">
+                    <i class="fas fa-cookie-bite"></i> Galletas
+                </a>
+                <a href="bebidas.html" class="nav-link">
+                    <i class="fas fa-coffee"></i> Bebidas
+                </a>
+                <a href="productos.html" class="nav-link">
+                    <i class="fas fa-store"></i> Tienda
+                </a>
+            </nav>
+            
+            <div class="header-actions">
+                <a href="checkout.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
                 </a>
             </div>
-            
-            <ul class="nav-menu">
-                <li><a href="../index.html"><i class="fas fa-home"></i> Inicio</a></li>
-                <li><a href="../productos.html"><i class="fas fa-store"></i> Productos</a></li>
-                <li><a href="../checkout.html"><i class="fas fa-shopping-cart"></i> Carrito</a></li>
-                <li><a href="../ubicacion.html"><i class="fas fa-map-marker-alt"></i> Ubicación</a></li>
-                <li><a href="../contactos.html"><i class="fas fa-phone"></i> Contacto</a></li>
-            </ul>
-            
-            <div class="cart-counter">
-                <i class="fas fa-shopping-cart"></i>
-                <span id="cart-count">0</span>
-            </div>
-            
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </nav>
+        </div>
     </header>
 
-    <main class="categoria-container">
-        <div class="categoria-header">
-            <h1><i class="fas fa-donut"></i> Nuestras Donas</h1>
-            <p>Esponjosas, glaseadas y llenas de sabor</p>
+    <!-- Header Donas -->
+    <section class="catalog-header">
+        <div class="container">
+            <h1>Nuestras Donas</h1>
+            <p class="catalog-description">Donas esponjosas y glaseadas, hechas frescas todos los días. Disponibles en una variedad de sabores irresistibles.</p>
         </div>
-        
-        <div class="productos-grid">
-            <div class="producto-card">
-                <img src="../img/dona-chocolate.jpg" alt="Dona Chocolate">
-                <h3>Dona Chocolate</h3>
-                <p>Glaseado de chocolate belga con sprinkles</p>
-                <div class="producto-footer">
-                    <span class="precio">$25 c/u</span>
-                    <span class="tamano">6 unidades: $120</span>
-                </div>
-                <button class="btn-add-cart" data-id="201">Añadir al Carrito</button>
-            </div>
-            
-            <div class="producto-card">
-                <img src="../img/dona-fresa.jpg" alt="Dona Fresa">
-                <h3>Dona Fresa</h3>
-                <p>Glaseado rosa con sabor a fresa natural</p>
-                <div class="producto-footer">
-                    <span class="precio">$25 c/u</span>
-                    <span class="tamano">6 unidades: $120</span>
-                </div>
-                <button class="btn-add-cart" data-id="202">Añadir al Carrito</button>
-            </div>
-            
-            <div class="producto-card">
-                <img src="../img/dona-vainilla.jpg" alt="Dona Vainilla">
-                <h3>Dona Vainilla</h3>
-                <p>Glaseado blanco con sprinkles de colores</p>
-                <div class="producto-footer">
-                    <span class="precio">$25 c/u</span>
-                    <span class="tamano">6 unidades: $120</span>
-                </div>
-                <button class="btn-add-cart" data-id="203">Añadir al Carrito</button>
-            </div>
-            
-            <div class="producto-card">
-                <img src="../img/dona-maple.jpg" alt="Dona Maple">
-                <h3>Dona Maple</h3>
-                <p>Glaseado sabor maple con tocino crujiente</p>
-                <div class="producto-footer">
-                    <span class="precio">$30 c/u</span>
-                    <span class="tamano">6 unidades: $150</span>
-                </div>
-                <button class="btn-add-cart" data-id="204">Añadir al Carrito</button>
-            </div>
-            
-            <div class="producto-card">
-                <img src="../img/dona-rellena.jpg" alt="Dona Rellena">
-                <h3>Dona Rellena</h3>
-                <p>Rellena de crema pastelera o mermelada</p>
-                <div class="producto-footer">
-                    <span class="precio">$30 c/u</span>
-                    <span class="tamano">6 unidades: $150</span>
-                </div>
-                <button class="btn-add-cart" data-id="205">Añadir al Carrito</button>
-            </div>
-            
-            <div class="producto-card">
-                <img src="../img/dona-mixta.jpg" alt="Donas Mixtas">
-                <h3>Paquete Mixto</h3>
-                <p>Variedad de 12 donas (2 de cada sabor)</p>
-                <div class="producto-footer">
-                    <span class="precio">$220</span>
-                    <span class="tamano">12 unidades</span>
-                </div>
-                <button class="btn-add-cart" data-id="206">Añadir al Carrito</button>
-            </div>
-        </div>
-        
-        <div class="categoria-info">
-            <h3><i class="fas fa-info-circle"></i> Opciones de Paquetes</h3>
-            <ul>
-                <li>Paquete de 6 donas: $120-$150 (según tipo)</li>
-                <li>Paquete de 12 donas: $220-$250</li>
-                <li>Paquete de 24 donas: $400 (ideal para oficinas)</li>
-                <li>Selección mixta disponible en todos los paquetes</li>
-                <li>Incluye caja decorativa para regalo</li>
-            </ul>
-        </div>
-    </main>
+    </section>
 
-    <footer class="happy-footer">
-        <div class="footer-content">
-            <p>© 2024 Sweet Delights. Donas recién hechas todos los días.</p>
+    <!-- Filtros específicos para donas -->
+    <section class="filters-section">
+        <div class="container">
+            <div class="filters-container">
+                <div class="filter-group">
+                    <span class="filter-label">Sabor:</span>
+                    <select class="filter-select" id="filterFlavor">
+                        <option value="all">Todos</option>
+                        <option value="chocolate">Chocolate</option>
+                        <option value="vainilla">Vainilla</option>
+                        <option value="fresa">Fresa</option>
+                        <option value="maple">Maple</option>
+                        <option value="especial">Especiales</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <span class="filter-label">Cantidad:</span>
+                    <select class="filter-select" id="filterQuantity">
+                        <option value="all">Todas</option>
+                        <option value="individual">Individuales</option>
+                        <option value="pack">Paquetes</option>
+                        <option value="docena">Docena</option>
+                    </select>
+                </div>
+                
+                <div class="search-box">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" class="search-input" id="searchInput" placeholder="Buscar donas...">
+                </div>
+            </div>
         </div>
+    </section>
+
+    <!-- Donas -->
+    <section class="section catalog-section">
+        <div class="container">
+            <div class="products-grid" id="donasGrid">
+                <!-- Dona 1 -->
+                <div class="card product-card-catalog">
+                    <div class="product-image-container">
+                        <span class="badge badge-accent product-badge">Más vendido</span>
+                        <img src="imagenes/donas-glaseadas.jpg" alt="Donas Glaseadas" class="product-image-catalog">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-header">
+                            <h3 class="product-title">Donas Glaseadas (6 pz)</h3>
+                            <div class="product-price">$120</div>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-count">(126)</span>
+                        </div>
+                        <p class="product-description">Paquete de 6 donas con variedad de sabores: chocolate, fresa, vainilla y glaseado de maple.</p>
+                        <div class="product-meta">
+                            <span class="product-category">Variedad</span>
+                            <button class="add-to-cart-btn" data-id="2">
+                                <i class="fas fa-cart-plus"></i> Agregar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Dona 2 -->
+                <div class="card product-card-catalog">
+                    <div class="product-image-container">
+                        <span class="badge badge-primary product-badge">Nuevo</span>
+                        <img src="imagenes/donas-chocolate.jpg" alt="Donas de Chocolate" class="product-image-catalog">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-header">
+                            <h3 class="product-title">Donas de Chocolate (4 pz)</h3>
+                            <div class="product-price">$90</div>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-count">(68)</span>
+                        </div>
+                        <p class="product-description">Donas cubiertas de chocolate belga con sprinkles coloridos. Paquete de 4 unidades.</p>
+                        <div class="product-meta">
+                            <span class="product-category">Chocolate</span>
+                            <button class="add-to-cart-btn" data-id="5">
+                                <i class="fas fa-cart-plus"></i> Agregar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Dona 3 -->
+                <div class="card product-card-catalog">
+                    <div class="product-image-container">
+                        <img src="imagenes/donas-maple.jpg" alt="Donas de Maple" class="product-image-catalog">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-header">
+                            <h3 class="product-title">Donas de Maple (6 pz)</h3>
+                            <div class="product-price">$130</div>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="rating-count">(47)</span>
+                        </div>
+                        <p class="product-description">Donas glaseadas con auténtico jarabe de maple canadiense. Paquete de 6 unidades.</p>
+                        <div class="product-meta">
+                            <span class="product-category">Maple</span>
+                            <button class="add-to-cart-btn" data-id="12">
+                                <i class="fas fa-cart-plus"></i> Agregar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Dona 4 -->
+                <div class="card product-card-catalog">
+                    <div class="product-image-container">
+                        <img src="imagenes/donas-fresa.jpg" alt="Donas de Fresa" class="product-image-catalog">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-header">
+                            <h3 class="product-title">Donas de Fresa (4 pz)</h3>
+                            <div class="product-price">$95</div>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="rating-count">(39)</span>
+                        </div>
+                        <p class="product-description">Donas con glaseado de fresa natural y decoración de chocolate blanco. Paquete de 4.</p>
+                        <div class="product-meta">
+                            <span class="product-category">Fresa</span>
+                            <button class="add-to-cart-btn" data-id="13">
+                                <i class="fas fa-cart-plus"></i> Agregar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Dona 5 -->
+                <div class="card product-card-catalog">
+                    <div class="product-image-container">
+                        <span class="badge badge-accent product-badge">Especial</span>
+                        <img src="imagenes/donas-rellenas.jpg" alt="Donas Rellenas" class="product-image-catalog">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-header">
+                            <h3 class="product-title">Donas Rellenas (3 pz)</h3>
+                            <div class="product-price">$110</div>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-count">(72)</span>
+                        </div>
+                        <p class="product-description">Donas rellenas de crema pastelera, chocolate o fresa. Paquete de 3 unidades.</p>
+                        <div class="product-meta">
+                            <span class="product-category">Rellenas</span>
+                            <button class="add-to-cart-btn" data-id="14">
+                                <i class="fas fa-cart-plus"></i> Agregar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Dona 6 -->
+                <div class="card product-card-catalog">
+                    <div class="product-image-container">
+                        <img src="imagenes/donas-docena.jpg" alt="Docena de Donas" class="product-image-catalog">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-header">
+                            <h3 class="product-title">Docena de Donas</h3>
+                            <div class="product-price">$220</div>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="rating-count">(88)</span>
+                        </div>
+                        <p class="product-description">12 donas surtidas: chocolate, maple, fresa, vainilla y especiales. Perfecto para compartir.</p>
+                        <div class="product-meta">
+                            <span class="product-category">Variedad</span>
+                            <button class="add-to-cart-btn" data-id="15">
+                                <i class="fas fa-cart-plus"></i> Agregar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Dona 7 -->
+                <div class="card product-card-catalog">
+                    <div class="product-image-container">
+                        <img src="imagenes/dona-individual.jpg" alt="Dona Individual" class="product-image-catalog">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-header">
+                            <h3 class="product-title">Dona Individual</h3>
+                            <div class="product-price">$25</div>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="rating-count">(156)</span>
+                        </div>
+                        <p class="product-description">Elige tu dona favorita: chocolate, maple, fresa, vainilla o especial del día.</p>
+                        <div class="product-meta">
+                            <span class="product-category">Individual</span>
+                            <button class="add-to-cart-btn" data-id="16">
+                                <i class="fas fa-cart-plus"></i> Agregar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Dona 8 -->
+                <div class="card product-card-catalog">
+                    <div class="product-image-container">
+                        <span class="badge badge-primary product-badge">Mini</span>
+                        <img src="imagenes/donas-mini.jpg" alt="Donas Mini" class="product-image-catalog">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-header">
+                            <h3 class="product-title">Donas Mini (12 pz)</h3>
+                            <div class="product-price">$140</div>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-count">(53)</span>
+                        </div>
+                        <p class="product-description">12 donas mini surtidas, perfectas para fiestas o como snack para compartir.</p>
+                        <div class="product-meta">
+                            <span class="product-category">Mini</span>
+                            <button class="add-to-cart-btn" data-id="17">
+                                <i class="fas fa-cart-plus"></i> Agregar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Información adicional -->
+            <div class="card mt-xl">
+                <div class="card-body">
+                    <h3 class="text-center mb-lg">¡Nuestras donas son horneadas diariamente!</h3>
+                    <div class="grid grid-3">
+                        <div class="text-center">
+                            <div class="category-icon mb-md">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <h4>Ingredientes frescos</h4>
+                            <p>Usamos solo ingredientes de la más alta calidad, sin conservadores artificiales.</p>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="category-icon mb-md">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <h4>Horneado fresco</h4>
+                            <p>Todas nuestras donas son horneadas el mismo día para garantizar frescura.</p>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="category-icon mb-md">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <h4>Hechas con amor</h4>
+                            <p>Cada dona es preparada con dedicación y cuidado artesanal.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (igual que index.html) -->
+    <footer class="footer-main">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="index.html" class="logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-smile"></i>
+                        </div>
+                        <div class="logo-text">
+                            Happy<span>Smile</span>
+                        </div>
+                    </a>
+                    <p class="footer-tagline">Endulzando momentos desde 2020. Repostería fresca y deliciosa entregada a tu puerta.</p>
+                    <div class="footer-social">
+                        <p class="social-title">Síguenos en:</p>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon-link facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-icon-link instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="social-icon-link twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="social-icon-link tiktok">
+                                <i class="fab fa-tiktok"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Inicio</a></li>
+                        <li><a href="productos.html"><i class="fas fa-chevron-right"></i> Productos</a></li>
+                        <li><a href="pasteles.html"><i class="fas fa-chevron-right"></i> Pasteles</a></li>
+                        <li><a href="donas.html"><i class="fas fa-chevron-right"></i> Donas</a></li>
+                        <li><a href="galletas.html"><i class="fas fa-chevron-right"></i> Galletas</a></li>
+                        <li><a href="bebidas.html"><i class="fas fa-chevron-right"></i> Bebidas</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contacto</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt contact-icon"></i>
+                            <div>
+                                <p class="contact-text">Av. Dulces 123, Ciudad Delicias</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone contact-icon"></i>
+                            <div>
+                                <a href="tel:+525551234567" class="contact-link">(55) 5123-4567</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope contact-icon"></i>
+                            <div>
+                                <a href="mailto:hola@happysmile.com" class="contact-link">hola@happysmile.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock contact-icon"></i>
+                            <div>
+                                <p class="contact-text">Lun-Vie: 8:00 - 20:00<br>Sab-Dom: 9:00 - 18:00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <h3>Newsletter</h3>
+                    <p class="footer-tagline">Suscríbete para recibir promociones y novedades</p>
+                    <form class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Tu correo electrónico" required>
+                        <button type="submit" class="newsletter-btn">
+                            <i class="fas fa-paper-plane"></i> Suscribirse
+                        </button>
+                    </form>
+                    <p class="newsletter-disclaimer">No compartimos tu información con terceros.</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2024 Happy Smile. Todos los derechos reservados.</p>
+                <div class="footer-legal">
+                    <a href="#" class="legal-link">Términos y Condiciones</a>
+                    <a href="#" class="legal-link">Política de Privacidad</a>
+                    <a href="#" class="legal-link">Aviso Legal</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Botón WhatsApp Flotante -->
+        <a href="https://wa.me/525551234567" class="whatsapp-float" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+            <span class="whatsapp-tooltip">¡Escríbenos!</span>
+        </a>
+        
+        <!-- Botón Volver Arriba -->
+        <a href="#" class="back-to-top">
+            <i class="fas fa-chevron-up"></i>
+        </a>
     </footer>
 
-    <script src="../js/catalogo.js"></script>
-    <script src="../js/carrito.js"></script>
-    <script src="../js/menu-mobile.js"></script>
+    <!-- Scripts -->
+    <script src="js/menu-mobile.js"></script>
+    <script src="js/catalogo.js"></script>
+    <script src="js/carrito.js"></script>
+    <script src="js/footer-scripts.js"></script>
 </body>
 </html>

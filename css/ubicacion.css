@@ -1,0 +1,308 @@
+/* ubicacion.css - Estilos para la página de ubicación */
+.location-header {
+    background: linear-gradient(135deg, var(--secondary), var(--primary-light));
+    color: var(--white);
+    padding: var(--space-3xl) 0;
+    text-align: center;
+    margin-top: 80px;
+}
+
+.location-header h1 {
+    color: var(--white);
+    -webkit-text-fill-color: var(--white);
+    margin-bottom: var(--space-sm);
+}
+
+.location-description {
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+/* SECCIÓN PRINCIPAL */
+.location-section {
+    padding: var(--space-3xl) 0;
+}
+
+.location-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2xl);
+}
+
+/* MAPA */
+.map-container-large {
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    height: 500px;
+}
+
+/* INFORMACIÓN DE TIENDAS */
+.stores-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+}
+
+.store-card {
+    background-color: var(--white);
+    border-radius: var(--radius-xl);
+    padding: var(--space-xl);
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-normal);
+}
+
+.store-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.store-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--space-lg);
+}
+
+.store-name {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: var(--space-xs);
+}
+
+.store-status {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-full);
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.status-open {
+    background-color: rgba(6, 214, 160, 0.1);
+    color: var(--accent);
+}
+
+.status-closed {
+    background-color: rgba(255, 107, 139, 0.1);
+    color: var(--accent);
+}
+
+.store-details {
+    display: grid;
+    gap: var(--space-md);
+}
+
+.detail-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+}
+
+.detail-icon {
+    color: var(--primary);
+    font-size: 1.25rem;
+    min-width: 24px;
+}
+
+.detail-text {
+    color: var(--text-secondary);
+}
+
+.detail-link {
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.detail-link:hover {
+    color: var(--primary-light);
+    text-decoration: underline;
+}
+
+.store-actions {
+    display: flex;
+    gap: var(--space-md);
+    margin-top: var(--space-lg);
+}
+
+.directions-btn, .call-btn {
+    flex: 1;
+    padding: 0.75rem;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+}
+
+.directions-btn {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.directions-btn:hover {
+    background-color: var(--primary-light);
+    transform: translateY(-2px);
+}
+
+.call-btn {
+    background-color: var(--light);
+    color: var(--primary);
+    border: 2px solid var(--primary);
+}
+
+.call-btn:hover {
+    background-color: var(--primary);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+/* HORARIOS DE ATENCIÓN */
+.hours-container {
+    background-color: var(--white);
+    border-radius: var(--radius-xl);
+    padding: var(--space-xl);
+    box-shadow: var(--shadow-md);
+    margin-top: var(--space-xl);
+}
+
+.hours-title {
+    font-size: 1.25rem;
+    color: var(--primary);
+    margin-bottom: var(--space-lg);
+}
+
+.hours-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.hours-table tr {
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.hours-table tr:last-child {
+    border-bottom: none;
+}
+
+.hours-table td {
+    padding: var(--space-md) 0;
+}
+
+.day-cell {
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.time-cell {
+    text-align: right;
+    color: var(--text-muted);
+}
+
+.time-closed {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+/* INDICACIONES */
+.directions-container {
+    margin-top: var(--space-2xl);
+    background-color: var(--white);
+    border-radius: var(--radius-xl);
+    padding: var(--space-xl);
+    box-shadow: var(--shadow-md);
+}
+
+.directions-title {
+    font-size: 1.25rem;
+    color: var(--primary);
+    margin-bottom: var(--space-lg);
+}
+
+.transport-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-lg);
+    margin-bottom: var(--space-xl);
+}
+
+.transport-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: var(--space-lg);
+    background-color: var(--light);
+    border-radius: var(--radius-lg);
+}
+
+.transport-icon {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: var(--space-sm);
+}
+
+.transport-name {
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-xs);
+}
+
+.transport-details {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+    .location-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .map-container-large {
+        height: 400px;
+        order: -1;
+    }
+}
+
+@media (max-width: 576px) {
+    .store-actions {
+        flex-direction: column;
+    }
+    
+    .transport-options {
+        grid-template-columns: 1fr;
+    }
+}
+/* ubicacion.css - Estilos adicionales específicos para ubicación */
+.coverage-icon {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: var(--space-md);
+}
+
+.parking-info, .accessibility-info {
+    background-color: var(--light);
+    padding: var(--space-lg);
+    border-radius: var(--radius-lg);
+    margin-top: var(--space-lg);
+}
+
+.parking-info h3, .accessibility-info h3 {
+    color: var(--primary);
+    margin-bottom: var(--space-sm);
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.parking-info p, .accessibility-info p {
+    margin-bottom: 0;
+}

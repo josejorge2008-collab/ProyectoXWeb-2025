@@ -3,140 +3,506 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <base href="/">
-    <title>Bebidas - Sweet Delights</title>
+    <title>Happy Smile - Bebidas</title>
     
-    <link rel="stylesheet" href="../css/estilos.css">
-    <link rel="stylesheet" href="../css/catalogo.css">
+    <!-- Fuentes de Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- Iconos Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" href="../img/icono.png">
+    
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/catalogo.css">
+    <link rel="stylesheet" href="css/footer-happy.css">
 </head>
 <body>
-    <header class="header-fixed">
-        <nav class="navbar">
-            <div class="logo">
-                <a href="../index.html">
-                    <img src="../img/icono.png" alt="Logo" width="50">
-                    <span>Sweet Delights</span>
+    <!-- Header y Navegación -->
+    <header class="header-main">
+        <div class="container header-content">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-smile"></i>
+                </div>
+                <div class="logo-text">
+                    Happy<span>Smile</span>
+                </div>
+            </a>
+            
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav class="nav-main" id="mainNav">
+                <a href="index.html" class="nav-link">
+                    <i class="fas fa-home"></i> Inicio
+                </a>
+                <a href="pasteles.html" class="nav-link">
+                    <i class="fas fa-birthday-cake"></i> Pasteles
+                </a>
+                <a href="donas.html" class="nav-link">
+                    <i class="fas fa-donut"></i> Donas
+                </a>
+                <a href="galletas.html" class="nav-link">
+                    <i class="fas fa-cookie-bite"></i> Galletas
+                </a>
+                <a href="bebidas.html" class="nav-link active">
+                    <i class="fas fa-coffee"></i> Bebidas
+                </a>
+                <a href="productos.html" class="nav-link">
+                    <i class="fas fa-store"></i> Tienda
+                </a>
+            </nav>
+            
+            <div class="header-actions">
+                <a href="checkout.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
                 </a>
             </div>
-            
-            <ul class="nav-menu">
-                <li><a href="../index.html"><i class="fas fa-home"></i> Inicio</a></li>
-                <li><a href="../productos.html"><i class="fas fa-store"></i> Productos</a></li>
-                <li><a href="../checkout.html"><i class="fas fa-shopping-cart"></i> Carrito</a></li>
-                <li><a href="../ubicacion.html"><i class="fas fa-map-marker-alt"></i> Ubicación</a></li>
-                <li><a href="../contactos.html"><i class="fas fa-phone"></i> Contacto</a></li>
-            </ul>
-            
-            <div class="cart-counter">
-                <i class="fas fa-shopping-cart"></i>
-                <span id="cart-count">0</span>
-            </div>
-            
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </nav>
+        </div>
     </header>
 
-    <main class="categoria-container">
-        <div class="categoria-header">
-            <h1><i class="fas fa-coffee"></i> Nuestras Bebidas</h1>
-            <p>El complemento perfecto para tus dulces</p>
+    <!-- Header Bebidas -->
+    <section class="catalog-header">
+        <div class="container">
+            <h1>Nuestras Bebidas</h1>
+            <p class="catalog-description">Para acompañar tu dulce favorito. Café, té y bebidas especiales preparadas con los mejores ingredientes.</p>
         </div>
-        
-        <div class="productos-grid">
-            <div class="producto-card">
-                <img src="../img/cafe-latte.jpg" alt="Café Latte">
-                <h3>Café Latte</h3>
-                <p>Café espresso con leche vaporizada al vapor</p>
-                <div class="producto-footer">
-                    <span class="precio">$45</span>
-                    <span class="tamano">Mediano 12oz</span>
-                </div>
-                <button class="btn-add-cart" data-id="401">Añadir al Carrito</button>
-            </div>
-            
-            <div class="producto-card">
-                <img src="../img/capuchino.jpg" alt="Capuchino">
-                <h3>Capuchino</h3>
-                <p>Espresso, leche vaporizada y espuma cremosa</p>
-                <div class="producto-footer">
-                    <span class="precio">$50</span>
-                    <span class="tamano">Mediano 12oz</span>
-                </div>
-                <button class="btn-add-cart" data-id="402">Añadir al Carrito</button>
-            </div>
-            
-            <div class="producto-card">
-                <img src="../img/chocolate-caliente.jpg" alt="Chocolate Caliente">
-                <h3>Chocolate Belga</h3>
-                <p>Chocolate oscuro belga con malvaviscos</p>
-                <div class="producto-footer">
-                    <span class="precio">$55</span>
-                    <span class="tamano">Grande 16oz</span>
-                </div>
-                <button class="btn-add-cart" data-id="403">Añadir al Carrito</button>
-            </div>
-            
-            <div class="producto-card">
-                <img src="../img/te-chai.jpg" alt="Té Chai">
-                <h3>Té Chai Latte</h3>
-                <p>Mezcla de especias con leche vaporizada</p>
-                <div class="producto-footer">
-                    <span class="precio">$48</span>
-                    <span class="tamano">Mediano 12oz</span>
-                </div>
-                <button class="btn-add-cart" data-id="404">Añadir al Carrito</button>
-            </div>
-            
-            <div class="producto-card">
-                <img src="../img/frappuccino.jpg" alt="Frappuccino">
-                <h3>Frappuccino</h3>
-                <p>Bebida fría con café, hielo y crema batida</p>
-                <div class="producto-footer">
-                    <span class="precio">$60</span>
-                    <span class="tamano">Grande 16oz</span>
-                </div>
-                <button class="btn-add-cart" data-id="405">Añadir al Carrito</button>
-            </div>
-            
-            <div class="producto-card">
-                <img src="../img/limonada.jpg" alt="Limonada">
-                <h3>Limonada Artesanal</h3>
-                <p>Limonada natural con hierbabuena o frutos rojos</p>
-                <div class="producto-footer">
-                    <span class="precio">$40</span>
-                    <span class="tamano">Grande 16oz</span>
-                </div>
-                <button class="btn-add-cart" data-id="406">Añadir al Carrito</button>
-            </div>
-        </div>
-        
-        <div class="categoria-info">
-            <h3><i class="fas fa-mug-hot"></i> Paquetes Combinados</h3>
-            <ul>
-                <li><strong>Combo Desayuno:</strong> 1 pastel individual + café = $90</li>
-                <li><strong>Combo Merienda:</strong> 3 donas + 2 bebidas = $180</li>
-                <li><strong>Combo Oficina:</strong> 12 galletas + 4 cafés = $220</li>
-                <li><strong>Combo Fiesta:</strong> 1 pastel + 6 bebidas = $450</li>
-                <li>Todas las bebidas disponibles calientes o frías</li>
-                <li>Opciones de leche: Entera, deslactosada, almendra, soya</li>
-            </ul>
-        </div>
-    </main>
+    </section>
 
-    <footer class="happy-footer">
-        <div class="footer-content">
-            <p>© 2024 Sweet Delights. Bebidas para endulzar tu día.</p>
+    <!-- Filtros específicos para bebidas -->
+    <section class="filters-section">
+        <div class="container">
+            <div class="filters-container">
+                <div class="filter-group">
+                    <span class="filter-label">Tipo:</span>
+                    <select class="filter-select" id="filterType">
+                        <option value="all">Todas</option>
+                        <option value="cafe">Café</option>
+                        <option value="te">Té</option>
+                        <option value="chocolate">Chocolate</option>
+                        <option value="especial">Especiales</option>
+                        <option value="fria">Bebidas Frías</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <span class="filter-label">Tamaño:</span>
+                    <select class="filter-select" id="filterSize">
+                        <option value="all">Todos</option>
+                        <option value="chico">Chico (12 oz)</option>
+                        <option value="mediano">Mediano (16 oz)</option>
+                        <option value="grande">Grande (20 oz)</option>
+                    </select>
+                </div>
+                
+                <div class="search-box">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" class="search-input" id="searchInput" placeholder="Buscar bebidas...">
+                </div>
+            </div>
         </div>
+    </section>
+
+    <!-- Bebidas -->
+    <section class="section catalog-section">
+        <div class="container">
+            <div class="products-grid" id="bebidasGrid">
+                <!-- Bebida 1 -->
+                <div class="card product-card-catalog">
+                    <div class="product-image-container">
+                        <span class="badge badge-accent product-badge">Especialidad</span>
+                        <img src="imagenes/cafe-especial.jpg" alt="Café Especial" class="product-image-catalog">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-header">
+                            <h3 class="product-title">Café Especial</h3>
+                            <div class="product-price">$45</div>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="rating-count">(89)</span>
+                        </div>
+                        <p class="product-description">Café de especialidad 100% arábica, tostado artesanalmente. Disponible en todos los tamaños.</p>
+                        <div class="product-meta">
+                            <span class="product-category">Café</span>
+                            <button class="add-to-cart-btn" data-id="7">
+                                <i class="fas fa-cart-plus"></i> Agregar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bebida 2 -->
+                <div class="card product-card-catalog">
+                    <div class="product-image-container">
+                        <span class="badge badge-primary product-badge">Oferta</span>
+                        <img src="imagenes/te-frutas.jpg" alt="Té de Frutas" class="product-image-catalog">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-header">
+                            <h3 class="product-title">Té de Frutas</h3>
+                            <div class="product-price">$35</div>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-count">(57)</span>
+                        </div>
+                        <p class="product-description">Mezcla de té con frutas deshidratadas, ideal para acompañar tus postres.</p>
+                        <div class="product-meta">
+                            <span class="product-category">Té</span>
+                            <button class="add-to-cart-btn" data-id="8">
+                                <i class="fas fa-cart-plus"></i> Agregar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bebida 3 -->
+                <div class="card product-card-catalog">
+                    <div class="product-image-container">
+                        <img src="imagenes/chocolate-caliente.jpg" alt="Chocolate Caliente" class="product-image-catalog">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-header">
+                            <h3 class="product-title">Chocolate Caliente</h3>
+                            <div class="product-price">$50</div>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-count">(102)</span>
+                        </div>
+                        <p class="product-description">Chocolate belga derretido con leche vaporizada y topping de crema batida.</p>
+                        <div class="product-meta">
+                            <span class="product-category">Chocolate</span>
+                            <button class="add-to-cart-btn" data-id="24">
+                                <i class="fas fa-cart-plus"></i> Agregar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bebida 4 -->
+                <div class="card product-card-catalog">
+                    <div class="product-image-container">
+                        <span class="badge badge-primary product-badge">Nuevo</span>
+                        <img src="imagenes/capuchino.jpg" alt="Capuchino" class="product-image-catalog">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-header">
+                            <h3 class="product-title">Capuchino</h3>
+                            <div class="product-price">$55</div>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="rating-count">(76)</span>
+                        </div>
+                        <p class="product-description">Café espresso con leche vaporizada y una capa gruesa de espuma de leche.</p>
+                        <div class="product-meta">
+                            <span class="product-category">Café</span>
+                            <button class="add-to-cart-btn" data-id="25">
+                                <i class="fas fa-cart-plus"></i> Agregar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bebida 5 -->
+                <div class="card product-card-catalog">
+                    <div class="product-image-container">
+                        <img src="imagenes/frappuccino.jpg" alt="Frappuccino" class="product-image-catalog">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-header">
+                            <h3 class="product-title">Frappuccino</h3>
+                            <div class="product-price">$65</div>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-count">(93)</span>
+                        </div>
+                        <p class="product-description">Bebida fría mezclada con café, hielo y diversos ingredientes saborizados.</p>
+                        <div class="product-meta">
+                            <span class="product-category">Bebida Fría</span>
+                            <button class="add-to-cart-btn" data-id="26">
+                                <i class="fas fa-cart-plus"></i> Agregar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bebida 6 -->
+                <div class="card product-card-catalog">
+                    <div class="product-image-container">
+                        <span class="badge badge-accent product-badge">Sin cafeína</span>
+                        <img src="imagenes/te-verde.jpg" alt="Té Verde" class="product-image-catalog">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-header">
+                            <h3 class="product-title">Té Verde</h3>
+                            <div class="product-price">$40</div>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="rating-count">(48)</span>
+                        </div>
+                        <p class="product-description">Té verde japonés de alta calidad, rico en antioxidantes y bajo en cafeína.</p>
+                        <div class="product-meta">
+                            <span class="product-category">Té</span>
+                            <button class="add-to-cart-btn" data-id="27">
+                                <i class="fas fa-cart-plus"></i> Agregar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bebida 7 -->
+                <div class="card product-card-catalog">
+                    <div class="product-image-container">
+                        <img src="imagenes/latte.jpg" alt="Latte" class="product-image-catalog">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-header">
+                            <h3 class="product-title">Latte</h3>
+                            <div class="product-price">$60</div>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="rating-count">(81)</span>
+                        </div>
+                        <p class="product-description">Café espresso con mayor cantidad de leche vaporizada y poca espuma.</p>
+                        <div class="product-meta">
+                            <span class="product-category">Café</span>
+                            <button class="add-to-cart-btn" data-id="28">
+                                <i class="fas fa-cart-plus"></i> Agregar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bebida 8 -->
+                <div class="card product-card-catalog">
+                    <div class="product-image-container">
+                        <span class="badge badge-primary product-badge">Combo</span>
+                        <img src="imagenes/combo-cafe-pastel.jpg" alt="Combo Café + Pastel" class="product-image-catalog">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-header">
+                            <h3 class="product-title">Combo Café + Pastel</h3>
+                            <div class="product-price">$120</div>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-count">(67)</span>
+                        </div>
+                        <p class="product-description">Café especial + rebanada de pastel del día. El combo perfecto para disfrutar.</p>
+                        <div class="product-meta">
+                            <span class="product-category">Combo</span>
+                            <button class="add-to-cart-btn" data-id="29">
+                                <i class="fas fa-cart-plus"></i> Agregar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Información adicional -->
+            <div class="card mt-xl">
+                <div class="card-body">
+                    <h3 class="text-center mb-lg">¡Bebidas preparadas al momento!</h3>
+                    <div class="grid grid-3">
+                        <div class="text-center">
+                            <div class="category-icon mb-md">
+                                <i class="fas fa-seedling"></i>
+                            </div>
+                            <h4>Ingredientes premium</h4>
+                            <p>Café de especialidad, tés importados y chocolate belga de la más alta calidad.</p>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="category-icon mb-md">
+                                <i class="fas fa-mug-hot"></i>
+                            </div>
+                            <h4>Preparación artesanal</h4>
+                            <p>Cada bebida es preparada al momento por nuestros baristas certificados.</p>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="category-icon mb-md">
+                                <i class="fas fa-truck"></i>
+                            </div>
+                            <h4>Entrega especial</h4>
+                            <p>Nuestras bebidas viajan en contenedores especiales para mantener la temperatura ideal.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (igual que index.html) -->
+    <footer class="footer-main">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="index.html" class="logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-smile"></i>
+                        </div>
+                        <div class="logo-text">
+                            Happy<span>Smile</span>
+                        </div>
+                    </a>
+                    <p class="footer-tagline">Endulzando momentos desde 2020. Repostería fresca y deliciosa entregada a tu puerta.</p>
+                    <div class="footer-social">
+                        <p class="social-title">Síguenos en:</p>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon-link facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-icon-link instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="social-icon-link twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="social-icon-link tiktok">
+                                <i class="fab fa-tiktok"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Inicio</a></li>
+                        <li><a href="productos.html"><i class="fas fa-chevron-right"></i> Productos</a></li>
+                        <li><a href="pasteles.html"><i class="fas fa-chevron-right"></i> Pasteles</a></li>
+                        <li><a href="donas.html"><i class="fas fa-chevron-right"></i> Donas</a></li>
+                        <li><a href="galletas.html"><i class="fas fa-chevron-right"></i> Galletas</a></li>
+                        <li><a href="bebidas.html"><i class="fas fa-chevron-right"></i> Bebidas</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contacto</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt contact-icon"></i>
+                            <div>
+                                <p class="contact-text">Av. Dulces 123, Ciudad Delicias</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone contact-icon"></i>
+                            <div>
+                                <a href="tel:+525551234567" class="contact-link">(55) 5123-4567</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope contact-icon"></i>
+                            <div>
+                                <a href="mailto:hola@happysmile.com" class="contact-link">hola@happysmile.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock contact-icon"></i>
+                            <div>
+                                <p class="contact-text">Lun-Vie: 8:00 - 20:00<br>Sab-Dom: 9:00 - 18:00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <h3>Newsletter</h3>
+                    <p class="footer-tagline">Suscríbete para recibir promociones y novedades</p>
+                    <form class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Tu correo electrónico" required>
+                        <button type="submit" class="newsletter-btn">
+                            <i class="fas fa-paper-plane"></i> Suscribirse
+                        </button>
+                    </form>
+                    <p class="newsletter-disclaimer">No compartimos tu información con terceros.</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2024 Happy Smile. Todos los derechos reservados.</p>
+                <div class="footer-legal">
+                    <a href="#" class="legal-link">Términos y Condiciones</a>
+                    <a href="#" class="legal-link">Política de Privacidad</a>
+                    <a href="#" class="legal-link">Aviso Legal</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Botón WhatsApp Flotante -->
+        <a href="https://wa.me/525551234567" class="whatsapp-float" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+            <span class="whatsapp-tooltip">¡Escríbenos!</span>
+        </a>
+        
+        <!-- Botón Volver Arriba -->
+        <a href="#" class="back-to-top">
+            <i class="fas fa-chevron-up"></i>
+        </a>
     </footer>
 
-    <script src="../js/catalogo.js"></script>
-    <script src="../js/carrito.js"></script>
-    <script src="../js/menu-mobile.js"></script>
+    <!-- Scripts -->
+    <script src="js/menu-mobile.js"></script>
+    <script src="js/catalogo.js"></script>
+    <script src="js/carrito.js"></script>
+    <script src="js/footer-scripts.js"></script>
 </body>
 </html>

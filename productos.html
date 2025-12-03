@@ -3,110 +3,480 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <base href="/">
-    <title>Productos - Sweet Delights</title>
+    <title>Happy Smile - Catálogo de Productos</title>
     
-    <link rel="stylesheet" href="./css/estilos.css">
-    <link rel="stylesheet" href="./css/catalogo.css">
+    <!-- Fuentes de Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- Iconos Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" href="./img/icono.png">
+    
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/catalogo.css">
+    <link rel="stylesheet" href="css/footer-happy.css">
 </head>
 <body>
-    <header class="header-fixed">
-        <nav class="navbar">
-            <div class="logo">
-                <a href="./index.html">
-                    <img src="./img/icono.png" alt="Logo" width="50">
-                    <span>Sweet Delights</span>
+    <!-- Header y Navegación -->
+    <header class="header-main">
+        <div class="container header-content">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-smile"></i>
+                </div>
+                <div class="logo-text">
+                    Happy<span>Smile</span>
+                </div>
+            </a>
+            
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav class="nav-main" id="mainNav">
+                <a href="index.html" class="nav-link">
+                    <i class="fas fa-home"></i> Inicio
+                </a>
+                <a href="pasteles.html" class="nav-link">
+                    <i class="fas fa-birthday-cake"></i> Pasteles
+                </a>
+                <a href="donas.html" class="nav-link">
+                    <i class="fas fa-donut"></i> Donas
+                </a>
+                <a href="galletas.html" class="nav-link">
+                    <i class="fas fa-cookie-bite"></i> Galletas
+                </a>
+                <a href="bebidas.html" class="nav-link">
+                    <i class="fas fa-coffee"></i> Bebidas
+                </a>
+                <a href="productos.html" class="nav-link active">
+                    <i class="fas fa-store"></i> Tienda
+                </a>
+            </nav>
+            
+            <div class="header-actions">
+                <a href="checkout.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
                 </a>
             </div>
-            
-            <ul class="nav-menu">
-                <li><a href="./index.html"><i class="fas fa-home"></i> Inicio</a></li>
-                <li><a href="./productos.html" class="active"><i class="fas fa-store"></i> Productos</a></li>
-                <li><a href="./checkout.html"><i class="fas fa-shopping-cart"></i> Carrito</a></li>
-                <li><a href="./ubicacion.html"><i class="fas fa-map-marker-alt"></i> Ubicación</a></li>
-                <li><a href="./contactos.html"><i class="fas fa-phone"></i> Contacto</a></li>
-            </ul>
-            
-            <div class="cart-counter">
-                <i class="fas fa-shopping-cart"></i>
-                <span id="cart-count">0</span>
-            </div>
-            
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </nav>
+        </div>
     </header>
 
-    <main class="catalogo-container">
-        <h1><i class="fas fa-boxes"></i> Nuestro Catálogo</h1>
-        
-        <div class="categorias-lista">
-            <a href="./page/pasteles.html" class="categoria-grande">
-                <div class="categoria-img">
-                    <img src="./img/pasteles-cat.jpg" alt="Pasteles">
-                </div>
-                <div class="categoria-info">
-                    <h2>Pasteles</h2>
-                    <p>Personalizados para bodas, cumpleaños y eventos especiales</p>
-                    <span class="ver-todo">Ver colección <i class="fas fa-arrow-right"></i></span>
-                </div>
-            </a>
-            
-            <a href="./page/donas.html" class="categoria-grande">
-                <div class="categoria-img">
-                    <img src="./img/donas-cat.jpg" alt="Donas">
-                </div>
-                <div class="categoria-info">
-                    <h2>Donas</h2>
-                    <p>Esponjosas, glaseadas y rellenas de diferentes sabores</p>
-                    <span class="ver-todo">Ver colección <i class="fas fa-arrow-right"></i></span>
-                </div>
-            </a>
-            
-            <a href="./page/galletas.html" class="categoria-grande">
-                <div class="categoria-img">
-                    <img src="./img/galletas-cat.jpg" alt="Galletas">
-                </div>
-                <div class="categoria-info">
-                    <h2>Galletas</h2>
-                    <p>Decoradas, con chispas y personalizadas</p>
-                    <span class="ver-todo">Ver colección <i class="fas fa-arrow-right"></i></span>
-                </div>
-            </a>
-            
-            <a href="./page/bebidas.html" class="categoria-grande">
-                <div class="categoria-img">
-                    <img src="./img/bebidas-cat.jpg" alt="Bebidas">
-                </div>
-                <div class="categoria-info">
-                    <h2>Bebidas</h2>
-                    <p>Cafés, tés y malteadas para acompañar</p>
-                    <span class="ver-todo">Ver colección <i class="fas fa-arrow-right"></i></span>
-                </div>
-            </a>
+    <!-- Header Catálogo -->
+    <section class="catalog-header">
+        <div class="container">
+            <h1>Nuestro Catálogo</h1>
+            <p class="catalog-description">Explora nuestra selección de productos frescos. Todos nuestros productos son hechos el mismo día con ingredientes de la más alta calidad.</p>
         </div>
-        
-        <div class="productos-populares">
-            <h2><i class="fas fa-fire"></i> Los Más Pedidos</h2>
-            <div class="productos-grid">
-                <!-- Productos dinámicos se cargan con JS -->
+    </section>
+
+    <!-- Filtros -->
+    <section class="filters-section">
+        <div class="container">
+            <div class="filters-container">
+                <div class="filter-group">
+                    <span class="filter-label">Ordenar por:</span>
+                    <select class="filter-select" id="sortProducts">
+                        <option value="popular">Más populares</option>
+                        <option value="price-asc">Precio: Menor a Mayor</option>
+                        <option value="price-desc">Precio: Mayor a Menor</option>
+                        <option value="name">Nombre A-Z</option>
+                        <option value="newest">Más recientes</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <span class="filter-label">Categoría:</span>
+                    <select class="filter-select" id="filterCategory">
+                        <option value="all">Todas</option>
+                        <option value="pasteles">Pasteles</option>
+                        <option value="donas">Donas</option>
+                        <option value="galletas">Galletas</option>
+                        <option value="bebidas">Bebidas</option>
+                    </select>
+                </div>
+                
+                <div class="search-box">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" class="search-input" id="searchInput" placeholder="Buscar productos...">
+                </div>
             </div>
         </div>
-    </main>
+    </section>
 
-    <footer class="happy-footer">
-        <div class="footer-content">
-            <p>© 2024 Sweet Delights. Delivery de felicidad en cada bocado.</p>
+    <!-- Productos -->
+    <section class="section catalog-section">
+        <div class="container">
+            <div class="products-grid" id="productsGrid">
+                <!-- Los productos se cargarán dinámicamente aquí -->
+                <div class="card product-card-catalog">
+                    <div class="product-image-container">
+                        <span class="badge badge-primary product-badge">Nuevo</span>
+                        <img src="imagenes/pastel-chocolate.jpg" alt="Pastel Chocolate Supreme" class="product-image-catalog">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-header">
+                            <h3 class="product-title">Pastel Chocolate Supreme</h3>
+                            <div class="product-price">$280</div>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="rating-count">(48)</span>
+                        </div>
+                        <p class="product-description">Triple capa de chocolate belga con decoración de frutos rojos.</p>
+                        <div class="product-meta">
+                            <span class="product-category">Pasteles</span>
+                            <button class="add-to-cart-btn" data-id="1">
+                                <i class="fas fa-cart-plus"></i> Agregar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card product-card-catalog">
+                    <div class="product-image-container">
+                        <span class="badge badge-accent product-badge">Más vendido</span>
+                        <img src="imagenes/donas-glaseadas.jpg" alt="Donas Glaseadas" class="product-image-catalog">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-header">
+                            <h3 class="product-title">Donas Glaseadas (6 pz)</h3>
+                            <div class="product-price">$120</div>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-count">(126)</span>
+                        </div>
+                        <p class="product-description">Paquete de 6 donas con variedad de sabores y glaseados.</p>
+                        <div class="product-meta">
+                            <span class="product-category">Donas</span>
+                            <button class="add-to-cart-btn" data-id="2">
+                                <i class="fas fa-cart-plus"></i> Agregar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card product-card-catalog">
+                    <div class="product-image-container">
+                        <img src="imagenes/galletas-chispas.jpg" alt="Galletas con Chispas" class="product-image-catalog">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-header">
+                            <h3 class="product-title">Galletas con Chispas</h3>
+                            <div class="product-price">$85</div>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-count">(94)</span>
+                        </div>
+                        <p class="product-description">Paquete de 12 galletas crujientes con chispas de chocolate.</p>
+                        <div class="product-meta">
+                            <span class="product-category">Galletas</span>
+                            <button class="add-to-cart-btn" data-id="3">
+                                <i class="fas fa-cart-plus"></i> Agregar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card product-card-catalog">
+                    <div class="product-image-container">
+                        <img src="imagenes/pastel-fresa.jpg" alt="Pastel de Fresa" class="product-image-catalog">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-header">
+                            <h3 class="product-title">Pastel de Fresa</h3>
+                            <div class="product-price">$250</div>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="rating-count">(37)</span>
+                        </div>
+                        <p class="product-description">Delicioso pastel con relleno de fresas frescas y crema batida.</p>
+                        <div class="product-meta">
+                            <span class="product-category">Pasteles</span>
+                            <button class="add-to-cart-btn" data-id="4">
+                                <i class="fas fa-cart-plus"></i> Agregar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card product-card-catalog">
+                    <div class="product-image-container">
+                        <span class="badge badge-primary product-badge">Nuevo</span>
+                        <img src="imagenes/donas-chocolate.jpg" alt="Donas de Chocolate" class="product-image-catalog">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-header">
+                            <h3 class="product-title">Donas de Chocolate (4 pz)</h3>
+                            <div class="product-price">$90</div>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-count">(68)</span>
+                        </div>
+                        <p class="product-description">Donas cubiertas de chocolate belga con sprinkles coloridos.</p>
+                        <div class="product-meta">
+                            <span class="product-category">Donas</span>
+                            <button class="add-to-cart-btn" data-id="5">
+                                <i class="fas fa-cart-plus"></i> Agregar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card product-card-catalog">
+                    <div class="product-image-container">
+                        <img src="imagenes/galletas-avena.jpg" alt="Galletas de Avena" class="product-image-catalog">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-header">
+                            <h3 class="product-title">Galletas de Avena</h3>
+                            <div class="product-price">$75</div>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="rating-count">(42)</span>
+                        </div>
+                        <p class="product-description">Galletas saludables con avena, pasas y un toque de miel.</p>
+                        <div class="product-meta">
+                            <span class="product-category">Galletas</span>
+                            <button class="add-to-cart-btn" data-id="6">
+                                <i class="fas fa-cart-plus"></i> Agregar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card product-card-catalog">
+                    <div class="product-image-container">
+                        <img src="imagenes/cafe-especial.jpg" alt="Café Especial" class="product-image-catalog">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-header">
+                            <h3 class="product-title">Café Especial</h3>
+                            <div class="product-price">$45</div>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="rating-count">(89)</span>
+                        </div>
+                        <p class="product-description">Café de especialidad 100% arábica, tostado artesanalmente.</p>
+                        <div class="product-meta">
+                            <span class="product-category">Bebidas</span>
+                            <button class="add-to-cart-btn" data-id="7">
+                                <i class="fas fa-cart-plus"></i> Agregar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card product-card-catalog">
+                    <div class="product-image-container">
+                        <span class="badge badge-accent product-badge">Oferta</span>
+                        <img src="imagenes/te-frutas.jpg" alt="Té de Frutas" class="product-image-catalog">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-header">
+                            <h3 class="product-title">Té de Frutas</h3>
+                            <div class="product-price">$35</div>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-count">(57)</span>
+                        </div>
+                        <p class="product-description">Mezcla de té con frutas deshidratadas, ideal para acompañar.</p>
+                        <div class="product-meta">
+                            <span class="product-category">Bebidas</span>
+                            <button class="add-to-cart-btn" data-id="8">
+                                <i class="fas fa-cart-plus"></i> Agregar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Paginación -->
+            <div class="pagination">
+                <a href="#" class="page-link disabled">
+                    <i class="fas fa-chevron-left"></i>
+                </a>
+                <a href="#" class="page-link active">1</a>
+                <a href="#" class="page-link">2</a>
+                <a href="#" class="page-link">3</a>
+                <a href="#" class="page-link">4</a>
+                <a href="#" class="page-link">
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+            </div>
         </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-main">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="index.html" class="logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-smile"></i>
+                        </div>
+                        <div class="logo-text">
+                            Happy<span>Smile</span>
+                        </div>
+                    </a>
+                    <p class="footer-tagline">Endulzando momentos desde 2020. Repostería fresca y deliciosa entregada a tu puerta.</p>
+                    <div class="footer-social">
+                        <p class="social-title">Síguenos en:</p>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon-link facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-icon-link instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="social-icon-link twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="social-icon-link tiktok">
+                                <i class="fab fa-tiktok"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Inicio</a></li>
+                        <li><a href="productos.html"><i class="fas fa-chevron-right"></i> Productos</a></li>
+                        <li><a href="pasteles.html"><i class="fas fa-chevron-right"></i> Pasteles</a></li>
+                        <li><a href="donas.html"><i class="fas fa-chevron-right"></i> Donas</a></li>
+                        <li><a href="galletas.html"><i class="fas fa-chevron-right"></i> Galletas</a></li>
+                        <li><a href="bebidas.html"><i class="fas fa-chevron-right"></i> Bebidas</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contacto</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt contact-icon"></i>
+                            <div>
+                                <p class="contact-text">Av. Dulces 123, Ciudad Delicias</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone contact-icon"></i>
+                            <div>
+                                <a href="tel:+525551234567" class="contact-link">(55) 5123-4567</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope contact-icon"></i>
+                            <div>
+                                <a href="mailto:hola@happysmile.com" class="contact-link">hola@happysmile.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock contact-icon"></i>
+                            <div>
+                                <p class="contact-text">Lun-Vie: 8:00 - 20:00<br>Sab-Dom: 9:00 - 18:00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <h3>Newsletter</h3>
+                    <p class="footer-tagline">Suscríbete para recibir promociones y novedades</p>
+                    <form class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Tu correo electrónico" required>
+                        <button type="submit" class="newsletter-btn">
+                            <i class="fas fa-paper-plane"></i> Suscribirse
+                        </button>
+                    </form>
+                    <p class="newsletter-disclaimer">No compartimos tu información con terceros.</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2024 Happy Smile. Todos los derechos reservados.</p>
+                <div class="footer-legal">
+                    <a href="#" class="legal-link">Términos y Condiciones</a>
+                    <a href="#" class="legal-link">Política de Privacidad</a>
+                    <a href="#" class="legal-link">Aviso Legal</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Botón WhatsApp Flotante -->
+        <a href="https://wa.me/525551234567" class="whatsapp-float" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+            <span class="whatsapp-tooltip">¡Escríbenos!</span>
+        </a>
+        
+        <!-- Botón Volver Arriba -->
+        <a href="#" class="back-to-top">
+            <i class="fas fa-chevron-up"></i>
+        </a>
     </footer>
 
-    <script src="./js/catalogo.js"></script>
-    <script src="./js/carrito.js"></script>
-    <script src="./js/menu-mobile.js"></script>
+    <!-- Scripts -->
+    <script src="js/menu-mobile.js"></script>
+    <script src="js/catalogo.js"></script>
+    <script src="js/carrito.js"></script>
+    <script src="js/footer-scripts.js"></script>
 </body>
 </html>

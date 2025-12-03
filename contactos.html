@@ -3,173 +3,457 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <base href="/">
-    <title>Contacto - Sweet Delights</title>
+    <title>Happy Smile - Contacto</title>
     
-    <link rel="stylesheet" href="./css/estilos.css">
-    <link rel="stylesheet" href="./css/contactos.css">
+    <!-- Fuentes de Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- Iconos Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" href="./img/icono.png">
+    
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/contactos.css">
+    <link rel="stylesheet" href="css/footer-happy.css">
 </head>
 <body>
-    <header class="header-fixed">
-        <nav class="navbar">
-            <div class="logo">
-                <a href="./index.html">
-                    <img src="./img/icono.png" alt="Logo" width="50">
-                    <span>Sweet Delights</span>
+    <!-- Header y Navegación -->
+    <header class="header-main">
+        <div class="container header-content">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-smile"></i>
+                </div>
+                <div class="logo-text">
+                    Happy<span>Smile</span>
+                </div>
+            </a>
+            
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav class="nav-main" id="mainNav">
+                <a href="index.html" class="nav-link">
+                    <i class="fas fa-home"></i> Inicio
+                </a>
+                <a href="pasteles.html" class="nav-link">
+                    <i class="fas fa-birthday-cake"></i> Pasteles
+                </a>
+                <a href="donas.html" class="nav-link">
+                    <i class="fas fa-donut"></i> Donas
+                </a>
+                <a href="galletas.html" class="nav-link">
+                    <i class="fas fa-cookie-bite"></i> Galletas
+                </a>
+                <a href="bebidas.html" class="nav-link">
+                    <i class="fas fa-coffee"></i> Bebidas
+                </a>
+                <a href="productos.html" class="nav-link">
+                    <i class="fas fa-store"></i> Tienda
+                </a>
+            </nav>
+            
+            <div class="header-actions">
+                <a href="checkout.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
                 </a>
             </div>
-            
-            <ul class="nav-menu">
-                <li><a href="./index.html"><i class="fas fa-home"></i> Inicio</a></li>
-                <li><a href="./productos.html"><i class="fas fa-store"></i> Productos</a></li>
-                <li><a href="./checkout.html"><i class="fas fa-shopping-cart"></i> Carrito</a></li>
-                <li><a href="./ubicacion.html"><i class="fas fa-map-marker-alt"></i> Ubicación</a></li>
-                <li><a href="./contactos.html" class="active"><i class="fas fa-phone"></i> Contacto</a></li>
-            </ul>
-            
-            <div class="cart-counter">
-                <i class="fas fa-shopping-cart"></i>
-                <span id="cart-count">0</span>
-            </div>
-            
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </nav>
+        </div>
     </header>
 
-    <main class="contactos-container">
-        <h1><i class="fas fa-comments"></i> Contáctanos</h1>
-        <p class="subtitulo">Estamos aquí para endulzar tu día</p>
-        
-        <div class="contactos-grid">
-            <div class="form-section">
-                <h2><i class="fas fa-envelope"></i> Envíanos un Mensaje</h2>
-                <form id="contacto-form">
-                    <div class="form-group">
-                        <label for="nombre"><i class="fas fa-user"></i> Nombre Completo *</label>
-                        <input type="text" id="nombre" name="nombre" required>
+    <!-- Header Contacto -->
+    <section class="contact-header">
+        <div class="container">
+            <h1>Contáctanos</h1>
+            <p class="contact-description">¿Tienes preguntas, comentarios o necesitas un pedido especial? Estamos aquí para ayudarte.</p>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section class="section contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Información de contacto -->
+                <div class="contact-info">
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Teléfono</h3>
+                            <p>Línea directa para pedidos y consultas</p>
+                            <a href="tel:+525551234567" class="info-link">(55) 5123-4567</a>
+                        </div>
                     </div>
                     
-                    <div class="form-group">
-                        <label for="email"><i class="fas fa-envelope"></i> Email *</label>
-                        <input type="email" id="email" name="email" required>
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Correo Electrónico</h3>
+                            <p>Escríbenos para cualquier consulta</p>
+                            <a href="mailto:hola@happysmile.com" class="info-link">hola@happysmile.com</a>
+                        </div>
                     </div>
                     
-                    <div class="form-group">
-                        <label for="telefono"><i class="fas fa-phone"></i> Teléfono</label>
-                        <input type="tel" id="telefono" name="telefono">
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Dirección</h3>
+                            <p>Visítanos en nuestro local principal</p>
+                            <p class="address">Av. Dulces 123, Col. Delicias<br>Ciudad de México, CP 06100</p>
+                            <a href="ubicacion.html" class="info-link">Ver en mapa →</a>
+                        </div>
                     </div>
                     
-                    <div class="form-group">
-                        <label for="asunto"><i class="fas fa-tag"></i> Asunto *</label>
-                        <select id="asunto" name="asunto" required>
-                            <option value="">Selecciona un asunto</option>
-                            <option value="pedido">Consulta sobre pedido</option>
-                            <option value="producto">Información de productos</option>
-                            <option value="evento">Pedido para evento</option>
-                            <option value="queja">Sugerencia o queja</option>
-                            <option value="otro">Otro</option>
-                        </select>
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Horarios de Atención</h3>
+                            <p>Estamos disponibles para atenderte</p>
+                            <p class="hours">Lunes a Viernes: 8:00 - 20:00 hrs<br>Sábados y Domingos: 9:00 - 18:00 hrs</p>
+                        </div>
                     </div>
                     
-                    <div class="form-group">
-                        <label for="mensaje"><i class="fas fa-comment"></i> Mensaje *</label>
-                        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                    <!-- Redes Sociales -->
+                    <div class="social-section">
+                        <h3 class="social-title">Síguenos en Redes Sociales</h3>
+                        <div class="social-links">
+                            <a href="#" class="social-link facebook">
+                                <i class="fab fa-facebook-f social-icon"></i>
+                                <span>Facebook</span>
+                            </a>
+                            <a href="#" class="social-link instagram">
+                                <i class="fab fa-instagram social-icon"></i>
+                                <span>Instagram</span>
+                            </a>
+                            <a href="#" class="social-link twitter">
+                                <i class="fab fa-twitter social-icon"></i>
+                                <span>Twitter</span>
+                            </a>
+                            <a href="#" class="social-link whatsapp">
+                                <i class="fab fa-whatsapp social-icon"></i>
+                                <span>WhatsApp</span>
+                            </a>
+                        </div>
                     </div>
-                    
-                    <button type="submit" class="btn-enviar">
-                        <i class="fas fa-paper-plane"></i> Enviar Mensaje
-                    </button>
-                </form>
+                </div>
+                
+                <!-- Formulario de contacto -->
+                <div class="contact-form-container">
+                    <h2 class="form-title">Envíanos un Mensaje</h2>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Nombre *</label>
+                                <input type="text" class="form-control" placeholder="Tu nombre" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Apellido *</label>
+                                <input type="text" class="form-control" placeholder="Tu apellido" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Correo electrónico *</label>
+                            <input type="email" class="form-control" placeholder="tu@email.com" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Teléfono</label>
+                            <input type="tel" class="form-control" placeholder="55 1234 5678">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Asunto *</label>
+                            <select class="form-control" required>
+                                <option value="">Selecciona un asunto</option>
+                                <option value="pedido">Consulta sobre pedido</option>
+                                <option value="personalizado">Pastel personalizado</option>
+                                <option value="evento">Pedido para evento</option>
+                                <option value="sugerencia">Sugerencia o comentario</option>
+                                <option value="trabajo">Trabaja con nosotros</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group form-textarea">
+                            <label class="form-label">Mensaje *</label>
+                            <textarea class="form-control" placeholder="Escribe tu mensaje aquí..." rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary submit-btn">
+                            <i class="fas fa-paper-plane"></i> Enviar Mensaje
+                        </button>
+                    </form>
+                </div>
             </div>
             
-            <div class="info-section">
-                <div class="contacto-card">
-                    <h3><i class="fas fa-headset"></i> Atención a Clientes</h3>
-                    <p class="contacto-info">
-                        <i class="fas fa-phone"></i> 
-                        <strong>Teléfono:</strong> 55 1234 5678
-                    </p>
-                    <p class="contacto-info">
-                        <i class="fab fa-whatsapp"></i> 
-                        <strong>WhatsApp:</strong> 55 8765 4321
-                    </p>
-                    <p class="contacto-info">
-                        <i class="fas fa-clock"></i> 
-                        <strong>Horario:</strong> 8:00 AM - 10:00 PM
-                    </p>
+            <!-- Preguntas Frecuentes -->
+            <div class="faq-section">
+                <h2 class="text-center mb-xl">Preguntas Frecuentes</h2>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>¿Cuál es el tiempo de entrega?</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>El tiempo de entrega estándar es de 45-60 minutos dentro de nuestra zona de cobertura. Contamos con servicio express de 20-30 minutos por un costo adicional.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>¿Hacen pasteles personalizados?</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Sí, creamos pasteles personalizados para cualquier ocasión. Recomendamos hacer el pedido con al menos 48 horas de anticipación para pasteles personalizados complejos.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>¿Tienen opciones sin azúcar?</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Sí, contamos con una línea de productos dietéticos endulzados con stevia. También ofrecemos opciones sin gluten (consultar disponibilidad).</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>¿Puedo cancelar o modificar mi pedido?</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Puedes cancelar o modificar tu pedido sin costo hasta 15 minutos después de realizarlo. Después de ese tiempo, podría aplicarse un cargo por cancelación.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>¿Aceptan pagos con tarjeta?</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Sí, aceptamos todas las tarjetas de crédito y débito principales, así como pagos con PayPal y en efectivo al momento de la entrega.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>¿Entregan los fines de semana?</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Sí, entregamos de lunes a domingo en los horarios establecidos. Los domingos el horario es de 9:00 a 18:00 hrs.</p>
+                        </div>
+                    </div>
                 </div>
-                
-                <div class="contacto-card">
-                    <h3><i class="fas fa-shipping-fast"></i> Delivery Express</h3>
-                    <p class="contacto-info">
-                        <i class="fas fa-bolt"></i> 
-                        <strong>Tiempo de entrega:</strong> 30-45 minutos
-                    </p>
-                    <p class="contacto-info">
-                        <i class="fas fa-money-bill-wave"></i> 
-                        <strong>Costo delivery:</strong> $35 pesos
-                    </p>
-                    <p class="contacto-info">
-                        <i class="fas fa-map-marker-alt"></i> 
-                        <strong>Zona de cobertura:</strong> CDMX y zona metropolitana
-                    </p>
-                </div>
-                
-                <div class="contacto-card">
-                    <h3><i class="fas fa-envelope-open-text"></i> Correos Electrónicos</h3>
-                    <p class="contacto-info">
-                        <i class="fas fa-inbox"></i> 
-                        <strong>Pedidos:</strong> pedidos@sweetdelights.com
-                    </p>
-                    <p class="contacto-info">
-                        <i class="fas fa-inbox"></i> 
-                        <strong>Eventos:</strong> eventos@sweetdelights.com
-                    </p>
-                    <p class="contacto-info">
-                        <i class="fas fa-inbox"></i> 
-                        <strong>Soporte:</strong> soporte@sweetdelights.com
-                    </p>
-                </div>
-                
-                <div class="contacto-card">
-                    <h3><i class="fas fa-share-alt"></i> Redes Sociales</h3>
-                    <div class="social-contactos">
-                        <a href="#" class="social-icon facebook">
-                            <i class="fab fa-facebook-f"></i> Facebook
-                        </a>
-                        <a href="#" class="social-icon instagram">
-                            <i class="fab fa-instagram"></i> Instagram
-                        </a>
-                        <a href="#" class="social-icon twitter">
-                            <i class="fab fa-twitter"></i> Twitter
+            </div>
+            
+            <!-- Mapa -->
+            <div class="map-section">
+                <h2 class="map-title">Nuestra Ubicación</h2>
+                <div class="map-container">
+                    <!-- En un proyecto real aquí iría un mapa de Google Maps -->
+                    <div class="map-placeholder">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <p>Mapa de nuestra ubicación</p>
+                        <p class="text-muted">Av. Dulces 123, Col. Delicias, Ciudad de México</p>
+                        <a href="ubicacion.html" class="btn btn-primary mt-md">
+                            <i class="fas fa-directions"></i> Ver dirección completa
                         </a>
                     </div>
-                    <p class="sigue-text">Síguenos para promociones</p>
-                </div>
-                
-                <div class="emergencia">
-                    <h4><i class="fas fa-exclamation-triangle"></i> ¿Problema con tu pedido?</h4>
-                    <p>Llámanos inmediatamente al: <strong>55 9999 8888</strong></p>
-                    <p>Estamos aquí para ayudarte</p>
                 </div>
             </div>
         </div>
-    </main>
+    </section>
 
-    <footer class="happy-footer">
-        <div class="footer-content">
-            <p>© 2024 Sweet Delights. Tu satisfacción es nuestra dulce recompensa.</p>
+    <!-- Footer -->
+    <footer class="footer-main">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="index.html" class="logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-smile"></i>
+                        </div>
+                        <div class="logo-text">
+                            Happy<span>Smile</span>
+                        </div>
+                    </a>
+                    <p class="footer-tagline">Endulzando momentos desde 2020. Repostería fresca y deliciosa entregada a tu puerta.</p>
+                    <div class="footer-social">
+                        <p class="social-title">Síguenos en:</p>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon-link facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-icon-link instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="social-icon-link twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="social-icon-link tiktok">
+                                <i class="fab fa-tiktok"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Inicio</a></li>
+                        <li><a href="productos.html"><i class="fas fa-chevron-right"></i> Productos</a></li>
+                        <li><a href="pasteles.html"><i class="fas fa-chevron-right"></i> Pasteles</a></li>
+                        <li><a href="donas.html"><i class="fas fa-chevron-right"></i> Donas</a></li>
+                        <li><a href="galletas.html"><i class="fas fa-chevron-right"></i> Galletas</a></li>
+                        <li><a href="bebidas.html"><i class="fas fa-chevron-right"></i> Bebidas</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contacto</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt contact-icon"></i>
+                            <div>
+                                <p class="contact-text">Av. Dulces 123, Ciudad Delicias</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone contact-icon"></i>
+                            <div>
+                                <a href="tel:+525551234567" class="contact-link">(55) 5123-4567</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope contact-icon"></i>
+                            <div>
+                                <a href="mailto:hola@happysmile.com" class="contact-link">hola@happysmile.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock contact-icon"></i>
+                            <div>
+                                <p class="contact-text">Lun-Vie: 8:00 - 20:00<br>Sab-Dom: 9:00 - 18:00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <h3>Newsletter</h3>
+                    <p class="footer-tagline">Suscríbete para recibir promociones y novedades</p>
+                    <form class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Tu correo electrónico" required>
+                        <button type="submit" class="newsletter-btn">
+                            <i class="fas fa-paper-plane"></i> Suscribirse
+                        </button>
+                    </form>
+                    <p class="newsletter-disclaimer">No compartimos tu información con terceros.</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2024 Happy Smile. Todos los derechos reservados.</p>
+                <div class="footer-legal">
+                    <a href="#" class="legal-link">Términos y Condiciones</a>
+                    <a href="#" class="legal-link">Política de Privacidad</a>
+                    <a href="#" class="legal-link">Aviso Legal</a>
+                </div>
+            </div>
         </div>
+        
+        <!-- Botón WhatsApp Flotante -->
+        <a href="https://wa.me/525551234567" class="whatsapp-float" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+            <span class="whatsapp-tooltip">¡Escríbenos!</span>
+        </a>
+        
+        <!-- Botón Volver Arriba -->
+        <a href="#" class="back-to-top">
+            <i class="fas fa-chevron-up"></i>
+        </a>
     </footer>
 
-    <script src="./js/contactos.js"></script>
-    <script src="./js/carrito.js"></script>
-    <script src="./js/menu-mobile.js"></script>
+    <!-- Modal de Confirmación -->
+    <div class="confirmation-modal" id="contactModal">
+        <div class="modal-content">
+            <div class="modal-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h2 class="modal-title">¡Mensaje Enviado!</h2>
+            <p class="modal-message">Gracias por contactarnos. Hemos recibido tu mensaje y te responderemos en un plazo máximo de 24 horas.</p>
+            <div class="modal-buttons">
+                <button class="btn btn-primary" id="closeContactModal">Aceptar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/menu-mobile.js"></script>
+    <script src="js/contactos.js"></script>
+    <script src="js/footer-scripts.js"></script>
+    
+    <script>
+        // FAQ functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('i');
+                
+                // Toggle answer visibility
+                answer.classList.toggle('active');
+                
+                // Rotate icon
+                if (answer.classList.contains('active')) {
+                    icon.style.transform = 'rotate(180deg)';
+                } else {
+                    icon.style.transform = 'rotate(0deg)';
+                }
+            });
+        });
+        
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show success modal
+            const modal = document.getElementById('contactModal');
+            modal.style.display = 'flex';
+            
+            // Reset form (in a real app, you would send the data to a server)
+            setTimeout(() => {
+                this.reset();
+            }, 1000);
+        });
+        
+        // Close modal
+        document.getElementById('closeContactModal').addEventListener('click', function() {
+            const modal = document.getElementById('contactModal');
+            modal.style.display = 'none';
+        });
+        
+        // Close modal when clicking outside
+        document.getElementById('contactModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>

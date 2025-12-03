@@ -3,139 +3,505 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <base href="/">
-    <title>Galletas - Sweet Delights</title>
+    <title>Happy Smile - Galletas</title>
     
-    <link rel="stylesheet" href="../css/estilos.css">
-    <link rel="stylesheet" href="../css/catalogo.css">
+    <!-- Fuentes de Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- Iconos Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" href="../img/icono.png">
+    
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/catalogo.css">
+    <link rel="stylesheet" href="css/footer-happy.css">
 </head>
 <body>
-    <header class="header-fixed">
-        <nav class="navbar">
-            <div class="logo">
-                <a href="../index.html">
-                    <img src="../img/icono.png" alt="Logo" width="50">
-                    <span>Sweet Delights</span>
+    <!-- Header y Navegación -->
+    <header class="header-main">
+        <div class="container header-content">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-smile"></i>
+                </div>
+                <div class="logo-text">
+                    Happy<span>Smile</span>
+                </div>
+            </a>
+            
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav class="nav-main" id="mainNav">
+                <a href="index.html" class="nav-link">
+                    <i class="fas fa-home"></i> Inicio
+                </a>
+                <a href="pasteles.html" class="nav-link">
+                    <i class="fas fa-birthday-cake"></i> Pasteles
+                </a>
+                <a href="donas.html" class="nav-link">
+                    <i class="fas fa-donut"></i> Donas
+                </a>
+                <a href="galletas.html" class="nav-link active">
+                    <i class="fas fa-cookie-bite"></i> Galletas
+                </a>
+                <a href="bebidas.html" class="nav-link">
+                    <i class="fas fa-coffee"></i> Bebidas
+                </a>
+                <a href="productos.html" class="nav-link">
+                    <i class="fas fa-store"></i> Tienda
+                </a>
+            </nav>
+            
+            <div class="header-actions">
+                <a href="checkout.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
                 </a>
             </div>
-            
-            <ul class="nav-menu">
-                <li><a href="../index.html"><i class="fas fa-home"></i> Inicio</a></li>
-                <li><a href="../productos.html"><i class="fas fa-store"></i> Productos</a></li>
-                <li><a href="../checkout.html"><i class="fas fa-shopping-cart"></i> Carrito</a></li>
-                <li><a href="../ubicacion.html"><i class="fas fa-map-marker-alt"></i> Ubicación</a></li>
-                <li><a href="../contactos.html"><i class="fas fa-phone"></i> Contacto</a></li>
-            </ul>
-            
-            <div class="cart-counter">
-                <i class="fas fa-shopping-cart"></i>
-                <span id="cart-count">0</span>
-            </div>
-            
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </nav>
+        </div>
     </header>
 
-    <main class="categoria-container">
-        <div class="categoria-header">
-            <h1><i class="fas fa-cookie-bite"></i> Nuestras Galletas</h1>
-            <p>Crujientes por fuera, suaves por dentro</p>
+    <!-- Header Galletas -->
+    <section class="catalog-header">
+        <div class="container">
+            <h1>Nuestras Galletas</h1>
+            <p class="catalog-description">Galletas crujientes y deliciosas, perfectas para acompañar tu café o como snack dulce en cualquier momento del día.</p>
         </div>
-        
-        <div class="productos-grid">
-            <div class="producto-card">
-                <img src="../img/galleta-chispas.jpg" alt="Galletas con Chispas">
-                <h3>Con Chispas de Chocolate</h3>
-                <p>Clásicas galletas con chispas de chocolate semi-amargo</p>
-                <div class="producto-footer">
-                    <span class="precio">$85</span>
-                    <span class="tamano">12 unidades</span>
-                </div>
-                <button class="btn-add-cart" data-id="301">Añadir al Carrito</button>
-            </div>
-            
-            <div class="producto-card">
-                <img src="../img/galleta-avena.jpg" alt="Galletas de Avena">
-                <h3>Avena con Pasas</h3>
-                <p>Avena integral con pasas y un toque de canela</p>
-                <div class="producto-footer">
-                    <span class="precio">$80</span>
-                    <span class="tamano">12 unidades</span>
-                </div>
-                <button class="btn-add-cart" data-id="302">Añadir al Carrito</button>
-            </div>
-            
-            <div class="producto-card">
-                <img src="../img/galleta-mantequilla.jpg" alt="Galletas de Mantequilla">
-                <h3>Mantequilla Decoradas</h3>
-                <p>Galletas de mantequilla con glaseado colorido</p>
-                <div class="producto-footer">
-                    <span class="precio">$120</span>
-                    <span class="tamano">6 unidades</span>
-                </div>
-                <button class="btn-add-cart" data-id="303">Añadir al Carrito</button>
-            </div>
-            
-            <div class="producto-card">
-                <img src="../img/galleta-jengibre.jpg" alt="Galletas de Jengibre">
-                <h3>Jengibre Navideñas</h3>
-                <p>Galletas especiadas con formas festivas</p>
-                <div class="producto-footer">
-                    <span class="precio">$150</span>
-                    <span class="tamano">8 unidades</span>
-                </div>
-                <button class="btn-add-cart" data-id="304">Añadir al Carrito</button>
-            </div>
-            
-            <div class="producto-card">
-                <img src="../img/galleta-almendra.jpg" alt="Galletas de Almendra">
-                <h3>Almendra y Coco</h3>
-                <p>Crujientes galletas con trozos de almendra y coco rallado</p>
-                <div class="producto-footer">
-                    <span class="precio">$95</span>
-                    <span class="tamano">12 unidades</span>
-                </div>
-                <button class="btn-add-cart" data-id="305">Añadir al Carrito</button>
-            </div>
-            
-            <div class="producto-card">
-                <img src="../img/galleta-mixta.jpg" alt="Galletas Mixtas">
-                <h3>Paquete Mixto</h3>
-                <p>Variedad de 24 galletas (4 de cada tipo)</p>
-                <div class="producto-footer">
-                    <span class="precio">$180</span>
-                    <span class="tamano">24 unidades</span>
-                </div>
-                <button class="btn-add-cart" data-id="306">Añadir al Carrito</button>
-            </div>
-        </div>
-        
-        <div class="categoria-info">
-            <h3><i class="fas fa-gift"></i> Galletas Personalizadas</h3>
-            <ul>
-                <li>Podemos hacer galletas con mensajes especiales</li>
-                <li>Decoraciones para bodas, baby showers y cumpleaños</li>
-                <li>Logotipos de empresas para eventos corporativos</li>
-                <li>Colores y diseños a tu elección</li>
-                <li>Se requiere 48 horas de anticipación para personalización</li>
-            </ul>
-        </div>
-    </main>
+    </section>
 
-    <footer class="happy-footer">
-        <div class="footer-content">
-            <p>© 2024 Sweet Delights. Galletas horneadas con amor.</p>
+    <!-- Filtros específicos para galletas -->
+    <section class="filters-section">
+        <div class="container">
+            <div class="filters-container">
+                <div class="filter-group">
+                    <span class="filter-label">Tipo:</span>
+                    <select class="filter-select" id="filterType">
+                        <option value="all">Todas</option>
+                        <option value="chispas">Con Chispas</option>
+                        <option value="avena">De Avena</option>
+                        <option value="chocolate">De Chocolate</option>
+                        <option value="mantequilla">De Mantequilla</option>
+                        <option value="especial">Especiales</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <span class="filter-label">Cantidad:</span>
+                    <select class="filter-select" id="filterQuantity">
+                        <option value="all">Todas</option>
+                        <option value="6">6 unidades</option>
+                        <option value="12">12 unidades</option>
+                        <option value="24">24 unidades</option>
+                    </select>
+                </div>
+                
+                <div class="search-box">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" class="search-input" id="searchInput" placeholder="Buscar galletas...">
+                </div>
+            </div>
         </div>
+    </section>
+
+    <!-- Galletas -->
+    <section class="section catalog-section">
+        <div class="container">
+            <div class="products-grid" id="galletasGrid">
+                <!-- Galleta 1 -->
+                <div class="card product-card-catalog">
+                    <div class="product-image-container">
+                        <span class="badge badge-accent product-badge">Clásica</span>
+                        <img src="imagenes/galletas-chispas.jpg" alt="Galletas con Chispas" class="product-image-catalog">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-header">
+                            <h3 class="product-title">Galletas con Chispas</h3>
+                            <div class="product-price">$85</div>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-count">(94)</span>
+                        </div>
+                        <p class="product-description">Paquete de 12 galletas crujientes por fuera y suaves por dentro, llenas de chispas de chocolate.</p>
+                        <div class="product-meta">
+                            <span class="product-category">Chispas</span>
+                            <button class="add-to-cart-btn" data-id="3">
+                                <i class="fas fa-cart-plus"></i> Agregar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Galleta 2 -->
+                <div class="card product-card-catalog">
+                    <div class="product-image-container">
+                        <img src="imagenes/galletas-avena.jpg" alt="Galletas de Avena" class="product-image-catalog">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-header">
+                            <h3 class="product-title">Galletas de Avena</h3>
+                            <div class="product-price">$75</div>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="rating-count">(42)</span>
+                        </div>
+                        <p class="product-description">Galletas saludables con avena, pasas y un toque de miel. Paquete de 12 unidades.</p>
+                        <div class="product-meta">
+                            <span class="product-category">Avena</span>
+                            <button class="add-to-cart-btn" data-id="6">
+                                <i class="fas fa-cart-plus"></i> Agregar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Galleta 3 -->
+                <div class="card product-card-catalog">
+                    <div class="product-image-container">
+                        <span class="badge badge-primary product-badge">Nuevo</span>
+                        <img src="imagenes/galletas-chocolate.jpg" alt="Galletas de Chocolate" class="product-image-catalog">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-header">
+                            <h3 class="product-title">Galletas de Chocolate</h3>
+                            <div class="product-price">$90</div>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-count">(57)</span>
+                        </div>
+                        <p class="product-description">Galletas intensas de chocolate con trozos de chocolate blanco. Paquete de 12 unidades.</p>
+                        <div class="product-meta">
+                            <span class="product-category">Chocolate</span>
+                            <button class="add-to-cart-btn" data-id="18">
+                                <i class="fas fa-cart-plus"></i> Agregar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Galleta 4 -->
+                <div class="card product-card-catalog">
+                    <div class="product-image-container">
+                        <img src="imagenes/galletas-mantequilla.jpg" alt="Galletas de Mantequilla" class="product-image-catalog">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-header">
+                            <h3 class="product-title">Galletas de Mantequilla</h3>
+                            <div class="product-price">$80</div>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="rating-count">(63)</span>
+                        </div>
+                        <p class="product-description">Galletas doradas y mantecosas, perfectas para acompañar té o café. Paquete de 12.</p>
+                        <div class="product-meta">
+                            <span class="product-category">Mantequilla</span>
+                            <button class="add-to-cart-btn" data-id="19">
+                                <i class="fas fa-cart-plus"></i> Agregar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Galleta 5 -->
+                <div class="card product-card-catalog">
+                    <div class="product-image-container">
+                        <span class="badge badge-accent product-badge">Sin azúcar</span>
+                        <img src="imagenes/galletas-dieteticas.jpg" alt="Galletas Dietéticas" class="product-image-catalog">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-header">
+                            <h3 class="product-title">Galletas Dietéticas</h3>
+                            <div class="product-price">$95</div>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="rating-count">(38)</span>
+                        </div>
+                        <p class="product-description">Galletas sin azúcar añadido, endulzadas con stevia. Ideal para dietas especiales. 12 unidades.</p>
+                        <div class="product-meta">
+                            <span class="product-category">Especiales</span>
+                            <button class="add-to-cart-btn" data-id="20">
+                                <i class="fas fa-cart-plus"></i> Agregar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Galleta 6 -->
+                <div class="card product-card-catalog">
+                    <div class="product-image-container">
+                        <img src="imagenes/galletas-mixtas.jpg" alt="Galletas Mixtas" class="product-image-catalog">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-header">
+                            <h3 class="product-title">Galletas Mixtas (24 pz)</h3>
+                            <div class="product-price">$150</div>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-count">(71)</span>
+                        </div>
+                        <p class="product-description">Caja con 24 galletas surtidas: chispas, avena, chocolate y mantequilla. Perfecta para regalo.</p>
+                        <div class="product-meta">
+                            <span class="product-category">Variedad</span>
+                            <button class="add-to-cart-btn" data-id="21">
+                                <i class="fas fa-cart-plus"></i> Agregar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Galleta 7 -->
+                <div class="card product-card-catalog">
+                    <div class="product-image-container">
+                        <img src="imagenes/galletas-jengibre.jpg" alt="Galletas de Jengibre" class="product-image-catalog">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-header">
+                            <h3 class="product-title">Galletas de Jengibre</h3>
+                            <div class="product-price">$85</div>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="rating-count">(29)</span>
+                        </div>
+                        <p class="product-description">Galletas especiadas con jengibre, canela y clavo. Decoradas a mano. Paquete de 12.</p>
+                        <div class="product-meta">
+                            <span class="product-category">Especiales</span>
+                            <button class="add-to-cart-btn" data-id="22">
+                                <i class="fas fa-cart-plus"></i> Agregar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Galleta 8 -->
+                <div class="card product-card-catalog">
+                    <div class="product-image-container">
+                        <span class="badge badge-primary product-badge">Mini</span>
+                        <img src="imagenes/galletas-mini.jpg" alt="Galletas Mini" class="product-image-catalog">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-header">
+                            <h3 class="product-title">Galletas Mini (36 pz)</h3>
+                            <div class="product-price">$120</div>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="rating-count">(46)</span>
+                        </div>
+                        <p class="product-description">36 galletas mini surtidas, ideales para fiestas, eventos o como snack para compartir.</p>
+                        <div class="product-meta">
+                            <span class="product-category">Mini</span>
+                            <button class="add-to-cart-btn" data-id="23">
+                                <i class="fas fa-cart-plus"></i> Agregar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Información adicional -->
+            <div class="card mt-xl">
+                <div class="card-body">
+                    <h3 class="text-center mb-lg">¡Perfectas para cualquier ocasión!</h3>
+                    <div class="grid grid-3">
+                        <div class="text-center">
+                            <div class="category-icon mb-md">
+                                <i class="fas fa-gift"></i>
+                            </div>
+                            <h4>Ideales para regalar</h4>
+                            <p>Nuestras cajas de galletas son el regalo perfecto para cualquier ocasión especial.</p>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="category-icon mb-md">
+                                <i class="fas fa-coffee"></i>
+                            </div>
+                            <h4>Acompaña tu bebida</h4>
+                            <p>Perfectas para acompañar café, té, leche o cualquier bebida favorita.</p>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="category-icon mb-md">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h4>Para compartir</h4>
+                            <p>Disponibles en diferentes tamaños para compartir en familia, oficina o eventos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (igual que index.html) -->
+    <footer class="footer-main">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="index.html" class="logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-smile"></i>
+                        </div>
+                        <div class="logo-text">
+                            Happy<span>Smile</span>
+                        </div>
+                    </a>
+                    <p class="footer-tagline">Endulzando momentos desde 2020. Repostería fresca y deliciosa entregada a tu puerta.</p>
+                    <div class="footer-social">
+                        <p class="social-title">Síguenos en:</p>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon-link facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-icon-link instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="social-icon-link twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="social-icon-link tiktok">
+                                <i class="fab fa-tiktok"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Inicio</a></li>
+                        <li><a href="productos.html"><i class="fas fa-chevron-right"></i> Productos</a></li>
+                        <li><a href="pasteles.html"><i class="fas fa-chevron-right"></i> Pasteles</a></li>
+                        <li><a href="donas.html"><i class="fas fa-chevron-right"></i> Donas</a></li>
+                        <li><a href="galletas.html"><i class="fas fa-chevron-right"></i> Galletas</a></li>
+                        <li><a href="bebidas.html"><i class="fas fa-chevron-right"></i> Bebidas</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contacto</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt contact-icon"></i>
+                            <div>
+                                <p class="contact-text">Av. Dulces 123, Ciudad Delicias</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone contact-icon"></i>
+                            <div>
+                                <a href="tel:+525551234567" class="contact-link">(55) 5123-4567</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope contact-icon"></i>
+                            <div>
+                                <a href="mailto:hola@happysmile.com" class="contact-link">hola@happysmile.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock contact-icon"></i>
+                            <div>
+                                <p class="contact-text">Lun-Vie: 8:00 - 20:00<br>Sab-Dom: 9:00 - 18:00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <h3>Newsletter</h3>
+                    <p class="footer-tagline">Suscríbete para recibir promociones y novedades</p>
+                    <form class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Tu correo electrónico" required>
+                        <button type="submit" class="newsletter-btn">
+                            <i class="fas fa-paper-plane"></i> Suscribirse
+                        </button>
+                    </form>
+                    <p class="newsletter-disclaimer">No compartimos tu información con terceros.</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2024 Happy Smile. Todos los derechos reservados.</p>
+                <div class="footer-legal">
+                    <a href="#" class="legal-link">Términos y Condiciones</a>
+                    <a href="#" class="legal-link">Política de Privacidad</a>
+                    <a href="#" class="legal-link">Aviso Legal</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Botón WhatsApp Flotante -->
+        <a href="https://wa.me/525551234567" class="whatsapp-float" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+            <span class="whatsapp-tooltip">¡Escríbenos!</span>
+        </a>
+        
+        <!-- Botón Volver Arriba -->
+        <a href="#" class="back-to-top">
+            <i class="fas fa-chevron-up"></i>
+        </a>
     </footer>
 
-    <script src="../js/catalogo.js"></script>
-    <script src="../js/carrito.js"></script>
-    <script src="../js/menu-mobile.js"></script>
+    <!-- Scripts -->
+    <script src="js/menu-mobile.js"></script>
+    <script src="js/catalogo.js"></script>
+    <script src="js/carrito.js"></script>
+    <script src="js/footer-scripts.js"></script>
 </body>
 </html>

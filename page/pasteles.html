@@ -3,138 +3,450 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <base href="/">
-    <title>Pasteles - Sweet Delights</title>
+    <title>Happy Smile - Pasteles</title>
     
-    <link rel="stylesheet" href="../css/estilos.css">
-    <link rel="stylesheet" href="../css/catalogo.css">
+    <!-- Fuentes de Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- Iconos Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" href="../img/icono.png">
+    
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/catalogo.css">
+    <link rel="stylesheet" href="css/footer-happy.css">
 </head>
 <body>
-    <header class="header-fixed">
-        <nav class="navbar">
-            <div class="logo">
-                <a href="../index.html">
-                    <img src="../img/icono.png" alt="Logo" width="50">
-                    <span>Sweet Delights</span>
+    <!-- Header y Navegación -->
+    <header class="header-main">
+        <div class="container header-content">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-smile"></i>
+                </div>
+                <div class="logo-text">
+                    Happy<span>Smile</span>
+                </div>
+            </a>
+            
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav class="nav-main" id="mainNav">
+                <a href="index.html" class="nav-link">
+                    <i class="fas fa-home"></i> Inicio
+                </a>
+                <a href="pasteles.html" class="nav-link active">
+                    <i class="fas fa-birthday-cake"></i> Pasteles
+                </a>
+                <a href="donas.html" class="nav-link">
+                    <i class="fas fa-donut"></i> Donas
+                </a>
+                <a href="galletas.html" class="nav-link">
+                    <i class="fas fa-cookie-bite"></i> Galletas
+                </a>
+                <a href="bebidas.html" class="nav-link">
+                    <i class="fas fa-coffee"></i> Bebidas
+                </a>
+                <a href="productos.html" class="nav-link">
+                    <i class="fas fa-store"></i> Tienda
+                </a>
+            </nav>
+            
+            <div class="header-actions">
+                <a href="checkout.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
                 </a>
             </div>
-            
-            <ul class="nav-menu">
-                <li><a href="../index.html"><i class="fas fa-home"></i> Inicio</a></li>
-                <li><a href="../productos.html"><i class="fas fa-store"></i> Productos</a></li>
-                <li><a href="../checkout.html"><i class="fas fa-shopping-cart"></i> Carrito</a></li>
-                <li><a href="../ubicacion.html"><i class="fas fa-map-marker-alt"></i> Ubicación</a></li>
-                <li><a href="../contactos.html"><i class="fas fa-phone"></i> Contacto</a></li>
-            </ul>
-            
-            <div class="cart-counter">
-                <i class="fas fa-shopping-cart"></i>
-                <span id="cart-count">0</span>
-            </div>
-            
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </nav>
+        </div>
     </header>
 
-    <main class="categoria-container">
-        <div class="categoria-header">
-            <h1><i class="fas fa-birthday-cake"></i> Nuestros Pasteles</h1>
-            <p>Hechos con amor y los mejores ingredientes</p>
+    <!-- Header Pasteles -->
+    <section class="catalog-header">
+        <div class="container">
+            <h1>Nuestros Pasteles</h1>
+            <p class="catalog-description">Pasteles personalizados para cada ocasión especial. Desde cumpleaños hasta bodas, creamos el pastel perfecto para ti.</p>
         </div>
-        
-        <div class="productos-grid">
-            <div class="producto-card">
-                <img src="../img/pastel-chocolate.jpg" alt="Pastel Chocolate">
-                <h3>Chocolate Supreme</h3>
-                <p>Triple capa de chocolate belga con relleno de ganache</p>
-                <div class="producto-footer">
-                    <span class="precio">$280</span>
-                    <span class="tamano">20 personas</span>
-                </div>
-                <button class="btn-add-cart" data-id="101">Añadir al Carrito</button>
-            </div>
-            
-            <div class="producto-card">
-                <img src="../img/pastel-fresa.jpg" alt="Pastel de Fresa">
-                <h3>Fresas con Crema</h3>
-                <p>Bizcocho vainilla, crema chantilly y fresas frescas</p>
-                <div class="producto-footer">
-                    <span class="precio">$250</span>
-                    <span class="tamano">15 personas</span>
-                </div>
-                <button class="btn-add-cart" data-id="102">Añadir al Carrito</button>
-            </div>
-            
-            <div class="producto-card">
-                <img src="../img/pastel-zanahoria.jpg" alt="Pastel de Zanahoria">
-                <h3>Zanahoria Especial</h3>
-                <p>Con nueces, pasas y frosting de queso crema</p>
-                <div class="producto-footer">
-                    <span class="precio">$270</span>
-                    <span class="tamano">18 personas</span>
-                </div>
-                <button class="btn-add-cart" data-id="103">Añadir al Carrito</button>
-            </div>
-            
-            <div class="producto-card">
-                <img src="../img/pastel-red-velvet.jpg" alt="Pastel Red Velvet">
-                <h3>Red Velvet</h3>
-                <p>Clásico americano con frosting de queso crema</p>
-                <div class="producto-footer">
-                    <span class="precio">$300</span>
-                    <span class="tamano">22 personas</span>
-                </div>
-                <button class="btn-add-cart" data-id="104">Añadir al Carrito</button>
-            </div>
-            
-            <div class="producto-card">
-                <img src="../img/pastel-coco.jpg" alt="Pastel de Coco">
-                <h3>Coco y Limón</h3>
-                <p>Bizcocho de coco con relleno de crema de limón</p>
-                <div class="producto-footer">
-                    <span class="precio">$260</span>
-                    <span class="tamano">16 personas</span>
-                </div>
-                <button class="btn-add-cart" data-id="105">Añadir al Carrito</button>
-            </div>
-            
-            <div class="producto-card">
-                <img src="../img/pastel-3-leches.jpg" alt="Pastel 3 Leches">
-                <h3>Tres Leches</h3>
-                <p>Esponjoso y humedo, bañado en mezcla de tres leches</p>
-                <div class="producto-footer">
-                    <span class="precio">$240</span>
-                    <span class="tamano">20 personas</span>
-                </div>
-                <button class="btn-add-cart" data-id="106">Añadir al Carrito</button>
-            </div>
-        </div>
-        
-        <div class="categoria-info">
-            <h3><i class="fas fa-info-circle"></i> Información Importante</h3>
-            <ul>
-                <li>Todos nuestros pasteles son hechos el mismo día</li>
-                <li>Se requiere 24 horas de anticipación para pedidos</li>
-                <li>Podemos personalizar mensajes y decoraciones</li>
-                <li>Incluye vela de cumpleaños y platos/desechables</li>
-            </ul>
-        </div>
-    </main>
+    </section>
 
-    <footer class="happy-footer">
-        <div class="footer-content">
-            <p>© 2024 Sweet Delights. El pastel perfecto para cada ocasión.</p>
+    <!-- Filtros específicos para pasteles -->
+    <section class="filters-section">
+        <div class="container">
+            <div class="filters-container">
+                <div class="filter-group">
+                    <span class="filter-label">Tipo:</span>
+                    <select class="filter-select" id="filterType">
+                        <option value="all">Todos</option>
+                        <option value="chocolate">Chocolate</option>
+                        <option value="fresa">Fresa</option>
+                        <option value="vainilla">Vainilla</option>
+                        <option value="tres-leches">Tres Leches</option>
+                        <option value="personalizado">Personalizado</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <span class="filter-label">Porciones:</span>
+                    <select class="filter-select" id="filterPortions">
+                        <option value="all">Todas</option>
+                        <option value="8-12">8-12 personas</option>
+                        <option value="12-16">12-16 personas</option>
+                        <option value="16-20">16-20 personas</option>
+                        <option value="20+">20+ personas</option>
+                    </select>
+                </div>
+                
+                <div class="search-box">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" class="search-input" id="searchInput" placeholder="Buscar pasteles...">
+                </div>
+            </div>
         </div>
+    </section>
+
+    <!-- Pasteles -->
+    <section class="section catalog-section">
+        <div class="container">
+            <div class="products-grid" id="pastelesGrid">
+                <!-- Pastel 1 -->
+                <div class="card product-card-catalog">
+                    <div class="product-image-container">
+                        <span class="badge badge-accent product-badge">Más vendido</span>
+                        <img src="imagenes/pastel-chocolate.jpg" alt="Pastel Chocolate Supreme" class="product-image-catalog">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-header">
+                            <h3 class="product-title">Pastel Chocolate Supreme</h3>
+                            <div class="product-price">$280</div>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="rating-count">(48)</span>
+                        </div>
+                        <p class="product-description">Triple capa de chocolate belga con decoración de frutos rojos y crema batida. Para 12-16 personas.</p>
+                        <div class="product-meta">
+                            <span class="product-category">Chocolate</span>
+                            <button class="add-to-cart-btn" data-id="1">
+                                <i class="fas fa-cart-plus"></i> Agregar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pastel 2 -->
+                <div class="card product-card-catalog">
+                    <div class="product-image-container">
+                        <img src="imagenes/pastel-fresa.jpg" alt="Pastel de Fresa" class="product-image-catalog">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-header">
+                            <h3 class="product-title">Pastel de Fresa</h3>
+                            <div class="product-price">$250</div>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="rating-count">(37)</span>
+                        </div>
+                        <p class="product-description">Delicioso pastel con relleno de fresas frescas y crema batida. Para 8-12 personas.</p>
+                        <div class="product-meta">
+                            <span class="product-category">Fresa</span>
+                            <button class="add-to-cart-btn" data-id="4">
+                                <i class="fas fa-cart-plus"></i> Agregar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pastel 3 -->
+                <div class="card product-card-catalog">
+                    <div class="product-image-container">
+                        <span class="badge badge-primary product-badge">Nuevo</span>
+                        <img src="imagenes/pastel-vainilla.jpg" alt="Pastel de Vainilla" class="product-image-catalog">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-header">
+                            <h3 class="product-title">Pastel de Vainilla</h3>
+                            <div class="product-price">$230</div>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-count">(29)</span>
+                        </div>
+                        <p class="product-description">Clásico pastel de vainilla con buttercream y decoración floral. Para 12-16 personas.</p>
+                        <div class="product-meta">
+                            <span class="product-category">Vainilla</span>
+                            <button class="add-to-cart-btn" data-id="9">
+                                <i class="fas fa-cart-plus"></i> Agregar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pastel 4 -->
+                <div class="card product-card-catalog">
+                    <div class="product-image-container">
+                        <img src="imagenes/pastel-tres-leches.jpg" alt="Pastel Tres Leches" class="product-image-catalog">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-header">
+                            <h3 class="product-title">Pastel Tres Leches</h3>
+                            <div class="product-price">$260</div>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-count">(64)</span>
+                        </div>
+                        <p class="product-description">Húmedo y delicioso pastel bañado en tres leches con merengue. Para 16-20 personas.</p>
+                        <div class="product-meta">
+                            <span class="product-category">Tres Leches</span>
+                            <button class="add-to-cart-btn" data-id="10">
+                                <i class="fas fa-cart-plus"></i> Agregar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pastel 5 -->
+                <div class="card product-card-catalog">
+                    <div class="product-image-container">
+                        <img src="imagenes/pastel-red-velvet.jpg" alt="Pastel Red Velvet" class="product-image-catalog">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-header">
+                            <h3 class="product-title">Pastel Red Velvet</h3>
+                            <div class="product-price">$290</div>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="rating-count">(41)</span>
+                        </div>
+                        <p class="product-description">Elegante pastel red velvet con frosting de queso crema. Para 12-16 personas.</p>
+                        <div class="product-meta">
+                            <span class="product-category">Red Velvet</span>
+                            <button class="add-to-cart-btn" data-id="11">
+                                <i class="fas fa-cart-plus"></i> Agregar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pastel 6 -->
+                <div class="card product-card-catalog">
+                    <div class="product-image-container">
+                        <span class="badge badge-accent product-badge">Personalizado</span>
+                        <img src="imagenes/pastel-personalizado.jpg" alt="Pastel Personalizado" class="product-image-catalog">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-header">
+                            <h3 class="product-title">Pastel Personalizado</h3>
+                            <div class="product-price">$350+</div>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-count">(83)</span>
+                        </div>
+                        <p class="product-description">Crea el pastel de tus sueños. Elige sabor, diseño y tamaño. Consulta precio.</p>
+                        <div class="product-meta">
+                            <span class="product-category">Personalizado</span>
+                            <a href="contactos.html" class="btn btn-primary">
+                                <i class="fas fa-comments"></i> Consultar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Información adicional -->
+            <div class="card mt-xl">
+                <div class="card-body">
+                    <h3 class="text-center mb-lg">¿Necesitas un pastel especial?</h3>
+                    <div class="grid grid-3">
+                        <div class="text-center">
+                            <div class="category-icon mb-md">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                            <h4>Reserva con anticipación</h4>
+                            <p>Recomendamos reservar con 48 horas de anticipación para pasteles personalizados.</p>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="category-icon mb-md">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <h4>Personalización total</h4>
+                            <p>Elige sabor, relleno, frosting y diseño. Incluye mensaje personalizado.</p>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="category-icon mb-md">
+                                <i class="fas fa-shipping-fast"></i>
+                            </div>
+                            <h4>Entrega especial</h4>
+                            <p>Entregamos tu pastel con cuidado especial para mantenerlo perfecto.</p>
+                        </div>
+                    </div>
+                    <div class="text-center mt-lg">
+                        <a href="contactos.html" class="btn btn-primary btn-large">
+                            <i class="fas fa-comments"></i> Solicitar Pastel Personalizado
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (igual que index.html) -->
+    <footer class="footer-main">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="index.html" class="logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-smile"></i>
+                        </div>
+                        <div class="logo-text">
+                            Happy<span>Smile</span>
+                        </div>
+                    </a>
+                    <p class="footer-tagline">Endulzando momentos desde 2020. Repostería fresca y deliciosa entregada a tu puerta.</p>
+                    <div class="footer-social">
+                        <p class="social-title">Síguenos en:</p>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon-link facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-icon-link instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="social-icon-link twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="social-icon-link tiktok">
+                                <i class="fab fa-tiktok"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Inicio</a></li>
+                        <li><a href="productos.html"><i class="fas fa-chevron-right"></i> Productos</a></li>
+                        <li><a href="pasteles.html"><i class="fas fa-chevron-right"></i> Pasteles</a></li>
+                        <li><a href="donas.html"><i class="fas fa-chevron-right"></i> Donas</a></li>
+                        <li><a href="galletas.html"><i class="fas fa-chevron-right"></i> Galletas</a></li>
+                        <li><a href="bebidas.html"><i class="fas fa-chevron-right"></i> Bebidas</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contacto</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt contact-icon"></i>
+                            <div>
+                                <p class="contact-text">Av. Dulces 123, Ciudad Delicias</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone contact-icon"></i>
+                            <div>
+                                <a href="tel:+525551234567" class="contact-link">(55) 5123-4567</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope contact-icon"></i>
+                            <div>
+                                <a href="mailto:hola@happysmile.com" class="contact-link">hola@happysmile.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock contact-icon"></i>
+                            <div>
+                                <p class="contact-text">Lun-Vie: 8:00 - 20:00<br>Sab-Dom: 9:00 - 18:00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <h3>Newsletter</h3>
+                    <p class="footer-tagline">Suscríbete para recibir promociones y novedades</p>
+                    <form class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Tu correo electrónico" required>
+                        <button type="submit" class="newsletter-btn">
+                            <i class="fas fa-paper-plane"></i> Suscribirse
+                        </button>
+                    </form>
+                    <p class="newsletter-disclaimer">No compartimos tu información con terceros.</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2024 Happy Smile. Todos los derechos reservados.</p>
+                <div class="footer-legal">
+                    <a href="#" class="legal-link">Términos y Condiciones</a>
+                    <a href="#" class="legal-link">Política de Privacidad</a>
+                    <a href="#" class="legal-link">Aviso Legal</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Botón WhatsApp Flotante -->
+        <a href="https://wa.me/525551234567" class="whatsapp-float" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+            <span class="whatsapp-tooltip">¡Escríbenos!</span>
+        </a>
+        
+        <!-- Botón Volver Arriba -->
+        <a href="#" class="back-to-top">
+            <i class="fas fa-chevron-up"></i>
+        </a>
     </footer>
 
-    <script src="../js/catalogo.js"></script>
-    <script src="../js/carrito.js"></script>
-    <script src="../js/menu-mobile.js"></script>
+    <!-- Scripts -->
+    <script src="js/menu-mobile.js"></script>
+    <script src="js/catalogo.js"></script>
+    <script src="js/carrito.js"></script>
+    <script src="js/footer-scripts.js"></script>
 </body>
 </html>

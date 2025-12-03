@@ -3,177 +3,325 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <base href="/">
-    <title>Sweet Delights - Repostería & Delivery</title>
+    <title>Happy Smile - Delivery de Repostería</title>
     
-    <!-- ESTILOS -->
-    <link rel="stylesheet" href="./css/estilos.css">
-    <link rel="stylesheet" href="./css/inicio.css">
-    <link rel="stylesheet" href="./css/footer-happy.css">
+    <!-- Fuentes de Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- Iconos Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- FAVICON -->
-    <link rel="icon" href="./img/icono.png" type="image/png">
-    
-    <!-- GOOGLE FONTS -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --rosa: #ffc8dd;
-            --azul: #a2d2ff;
-            --rosa-hover: #ff9ebb;
-            --azul-hover: #7bb5ff;
-        }
-    </style>
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/inicio.css">
+    <link rel="stylesheet" href="css/footer-happy.css">
 </head>
 <body>
-    <!-- HEADER -->
-    <header class="header-fixed">
-        <nav class="navbar">
-            <div class="logo">
-                <a href="./index.html">
-                    <img src="./img/icono.png" alt="Logo Sweet Delights" width="50">
-                    <span>Sweet Delights</span>
+    <!-- Header y Navegación -->
+    <header class="header-main">
+        <div class="container header-content">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-smile"></i>
+                </div>
+                <div class="logo-text">
+                    Happy<span>Smile</span>
+                </div>
+            </a>
+            
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav class="nav-main" id="mainNav">
+                <a href="index.html" class="nav-link active">
+                    <i class="fas fa-home"></i> Inicio
+                </a>
+                <a href="pasteles.html" class="nav-link">
+                    <i class="fas fa-birthday-cake"></i> Pasteles
+                </a>
+                <a href="donas.html" class="nav-link">
+                    <i class="fas fa-donut"></i> Donas
+                </a>
+                <a href="galletas.html" class="nav-link">
+                    <i class="fas fa-cookie-bite"></i> Galletas
+                </a>
+                <a href="bebidas.html" class="nav-link">
+                    <i class="fas fa-coffee"></i> Bebidas
+                </a>
+                <a href="productos.html" class="nav-link">
+                    <i class="fas fa-store"></i> Tienda
+                </a>
+            </nav>
+            
+            <div class="header-actions">
+                <a href="checkout.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
                 </a>
             </div>
-            
-            <ul class="nav-menu">
-                <li><a href="./index.html" class="active"><i class="fas fa-home"></i> Inicio</a></li>
-                <li><a href="./productos.html"><i class="fas fa-store"></i> Productos</a></li>
-                <li><a href="./checkout.html"><i class="fas fa-shopping-cart"></i> Carrito</a></li>
-                <li><a href="./ubicacion.html"><i class="fas fa-map-marker-alt"></i> Ubicación</a></li>
-                <li><a href="./contactos.html"><i class="fas fa-phone"></i> Contacto</a></li>
-            </ul>
-            
-            <div class="cart-counter">
-                <i class="fas fa-shopping-cart"></i>
-                <span id="cart-count">0</span>
-            </div>
-            
-            <!-- MENÚ MÓVIL -->
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </nav>
+        </div>
     </header>
 
-    <!-- HERO SECTION -->
+    <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-content">
-            <h1>Dulces Momentos en Cada Bocado</h1>
-            <p>Repostería artesanal con delivery express. ¡Lo mejor llega a tu puerta!</p>
-            <a href="./productos.html" class="btn-hero">Ver Productos</a>
-        </div>
-        <div class="hero-image">
-            <img src="./img/hero-pastel.jpg" alt="Pastel delicioso">
-        </div>
-    </section>
-
-    <!-- CATEGORÍAS -->
-    <section class="categorias">
-        <h2>Nuestras Especialidades</h2>
-        <div class="categorias-grid">
-            <a href="./page/pasteles.html" class="categoria-card">
-                <div class="categoria-icon">
-                    <i class="fas fa-birthday-cake"></i>
-                </div>
-                <h3>Pasteles</h3>
-                <p>Personalizados para cada ocasión</p>
-            </a>
-            
-            <a href="./page/donas.html" class="categoria-card">
-                <div class="categoria-icon">
-                    <i class="fas fa-donut"></i>
-                </div>
-                <h3>Donas</h3>
-                <p>Esponjosas y glaseadas</p>
-            </a>
-            
-            <a href="./page/galletas.html" class="categoria-card">
-                <div class="categoria-icon">
-                    <i class="fas fa-cookie-bite"></i>
-                </div>
-                <h3>Galletas</h3>
-                <p>Crujientes y deliciosas</p>
-            </a>
-            
-            <a href="./page/bebidas.html" class="categoria-card">
-                <div class="categoria-icon">
-                    <i class="fas fa-coffee"></i>
-                </div>
-                <h3>Bebidas</h3>
-                <p>Para acompañar tu dulce</p>
-            </a>
-        </div>
-    </section>
-
-    <!-- DESTACADOS -->
-    <section class="destacados">
-        <h2>Productos Destacados</h2>
-        <div class="productos-grid">
-            <div class="producto-card">
-                <img src="./img/pastel-chocolate.jpg" alt="Pastel de Chocolate">
-                <h3>Pastel Chocolate Supreme</h3>
-                <p>Triple capa de chocolate belga</p>
-                <span class="precio">$280</span>
-                <button class="btn-add-cart" data-id="1">Añadir al Carrito</button>
-            </div>
-            
-            <div class="producto-card">
-                <img src="./img/donas-mixtas.jpg" alt="Donas Mixtas">
-                <h3>Donas Glaseadas (6 pz)</h3>
-                <p>Variedad de sabores</p>
-                <span class="precio">$120</span>
-                <button class="btn-add-cart" data-id="2">Añadir al Carrito</button>
-            </div>
-            
-            <div class="producto-card">
-                <img src="./img/galletas-chispas.jpg" alt="Galletas con Chispas">
-                <h3>Galletas con Chispas</h3>
-                <p>Pack de 12 unidades</p>
-                <span class="precio">$85</span>
-                <button class="btn-add-cart" data-id="3">Añadir al Carrito</button>
+        <div class="container hero-content">
+            <h1>¡Dulces Momentos con Happy Smile!</h1>
+            <p class="hero-subtitle">Los mejores pasteles, donas y galletas entregados directamente a tu puerta. Frescos, deliciosos y hechos con amor.</p>
+            <div class="hero-buttons">
+                <a href="productos.html" class="btn btn-primary btn-large">
+                    <i class="fas fa-shopping-bag"></i> Ordenar Ahora
+                </a>
+                <a href="#categorias" class="btn btn-secondary btn-large">
+                    <i class="fas fa-utensils"></i> Ver Especialidades
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="happy-footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Sweet Delights</h3>
-                <p>Repostería artesanal con amor</p>
-                <p>Delivery en 30-45 minutos</p>
+    <!-- Categorías -->
+    <section class="section categories-section" id="categorias">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nuestras Especialidades</h2>
+                <p class="section-subtitle">Descubre nuestra selección de productos frescos hechos diariamente</p>
             </div>
             
-            <div class="footer-section">
-                <h3>Contacto</h3>
-                <p><i class="fas fa-phone"></i> 55 1234 5678</p>
-                <p><i class="fas fa-envelope"></i> hola@sweetdelights.com</p>
-                <p><i class="fas fa-clock"></i> 8:00 AM - 10:00 PM</p>
+            <div class="grid grid-4">
+                <a href="pasteles.html" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-birthday-cake"></i>
+                    </div>
+                    <h3 class="category-title">Pasteles</h3>
+                    <p class="category-description">Personalizados para cada ocasión especial</p>
+                </a>
+                
+                <a href="donas.html" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-donut"></i>
+                    </div>
+                    <h3 class="category-title">Donas</h3>
+                    <p class="category-description">Esponjosas y glaseadas con los mejores ingredientes</p>
+                </a>
+                
+                <a href="galletas.html" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-cookie-bite"></i>
+                    </div>
+                    <h3 class="category-title">Galletas</h3>
+                    <p class="category-description">Crujientes y deliciosas para cualquier momento</p>
+                </a>
+                
+                <a href="bebidas.html" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-coffee"></i>
+                    </div>
+                    <h3 class="category-title">Bebidas</h3>
+                    <p class="category-description">Para acompañar tus dulces favoritos</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Productos Destacados -->
+    <section class="section featured-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Productos Destacados</h2>
+                <p class="section-subtitle">Los favoritos de nuestros clientes</p>
             </div>
             
-            <div class="footer-section">
-                <h3>Síguenos</h3>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+            <div class="grid grid-3">
+                <div class="card product-card">
+                    <img src="imagenes/pastel-chocolate.jpg" alt="Pastel Chocolate Supreme" class="product-image">
+                    <div class="product-info">
+                        <div class="product-header">
+                            <h3 class="product-title">Pastel Chocolate Supreme</h3>
+                            <div class="product-price">$280</div>
+                        </div>
+                        <p class="product-description">Triple capa de chocolate belga, decorado con frutos rojos y crema batida.</p>
+                        <div class="product-actions">
+                            <button class="btn btn-primary add-to-cart" data-id="1">
+                                <i class="fas fa-cart-plus"></i> Agregar
+                            </button>
+                            <a href="pasteles.html" class="btn btn-outline">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card product-card">
+                    <img src="imagenes/donas-glaseadas.jpg" alt="Donas Glaseadas" class="product-image">
+                    <div class="product-info">
+                        <div class="product-header">
+                            <h3 class="product-title">Donas Glaseadas (6 pz)</h3>
+                            <div class="product-price">$120</div>
+                        </div>
+                        <p class="product-description">Variedad de sabores: chocolate, fresa, vainilla y glaseado de maple.</p>
+                        <div class="product-actions">
+                            <button class="btn btn-primary add-to-cart" data-id="2">
+                                <i class="fas fa-cart-plus"></i> Agregar
+                            </button>
+                            <a href="donas.html" class="btn btn-outline">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card product-card">
+                    <img src="imagenes/galletas-chispas.jpg" alt="Galletas con Chispas" class="product-image">
+                    <div class="product-info">
+                        <div class="product-header">
+                            <h3 class="product-title">Galletas con Chispas</h3>
+                            <div class="product-price">$85</div>
+                        </div>
+                        <p class="product-description">Paquete de 12 unidades, crujientes por fuera y suaves por dentro.</p>
+                        <div class="product-actions">
+                            <button class="btn btn-primary add-to-cart" data-id="3">
+                                <i class="fas fa-cart-plus"></i> Agregar
+                            </button>
+                            <a href="galletas.html" class="btn btn-outline">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-xl">
+                <a href="productos.html" class="btn btn-primary btn-large">
+                    <i class="fas fa-store"></i> Ver Todos los Productos
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section">
+        <div class="container">
+            <h2>¿Listo para endulzar tu día?</h2>
+            <p>Haz tu pedido en línea y recíbelo en menos de 45 minutos. ¡Garantizado!</p>
+            <div class="hero-buttons">
+                <a href="productos.html" class="btn btn-accent btn-large">
+                    <i class="fas fa-bolt"></i> Pedir Ahora
+                </a>
+                <a href="contactos.html" class="btn btn-secondary btn-large">
+                    <i class="fas fa-phone-alt"></i> Llamar
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-main">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="index.html" class="logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-smile"></i>
+                        </div>
+                        <div class="logo-text">
+                            Happy<span>Smile</span>
+                        </div>
+                    </a>
+                    <p class="footer-tagline">Endulzando momentos desde 2020. Repostería fresca y deliciosa entregada a tu puerta.</p>
+                    <div class="footer-social">
+                        <p class="social-title">Síguenos en:</p>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon-link facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-icon-link instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="social-icon-link twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="social-icon-link tiktok">
+                                <i class="fab fa-tiktok"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Inicio</a></li>
+                        <li><a href="productos.html"><i class="fas fa-chevron-right"></i> Productos</a></li>
+                        <li><a href="pasteles.html"><i class="fas fa-chevron-right"></i> Pasteles</a></li>
+                        <li><a href="donas.html"><i class="fas fa-chevron-right"></i> Donas</a></li>
+                        <li><a href="galletas.html"><i class="fas fa-chevron-right"></i> Galletas</a></li>
+                        <li><a href="bebidas.html"><i class="fas fa-chevron-right"></i> Bebidas</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contacto</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt contact-icon"></i>
+                            <div>
+                                <p class="contact-text">Av. Dulces 123, Ciudad Delicias</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone contact-icon"></i>
+                            <div>
+                                <a href="tel:+525551234567" class="contact-link">(55) 5123-4567</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope contact-icon"></i>
+                            <div>
+                                <a href="mailto:hola@happysmile.com" class="contact-link">hola@happysmile.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock contact-icon"></i>
+                            <div>
+                                <p class="contact-text">Lun-Vie: 8:00 - 20:00<br>Sab-Dom: 9:00 - 18:00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <h3>Newsletter</h3>
+                    <p class="footer-tagline">Suscríbete para recibir promociones y novedades</p>
+                    <form class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Tu correo electrónico" required>
+                        <button type="submit" class="newsletter-btn">
+                            <i class="fas fa-paper-plane"></i> Suscribirse
+                        </button>
+                    </form>
+                    <p class="newsletter-disclaimer">No compartimos tu información con terceros.</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2024 Happy Smile. Todos los derechos reservados.</p>
+                <div class="footer-legal">
+                    <a href="#" class="legal-link">Términos y Condiciones</a>
+                    <a href="#" class="legal-link">Política de Privacidad</a>
+                    <a href="#" class="legal-link">Aviso Legal</a>
                 </div>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>© 2024 Sweet Delights. Todos los derechos reservados.</p>
-            <p>Hecho con ❤️ y mucho azúcar</p>
-        </div>
+        
+        <!-- Botón WhatsApp Flotante -->
+        <a href="https://wa.me/525551234567" class="whatsapp-float" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+            <span class="whatsapp-tooltip">¡Escríbenos!</span>
+        </a>
+        
+        <!-- Botón Volver Arriba -->
+        <a href="#" class="back-to-top">
+            <i class="fas fa-chevron-up"></i>
+        </a>
     </footer>
 
-    <!-- SCRIPTS -->
-    <script src="./js/inicio.js"></script>
-    <script src="./js/carrito.js"></script>
-    <script src="./js/menu-mobile.js"></script>
+    <!-- Scripts -->
+    <script src="js/menu-mobile.js"></script>
+    <script src="js/inicio.js"></script>
+    <script src="js/carrito.js"></script>
+    <script src="js/footer-scripts.js"></script>
 </body>
 </html>

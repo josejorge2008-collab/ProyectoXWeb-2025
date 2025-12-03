@@ -3,242 +3,527 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <base href="/">
-    <title>Checkout - Sweet Delights</title>
+    <title>Happy Smile - Checkout</title>
     
-    <link rel="stylesheet" href="./css/estilos.css">
-    <link rel="stylesheet" href="./css/checkout.css">
+    <!-- Fuentes de Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- Iconos Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" href="./img/icono.png">
+    
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/checkout.css">
+    <link rel="stylesheet" href="css/footer-happy.css">
 </head>
 <body>
-    <header class="header-fixed">
-        <nav class="navbar">
-            <div class="logo">
-                <a href="./index.html">
-                    <img src="./img/icono.png" alt="Logo" width="50">
-                    <span>Sweet Delights</span>
+    <!-- Header y Navegación -->
+    <header class="header-main">
+        <div class="container header-content">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-smile"></i>
+                </div>
+                <div class="logo-text">
+                    Happy<span>Smile</span>
+                </div>
+            </a>
+            
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav class="nav-main" id="mainNav">
+                <a href="index.html" class="nav-link">
+                    <i class="fas fa-home"></i> Inicio
+                </a>
+                <a href="pasteles.html" class="nav-link">
+                    <i class="fas fa-birthday-cake"></i> Pasteles
+                </a>
+                <a href="donas.html" class="nav-link">
+                    <i class="fas fa-donut"></i> Donas
+                </a>
+                <a href="galletas.html" class="nav-link">
+                    <i class="fas fa-cookie-bite"></i> Galletas
+                </a>
+                <a href="bebidas.html" class="nav-link">
+                    <i class="fas fa-coffee"></i> Bebidas
+                </a>
+                <a href="productos.html" class="nav-link">
+                    <i class="fas fa-store"></i> Tienda
+                </a>
+            </nav>
+            
+            <div class="header-actions">
+                <a href="checkout.html" class="cart-icon active">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">3</span>
                 </a>
             </div>
-            
-            <ul class="nav-menu">
-                <li><a href="./index.html"><i class="fas fa-home"></i> Inicio</a></li>
-                <li><a href="./productos.html"><i class="fas fa-store"></i> Productos</a></li>
-                <li><a href="./checkout.html" class="active"><i class="fas fa-shopping-cart"></i> Carrito</a></li>
-                <li><a href="./ubicacion.html"><i class="fas fa-map-marker-alt"></i> Ubicación</a></li>
-                <li><a href="./contactos.html"><i class="fas fa-phone"></i> Contacto</a></li>
-            </ul>
-            
-            <div class="cart-counter">
-                <i class="fas fa-shopping-cart"></i>
-                <span id="cart-count">3</span>
-            </div>
-            
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </nav>
+        </div>
     </header>
 
-    <main class="checkout-container">
-        <div class="checkout-progress">
-            <div class="progress-step active">
-                <div class="step-number">1</div>
-                <span>Carrito</span>
-            </div>
-            <div class="progress-step active">
-                <div class="step-number">2</div>
-                <span>Pago</span>
-            </div>
-            <div class="progress-step">
-                <div class="step-number">3</div>
-                <span>Confirmación</span>
+    <!-- Header Checkout -->
+    <section class="checkout-header">
+        <div class="container">
+            <h1>Finalizar Compra</h1>
+            <p class="catalog-description">Estás a un paso de disfrutar de nuestros deliciosos productos. Completa la información para finalizar tu pedido.</p>
+            
+            <div class="checkout-steps">
+                <div class="step active">
+                    <div class="step-number">1</div>
+                    <div class="step-title">Carrito</div>
+                </div>
+                <div class="step-line"></div>
+                
+                <div class="step active">
+                    <div class="step-number">2</div>
+                    <div class="step-title">Información</div>
+                </div>
+                <div class="step-line"></div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-title">Pago</div>
+                </div>
+                <div class="step-line"></div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-title">Confirmación</div>
+                </div>
             </div>
         </div>
+    </section>
 
-        <h1><i class="fas fa-shopping-bag"></i> Finalizar Compra</h1>
-        
-        <div class="checkout-grid">
-            <!-- RESUMEN DEL PEDIDO -->
-            <div class="order-summary">
-                <h2><i class="fas fa-receipt"></i> Tu Pedido</h2>
-                
-                <div class="order-items">
-                    <div class="order-item">
-                        <img src="./img/pastel-chocolate.jpg" alt="Pastel">
-                        <div class="item-details">
-                            <h4>Pastel Chocolate Supreme</h4>
-                            <p>Triple capa de chocolate belga</p>
-                            <div class="item-controls">
-                                <button class="qty-btn minus"><i class="fas fa-minus"></i></button>
-                                <span class="qty">1</span>
-                                <button class="qty-btn plus"><i class="fas fa-plus"></i></button>
-                                <span class="item-price">$280.00</span>
+    <!-- Checkout -->
+    <section class="section checkout-section">
+        <div class="container">
+            <div class="checkout-grid">
+                <!-- Formulario -->
+                <div class="checkout-form">
+                    <div class="form-section">
+                        <h2 class="section-title">Información de Envío</h2>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Nombre completo *</label>
+                                <input type="text" class="form-control" placeholder="Tu nombre y apellido" required>
                             </div>
-                        </div>
-                        <button class="remove-item"><i class="fas fa-trash"></i></button>
-                    </div>
-                    
-                    <div class="order-item">
-                        <img src="./img/donas-mixtas.jpg" alt="Donas">
-                        <div class="item-details">
-                            <h4>Donas Glaseadas (6 pz)</h4>
-                            <p>Variedad de sabores</p>
-                            <div class="item-controls">
-                                <button class="qty-btn minus"><i class="fas fa-minus"></i></button>
-                                <span class="qty">1</span>
-                                <button class="qty-btn plus"><i class="fas fa-plus"></i></button>
-                                <span class="item-price">$120.00</span>
-                            </div>
-                        </div>
-                        <button class="remove-item"><i class="fas fa-trash"></i></button>
-                    </div>
-                    
-                    <div class="order-item">
-                        <img src="./img/galletas-chispas.jpg" alt="Galletas">
-                        <div class="item-details">
-                            <h4>Galletas con Chispas</h4>
-                            <p>Pack de 12 unidades</p>
-                            <div class="item-controls">
-                                <button class="qty-btn minus"><i class="fas fa-minus"></i></button>
-                                <span class="qty">2</span>
-                                <button class="qty-btn plus"><i class="fas fa-plus"></i></button>
-                                <span class="item-price">$170.00</span>
-                            </div>
-                        </div>
-                        <button class="remove-item"><i class="fas fa-trash"></i></button>
-                    </div>
-                </div>
-                
-                <div class="price-summary">
-                    <div class="summary-row">
-                        <span>Subtotal</span>
-                        <span id="subtotal">$570.00</span>
-                    </div>
-                    <div class="summary-row">
-                        <span>Envío</span>
-                        <span id="shipping">$35.00</span>
-                    </div>
-                    <div class="summary-row discount">
-                        <span>Descuento</span>
-                        <span id="discount">-$50.00</span>
-                    </div>
-                    <div class="summary-row total">
-                        <strong>Total</strong>
-                        <strong id="total">$555.00</strong>
-                    </div>
-                </div>
-                
-                <div class="discount-code">
-                    <input type="text" placeholder="Código de descuento" id="discount-input">
-                    <button class="btn-apply">Aplicar</button>
-                </div>
-                
-                <div class="delivery-info">
-                    <h3><i class="fas fa-truck"></i> Información de Entrega</h3>
-                    <p><strong>Dirección:</strong> Av. Principal #123, Col. Centro</p>
-                    <p><strong>Hora estimada:</strong> 45-60 minutos</p>
-                    <p><strong>Notas:</strong> Timbrar dos veces</p>
-                </div>
-            </div>
-            
-            <!-- INFORMACIÓN DE PAGO -->
-            <div class="payment-section">
-                <h2><i class="fas fa-credit-card"></i> Método de Pago</h2>
-                
-                <div class="payment-methods">
-                    <div class="method-option active" data-method="qr">
-                        <i class="fas fa-qrcode"></i>
-                        <span>Pago QR</span>
-                    </div>
-                    <div class="method-option" data-method="card">
-                        <i class="fas fa-credit-card"></i>
-                        <span>Tarjeta</span>
-                    </div>
-                    <div class="method-option" data-method="cash">
-                        <i class="fas fa-money-bill-wave"></i>
-                        <span>Efectivo</span>
-                    </div>
-                </div>
-                
-                <div class="qr-payment active">
-                    <div class="qr-container">
-                        <div class="qr-code-box">
-                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://proyectoxweb.netlify.app/confirmacion&monto=555&format=svg&color=ffc8dd&bgcolor=ffffff" 
-                                 alt="QR de Pago" 
-                                 class="qr-code">
-                            <div class="qr-amount">
-                                <span class="amount-label">Monto a pagar:</span>
-                                <span class="amount">$555.00 MXN</span>
+                            <div class="form-group">
+                                <label class="form-label">Teléfono *</label>
+                                <input type="tel" class="form-control" placeholder="55 1234 5678" required>
                             </div>
                         </div>
                         
-                        <div class="qr-instructions">
-                            <h3><i class="fas fa-mobile-alt"></i> Cómo pagar con QR:</h3>
-                            <ol>
-                                <li>Abre la app de tu banco</li>
-                                <li>Selecciona "Pagar con QR"</li>
-                                <li>Escanea este código</li>
-                                <li>Confirma el pago de <strong>$555.00</strong></li>
-                                <li>Recibirás confirmación automática</li>
-                            </ol>
+                        <div class="form-group">
+                            <label class="form-label">Correo electrónico *</label>
+                            <input type="email" class="form-control" placeholder="tu@email.com" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Dirección de entrega *</label>
+                            <input type="text" class="form-control" placeholder="Calle, número, colonia" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Ciudad *</label>
+                                <input type="text" class="form-control" placeholder="Ciudad" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Código Postal *</label>
+                                <input type="text" class="form-control" placeholder="CP" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Instrucciones especiales (opcional)</label>
+                            <textarea class="form-control form-textarea" placeholder="Ej: Llamar antes de llegar, dejar con el portero, etc." rows="3"></textarea>
                         </div>
                     </div>
                     
-                    <div class="supported-banks">
-                        <h4><i class="fas fa-university"></i> Bancos compatibles:</h4>
-                        <div class="bank-logos">
-                            <span class="bank">BBVA</span>
-                            <span class="bank">Santander</span>
-                            <span class="bank">Banorte</span>
-                            <span class="bank">HSBC</span>
-                            <span class="bank">Scotia</span>
-                            <span class="bank">Banamex</span>
+                    <div class="form-section">
+                        <h2 class="section-title">Método de Entrega</h2>
+                        <div class="delivery-options">
+                            <div class="delivery-option selected">
+                                <input type="radio" name="delivery" id="delivery-standard" checked>
+                                <label for="delivery-standard">
+                                    <div class="option-content">
+                                        <h4>Entrega Estándar</h4>
+                                        <p>Entrega en 45-60 minutos</p>
+                                        <span class="option-price">$25</span>
+                                    </div>
+                                </label>
+                            </div>
+                            
+                            <div class="delivery-option">
+                                <input type="radio" name="delivery" id="delivery-express">
+                                <label for="delivery-express">
+                                    <div class="option-content">
+                                        <h4>Entrega Express</h4>
+                                        <p>Entrega en 20-30 minutos</p>
+                                        <span class="option-price">$45</span>
+                                    </div>
+                                </label>
+                            </div>
+                            
+                            <div class="delivery-option">
+                                <input type="radio" name="delivery" id="delivery-pickup">
+                                <label for="delivery-pickup">
+                                    <div class="option-content">
+                                        <h4>Recoger en Tienda</h4>
+                                        <p>Listo en 15 minutos - Sin costo</p>
+                                        <span class="option-price">Gratis</span>
+                                    </div>
+                                </label>
+                            </div>
                         </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h2 class="section-title">Método de Pago</h2>
+                        
+                        <div class="payment-methods">
+                            <div class="payment-method selected" data-method="card">
+                                <div class="method-icon">
+                                    <i class="far fa-credit-card"></i>
+                                </div>
+                                <div class="method-name">Tarjeta</div>
+                            </div>
+                            
+                            <div class="payment-method" data-method="paypal">
+                                <div class="method-icon">
+                                    <i class="fab fa-paypal"></i>
+                                </div>
+                                <div class="method-name">PayPal</div>
+                            </div>
+                            
+                            <div class="payment-method" data-method="cash">
+                                <div class="method-icon">
+                                    <i class="fas fa-money-bill-wave"></i>
+                                </div>
+                                <div class="method-name">Efectivo</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Formulario de tarjeta (visible solo cuando se selecciona tarjeta) -->
+                        <div class="payment-form" id="cardForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">Número de tarjeta *</label>
+                                    <input type="text" class="form-control" placeholder="1234 5678 9012 3456">
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">Fecha de expiración *</label>
+                                    <input type="text" class="form-control" placeholder="MM/AA">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">CVV *</label>
+                                    <input type="text" class="form-control" placeholder="123">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Nombre en la tarjeta *</label>
+                                <input type="text" class="form-control" placeholder="Como aparece en la tarjeta">
+                            </div>
+                        </div>
+                        
+                        <!-- Mensaje para pago en efectivo -->
+                        <div class="payment-message" id="cashMessage" style="display: none;">
+                            <div class="alert alert-info">
+                                <i class="fas fa-info-circle"></i>
+                                <p>Paga al recibir tu pedido. Asegúrate de tener el cambio exacto.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Mensaje para PayPal -->
+                        <div class="payment-message" id="paypalMessage" style="display: none;">
+                            <div class="alert alert-info">
+                                <i class="fab fa-paypal"></i>
+                                <p>Serás redirigido a PayPal para completar el pago de forma segura.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="terms-checkbox">
+                        <input type="checkbox" id="terms" required>
+                        <label for="terms" class="terms-label">
+                            Acepto los <a href="#">Términos y Condiciones</a> y la <a href="#">Política de Privacidad</a> de Happy Smile.
+                        </label>
+                    </div>
+                    
+                    <div class="terms-checkbox">
+                        <input type="checkbox" id="newsletter">
+                        <label for="newsletter" class="terms-label">
+                            Quiero suscribirme al newsletter para recibir ofertas y novedades.
+                        </label>
                     </div>
                 </div>
                 
-                <div class="payment-security">
-                    <h3><i class="fas fa-shield-alt"></i> Seguridad Garantizada</h3>
-                    <div class="security-features">
-                        <div class="feature">
-                            <i class="fas fa-lock"></i>
-                            <p>Pago 100% seguro</p>
+                <!-- Resumen del pedido -->
+                <div class="order-summary">
+                    <div class="summary-header">
+                        <h2 class="summary-title">Resumen del Pedido</h2>
+                    </div>
+                    
+                    <div class="summary-items">
+                        <div class="summary-item">
+                            <div class="item-info">
+                                <img src="imagenes/pastel-chocolate.jpg" alt="Pastel Chocolate Supreme" class="item-image">
+                                <div class="item-details">
+                                    <h4>Pastel Chocolate Supreme</h4>
+                                    <p>Cantidad: 1</p>
+                                </div>
+                            </div>
+                            <div class="item-price">$280</div>
                         </div>
-                        <div class="feature">
-                            <i class="fas fa-user-shield"></i>
-                            <p>Datos encriptados</p>
+                        
+                        <div class="summary-item">
+                            <div class="item-info">
+                                <img src="imagenes/donas-glaseadas.jpg" alt="Donas Glaseadas" class="item-image">
+                                <div class="item-details">
+                                    <h4>Donas Glaseadas (6 pz)</h4>
+                                    <p>Cantidad: 1</p>
+                                </div>
+                            </div>
+                            <div class="item-price">$120</div>
                         </div>
-                        <div class="feature">
-                            <i class="fas fa-certificate"></i>
-                            <p>Certificado SSL</p>
+                        
+                        <div class="summary-item">
+                            <div class="item-info">
+                                <img src="imagenes/galletas-chispas.jpg" alt="Galletas con Chispas" class="item-image">
+                                <div class="item-details">
+                                    <h4>Galletas con Chispas</h4>
+                                    <p>Cantidad: 1</p>
+                                </div>
+                            </div>
+                            <div class="item-price">$85</div>
                         </div>
                     </div>
-                </div>
-                
-                <button class="confirm-payment-btn">
-                    <i class="fas fa-lock"></i> Confirmar y Pagar $555.00
-                </button>
-                
-                <div class="guarantees">
-                    <p><i class="fas fa-check-circle"></i> Garantía de satisfacción o devolución</p>
-                    <p><i class="fas fa-clock"></i> Entrega en máximo 60 minutos</p>
-                    <p><i class="fas fa-headset"></i> Soporte durante todo el proceso</p>
+                    
+                    <div class="summary-totals">
+                        <div class="total-row">
+                            <span>Subtotal</span>
+                            <span>$485</span>
+                        </div>
+                        <div class="total-row">
+                            <span>Envío</span>
+                            <span>$25</span>
+                        </div>
+                        <div class="total-row total">
+                            <span>Total</span>
+                            <span>$510</span>
+                        </div>
+                    </div>
+                    
+                    <div class="promo-code">
+                        <div class="form-group">
+                            <label class="form-label">¿Tienes un código promocional?</label>
+                            <div class="promo-input-group">
+                                <input type="text" class="form-control" placeholder="Ingresa tu código">
+                                <button type="button" class="btn btn-secondary">Aplicar</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="confirm-btn" id="confirmOrder">
+                        <i class="fas fa-lock"></i> Realizar Pedido
+                    </button>
+                    
+                    <p class="text-center mt-md text-muted">
+                        <small>Tu información está protegida con encriptación SSL</small>
+                    </p>
                 </div>
             </div>
         </div>
-    </main>
+    </section>
 
-    <footer class="happy-footer">
-        <div class="footer-content">
-            <p>© 2024 Sweet Delights. Pago seguro y delivery garantizado.</p>
+    <!-- Footer -->
+    <footer class="footer-main">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="index.html" class="logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-smile"></i>
+                        </div>
+                        <div class="logo-text">
+                            Happy<span>Smile</span>
+                        </div>
+                    </a>
+                    <p class="footer-tagline">Endulzando momentos desde 2020. Repostería fresca y deliciosa entregada a tu puerta.</p>
+                    <div class="footer-social">
+                        <p class="social-title">Síguenos en:</p>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon-link facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-icon-link instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="social-icon-link twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="social-icon-link tiktok">
+                                <i class="fab fa-tiktok"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Inicio</a></li>
+                        <li><a href="productos.html"><i class="fas fa-chevron-right"></i> Productos</a></li>
+                        <li><a href="pasteles.html"><i class="fas fa-chevron-right"></i> Pasteles</a></li>
+                        <li><a href="donas.html"><i class="fas fa-chevron-right"></i> Donas</a></li>
+                        <li><a href="galletas.html"><i class="fas fa-chevron-right"></i> Galletas</a></li>
+                        <li><a href="bebidas.html"><i class="fas fa-chevron-right"></i> Bebidas</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contacto</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt contact-icon"></i>
+                            <div>
+                                <p class="contact-text">Av. Dulces 123, Ciudad Delicias</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone contact-icon"></i>
+                            <div>
+                                <a href="tel:+525551234567" class="contact-link">(55) 5123-4567</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope contact-icon"></i>
+                            <div>
+                                <a href="mailto:hola@happysmile.com" class="contact-link">hola@happysmile.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock contact-icon"></i>
+                            <div>
+                                <p class="contact-text">Lun-Vie: 8:00 - 20:00<br>Sab-Dom: 9:00 - 18:00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <h3>Newsletter</h3>
+                    <p class="footer-tagline">Suscríbete para recibir promociones y novedades</p>
+                    <form class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Tu correo electrónico" required>
+                        <button type="submit" class="newsletter-btn">
+                            <i class="fas fa-paper-plane"></i> Suscribirse
+                        </button>
+                    </form>
+                    <p class="newsletter-disclaimer">No compartimos tu información con terceros.</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2024 Happy Smile. Todos los derechos reservados.</p>
+                <div class="footer-legal">
+                    <a href="#" class="legal-link">Términos y Condiciones</a>
+                    <a href="#" class="legal-link">Política de Privacidad</a>
+                    <a href="#" class="legal-link">Aviso Legal</a>
+                </div>
+            </div>
         </div>
+        
+        <!-- Botón WhatsApp Flotante -->
+        <a href="https://wa.me/525551234567" class="whatsapp-float" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+            <span class="whatsapp-tooltip">¡Escríbenos!</span>
+        </a>
+        
+        <!-- Botón Volver Arriba -->
+        <a href="#" class="back-to-top">
+            <i class="fas fa-chevron-up"></i>
+        </a>
     </footer>
 
-    <script src="./js/checkout.js"></script>
-    <script src="./js/carrito.js"></script>
-    <script src="./js/menu-mobile.js"></script>
+    <!-- Modal de Confirmación -->
+    <div class="confirmation-modal" id="confirmationModal">
+        <div class="modal-content">
+            <div class="modal-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h2 class="modal-title">¡Pedido Confirmado!</h2>
+            <p class="modal-message">Tu pedido ha sido procesado exitosamente. Recibirás un correo de confirmación con los detalles de tu compra.</p>
+            <div class="order-details">
+                <p><strong>Número de pedido:</strong> HS-2024-00123</p>
+                <p><strong>Tiempo estimado de entrega:</strong> 45-60 minutos</p>
+                <p><strong>Total:</strong> $510.00 MXN</p>
+            </div>
+            <div class="modal-buttons">
+                <a href="index.html" class="btn btn-primary">Volver al inicio</a>
+                <button class="btn btn-outline" id="closeModal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/menu-mobile.js"></script>
+    <script src="js/checkout.js"></script>
+    <script src="js/footer-scripts.js"></script>
+    
+    <script>
+        // Funcionalidad para métodos de pago
+        document.querySelectorAll('.payment-method').forEach(method => {
+            method.addEventListener('click', function() {
+                // Remover selección anterior
+                document.querySelectorAll('.payment-method').forEach(m => m.classList.remove('selected'));
+                
+                // Agregar selección actual
+                this.classList.add('selected');
+                
+                // Mostrar el formulario correspondiente
+                const methodType = this.getAttribute('data-method');
+                
+                // Ocultar todos los formularios/mensajes
+                document.getElementById('cardForm').style.display = 'none';
+                document.getElementById('cashMessage').style.display = 'none';
+                document.getElementById('paypalMessage').style.display = 'none';
+                
+                // Mostrar el correspondiente
+                if (methodType === 'card') {
+                    document.getElementById('cardForm').style.display = 'block';
+                } else if (methodType === 'cash') {
+                    document.getElementById('cashMessage').style.display = 'block';
+                } else if (methodType === 'paypal') {
+                    document.getElementById('paypalMessage').style.display = 'block';
+                }
+            });
+        });
+        
+        // Confirmar pedido
+        document.getElementById('confirmOrder').addEventListener('click', function() {
+            const modal = document.getElementById('confirmationModal');
+            modal.style.display = 'flex';
+        });
+        
+        // Cerrar modal
+        document.getElementById('closeModal').addEventListener('click', function() {
+            const modal = document.getElementById('confirmationModal');
+            modal.style.display = 'none';
+        });
+        
+        // Cerrar modal al hacer clic fuera
+        document.getElementById('confirmationModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>
