@@ -2,23 +2,127 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Ubicación</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="/">
+    <title>Ubicación - Sweet Delights</title>
+    
+    <link rel="stylesheet" href="./css/estilos.css">
+    <link rel="stylesheet" href="./css/ubicacion.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="./img/icono.png">
 </head>
 <body>
-    
-    <h1>Ubicación</h1>
+    <header class="header-fixed">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="./index.html">
+                    <img src="./img/icono.png" alt="Logo" width="50">
+                    <span>Sweet Delights</span>
+                </a>
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="./index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="./productos.html"><i class="fas fa-store"></i> Productos</a></li>
+                <li><a href="./checkout.html"><i class="fas fa-shopping-cart"></i> Carrito</a></li>
+                <li><a href="./ubicacion.html" class="active"><i class="fas fa-map-marker-alt"></i> Ubicación</a></li>
+                <li><a href="./contactos.html"><i class="fas fa-phone"></i> Contacto</a></li>
+            </ul>
+            
+            <div class="cart-counter">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cart-count">0</span>
+            </div>
+            
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
 
-    <!-- MISMO MENÚ -->
-    <nav>
-        <button onclick="location.href='index.html'">Inicio</button>
-        <button onclick="location.href='productos.html'">Productos</button>
-        <button onclick="location.href='ubicacion.html'">Ubicación</button>
-        <button onclick="location.href='contactos.html'">Contactos</button>
-    </nav>
+    <main class="ubicacion-container">
+        <h1><i class="fas fa-map-marked-alt"></i> Nuestra Ubicación</h1>
+        
+        <div class="ubicacion-grid">
+            <div class="mapa-section">
+                <div class="mapa-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.888598728546!2d-99.167662!3d19.427025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff35f5bd1563%3A0x6c366f0e2de02ff7!2sEl%20%C3%81ngel%20de%20la%20Independencia!5e0!3m2!1ses!2smx!4v1700000000000!5m2!1ses!2smx" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+            
+            <div class="info-section">
+                <div class="info-card">
+                    <h3><i class="fas fa-store"></i> Nuestra Tienda</h3>
+                    <p><strong>Dirección:</strong> Av. Paseo de la Reforma s/n, Juárez, Cuauhtémoc, CDMX</p>
+                    <p><strong>Colonia:</strong> Juárez</p>
+                    <p><strong>C.P.:</strong> 06600</p>
+                </div>
+                
+                <div class="info-card">
+                    <h3><i class="fas fa-clock"></i> Horarios</h3>
+                    <p><strong>Lunes a Viernes:</strong> 8:00 AM - 10:00 PM</p>
+                    <p><strong>Sábados:</strong> 9:00 AM - 11:00 PM</p>
+                    <p><strong>Domingos:</strong> 9:00 AM - 9:00 PM</p>
+                </div>
+                
+                <div class="info-card">
+                    <h3><i class="fas fa-truck"></i> Zonas de Delivery</h3>
+                    <ul>
+                        <li>Cuauhtémoc</li>
+                        <li>Miguel Hidalgo</li>
+                        <li>Benito Juárez</li>
+                        <li>Álvaro Obregón</li>
+                        <li>Coyoacán</li>
+                    </ul>
+                    <p class="delivery-time"><i class="fas fa-bolt"></i> Entrega en 30-45 minutos</p>
+                </div>
+                
+                <div class="info-card">
+                    <h3><i class="fas fa-phone"></i> Contacto Rápido</h3>
+                    <p><strong>Teléfono:</strong> 55 1234 5678</p>
+                    <p><strong>WhatsApp:</strong> 55 8765 4321</p>
+                    <p><strong>Email:</strong> hola@sweetdelights.com</p>
+                    <a href="./contactos.html" class="btn-contacto">Enviar Mensaje</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="instrucciones">
+            <h3><i class="fas fa-car"></i> Cómo Llegar</h3>
+            <div class="instrucciones-grid">
+                <div class="transporte">
+                    <h4><i class="fas fa-subway"></i> Metro</h4>
+                    <p>Estación Insurgentes (Línea 1)</p>
+                    <p>5 minutos caminando</p>
+                </div>
+                <div class="transporte">
+                    <h4><i class="fas fa-bus"></i> Metrobús</h4>
+                    <p>Estación Reforma (Línea 7)</p>
+                    <p>3 minutos caminando</p>
+                </div>
+                <div class="transporte">
+                    <h4><i class="fas fa-parking"></i> Estacionamiento</h4>
+                    <p>Disponible en la zona</p>
+                    <p>$30 pesos por hora</p>
+                </div>
+            </div>
+        </div>
+    </main>
 
-    
-    <p>Aquí va tu dirección o mapa.</p>
+    <footer class="happy-footer">
+        <div class="footer-content">
+            <p>© 2024 Sweet Delights. Ven a visitarnos o pide delivery.</p>
+        </div>
+    </footer>
 
+    <script src="./js/carrito.js"></script>
+    <script src="./js/menu-mobile.js"></script>
 </body>
 </html>

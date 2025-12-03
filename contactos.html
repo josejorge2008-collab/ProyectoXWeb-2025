@@ -3,195 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contáctanos - Happy Smile</title>
-    <link rel="stylesheet" href="css/estilos.css">
-    <link rel="stylesheet" href="css/contactos.css">
+    <base href="/">
+    <title>Contacto - Sweet Delights</title>
+    
+    <link rel="stylesheet" href="./css/estilos.css">
+    <link rel="stylesheet" href="./css/contactos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="./img/icono.png">
 </head>
 <body>
     <header class="header-fixed">
-    <nav class="navbar">
-        <div class="logo">
-            <a href="index.html">
-                <img src="img/icono.png" alt="Logo Repostería" width="50">
-                <span>Sweet Delights</span>
-            </a>
-        </div>
-        <ul class="nav-menu">
-            <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
-            <li><a href="productos.html"><i class="fas fa-store"></i> Productos</a></li>
-            <li><a href="checkout.html"><i class="fas fa-shopping-cart"></i> Carrito</a></li>
-            <li><a href="ubicacion.html"><i class="fas fa-map-marker-alt"></i> Ubicación</a></li>
-            <li><a href="contactos.html"><i class="fas fa-phone"></i> Contacto</a></li>
-        </ul>
-        
-        <!-- CONTADOR DEL CARRITO -->
-        <div class="cart-counter">
-            <i class="fas fa-shopping-cart"></i>
-            <span id="cart-count">0</span>
-        </div>
-    </nav>
-</header>
-
-    <main class="main-contacto">
-        <section class="hero-contacto">
-            <div class="container">
-                <h1>CONTÁCTANOS</h1>
-                <p>Estamos aquí para atenderte y hacer tu experiencia más dulce</p>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="./index.html">
+                    <img src="./img/icono.png" alt="Logo" width="50">
+                    <span>Sweet Delights</span>
+                </a>
             </div>
-        </section>
+            
+            <ul class="nav-menu">
+                <li><a href="./index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="./productos.html"><i class="fas fa-store"></i> Productos</a></li>
+                <li><a href="./checkout.html"><i class="fas fa-shopping-cart"></i> Carrito</a></li>
+                <li><a href="./ubicacion.html"><i class="fas fa-map-marker-alt"></i> Ubicación</a></li>
+                <li><a href="./contactos.html" class="active"><i class="fas fa-phone"></i> Contacto</a></li>
+            </ul>
+            
+            <div class="cart-counter">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cart-count">0</span>
+            </div>
+            
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
 
-        <section class="contacto-contenido">
-            <div class="container">
-                <div class="contacto-grid">
-                    <div class="info-contacto">
-                        <h2>Información de Contacto</h2>
-                        <div class="contacto-item">
-                            <h3>📍 Dirección</h3>
-                            <p>Av. Principal #123<br>Centro Ciudad</p>
-                        </div>
-                        <div class="contacto-item">
-                            <h3>📞 Teléfono</h3>
-                            <p>+1 (555) 123-4567</p>
-                        </div>
-                        <div class="contacto-item">
-                            <h3>✉️ Email</h3>
-                            <p>info@happysmile.com</p>
-                        </div>
-                        <div class="contacto-item">
-                            <h3>🕒 Horario</h3>
-                            <p>Lunes a Viernes: 8:00 AM - 8:00 PM<br>
-                               Sábados: 9:00 AM - 6:00 PM<br>
-                               Domingos: 10:00 AM - 4:00 PM</p>
-                        </div>
+    <main class="contactos-container">
+        <h1><i class="fas fa-comments"></i> Contáctanos</h1>
+        <p class="subtitulo">Estamos aquí para endulzar tu día</p>
+        
+        <div class="contactos-grid">
+            <div class="form-section">
+                <h2><i class="fas fa-envelope"></i> Envíanos un Mensaje</h2>
+                <form id="contacto-form">
+                    <div class="form-group">
+                        <label for="nombre"><i class="fas fa-user"></i> Nombre Completo *</label>
+                        <input type="text" id="nombre" name="nombre" required>
                     </div>
-
-                    <div class="formulario-contacto">
-                        <h2>Envíanos un Mensaje</h2>
-                        <form class="form-contacto">
-                            <div class="form-group">
-                                <input type="text" placeholder="Tu nombre completo" required>
-                            </div>
-                            <div class="form-group">
-                                <input type="email" placeholder="Tu correo electrónico" required>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" placeholder="Asunto del mensaje" required>
-                            </div>
-                            <div class="form-group">
-                                <textarea placeholder="Tu mensaje..." rows="5" required></textarea>
-                            </div>
-                            <button type="submit" class="btn-enviar">ENVIAR MENSAJE</button>
-                        </form>
+                    
+                    <div class="form-group">
+                        <label for="email"><i class="fas fa-envelope"></i> Email *</label>
+                        <input type="email" id="email" name="email" required>
                     </div>
+                    
+                    <div class="form-group">
+                        <label for="telefono"><i class="fas fa-phone"></i> Teléfono</label>
+                        <input type="tel" id="telefono" name="telefono">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="asunto"><i class="fas fa-tag"></i> Asunto *</label>
+                        <select id="asunto" name="asunto" required>
+                            <option value="">Selecciona un asunto</option>
+                            <option value="pedido">Consulta sobre pedido</option>
+                            <option value="producto">Información de productos</option>
+                            <option value="evento">Pedido para evento</option>
+                            <option value="queja">Sugerencia o queja</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="mensaje"><i class="fas fa-comment"></i> Mensaje *</label>
+                        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn-enviar">
+                        <i class="fas fa-paper-plane"></i> Enviar Mensaje
+                    </button>
+                </form>
+            </div>
+            
+            <div class="info-section">
+                <div class="contacto-card">
+                    <h3><i class="fas fa-headset"></i> Atención a Clientes</h3>
+                    <p class="contacto-info">
+                        <i class="fas fa-phone"></i> 
+                        <strong>Teléfono:</strong> 55 1234 5678
+                    </p>
+                    <p class="contacto-info">
+                        <i class="fab fa-whatsapp"></i> 
+                        <strong>WhatsApp:</strong> 55 8765 4321
+                    </p>
+                    <p class="contacto-info">
+                        <i class="fas fa-clock"></i> 
+                        <strong>Horario:</strong> 8:00 AM - 10:00 PM
+                    </p>
+                </div>
+                
+                <div class="contacto-card">
+                    <h3><i class="fas fa-shipping-fast"></i> Delivery Express</h3>
+                    <p class="contacto-info">
+                        <i class="fas fa-bolt"></i> 
+                        <strong>Tiempo de entrega:</strong> 30-45 minutos
+                    </p>
+                    <p class="contacto-info">
+                        <i class="fas fa-money-bill-wave"></i> 
+                        <strong>Costo delivery:</strong> $35 pesos
+                    </p>
+                    <p class="contacto-info">
+                        <i class="fas fa-map-marker-alt"></i> 
+                        <strong>Zona de cobertura:</strong> CDMX y zona metropolitana
+                    </p>
+                </div>
+                
+                <div class="contacto-card">
+                    <h3><i class="fas fa-envelope-open-text"></i> Correos Electrónicos</h3>
+                    <p class="contacto-info">
+                        <i class="fas fa-inbox"></i> 
+                        <strong>Pedidos:</strong> pedidos@sweetdelights.com
+                    </p>
+                    <p class="contacto-info">
+                        <i class="fas fa-inbox"></i> 
+                        <strong>Eventos:</strong> eventos@sweetdelights.com
+                    </p>
+                    <p class="contacto-info">
+                        <i class="fas fa-inbox"></i> 
+                        <strong>Soporte:</strong> soporte@sweetdelights.com
+                    </p>
+                </div>
+                
+                <div class="contacto-card">
+                    <h3><i class="fas fa-share-alt"></i> Redes Sociales</h3>
+                    <div class="social-contactos">
+                        <a href="#" class="social-icon facebook">
+                            <i class="fab fa-facebook-f"></i> Facebook
+                        </a>
+                        <a href="#" class="social-icon instagram">
+                            <i class="fab fa-instagram"></i> Instagram
+                        </a>
+                        <a href="#" class="social-icon twitter">
+                            <i class="fab fa-twitter"></i> Twitter
+                        </a>
+                    </div>
+                    <p class="sigue-text">Síguenos para promociones</p>
+                </div>
+                
+                <div class="emergencia">
+                    <h4><i class="fas fa-exclamation-triangle"></i> ¿Problema con tu pedido?</h4>
+                    <p>Llámanos inmediatamente al: <strong>55 9999 8888</strong></p>
+                    <p>Estamos aquí para ayudarte</p>
                 </div>
             </div>
-        </section>
+        </div>
     </main>
 
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 Happy Smile. Todos los derechos reservados.</p>
+    <footer class="happy-footer">
+        <div class="footer-content">
+            <p>© 2024 Sweet Delights. Tu satisfacción es nuestra dulce recompensa.</p>
         </div>
     </footer>
 
-    <script src="js/JS contactos.js"></script>
-<!-- FOOTER PROFESIONAL HAPPY SMILE - AÑADE ESTO -->
-<footer class="footer-profesional">
-    <div class="footer-container">
-        <div class="footer-content">
-            <!-- Información de contacto -->
-            <div class="footer-section footer-contact">
-                <h3>Contacto</h3>
-                <p><i class="fas fa-map-marker-alt"></i> Medellín, Antioquia, Colombia</p>
-                <p><i class="fas fa-phone"></i> +57 321 423 9806</p>
-                <p><i class="fas fa-envelope"></i> info@happysmile.com</p>
-                <p><i class="fas fa-clock"></i> Lunes a Sábado: 8:00 AM - 8:00 PM</p>
-                
-                <div class="footer-social">
-                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
-                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
-                </div>
-            </div>
-            
-            <!-- Enlaces rápidos -->
-            <div class="footer-section footer-links">
-                <h3>Enlaces Rápidos</h3>
-                <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="page/pasteles.html">Catálogo</a></li>
-                    <li><a href="#">Servicios</a></li>
-                    <li><a href="contactos.html">Contáctanos</a></li>
-                    <li><a href="#">Sobre Nosotros</a></li>
-                    <li><a href="#">Preguntas Frecuentes</a></li>
-                </ul>
-            </div>
-            
-            <!-- Newsletter -->
-            <div class="footer-section footer-newsletter">
-                <h3>Newsletter</h3>
-                <p>Suscríbete para recibir ofertas exclusivas y novedades</p>
-                <form class="newsletter-form">
-                    <input type="email" class="newsletter-input" placeholder="Tu correo electrónico" required>
-                    <button type="submit" class="newsletter-btn">Suscribir</button>
-                </form>
-            </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <div class="footer-logo">
-                <span class="footer-logo-text">Happy Smile</span>
-            </div>
-            
-            <div class="footer-legal">
-                <a href="#">Política de Privacidad</a>
-                <a href="#">Términos y Condiciones</a>
-                <a href="#">Política de Cookies</a>
-            </div>
-            
-            <div class="footer-copyright">
-                © 2025 Happy Smile. Todos los derechos reservados.
-            </div>
-        </div>
-    </div>
-</footer>
-
-<!-- Botón flotante de WhatsApp -->
-<a href="https://wa.me/573214239806" class="whatsapp-float" target="_blank">
-    <i class="fab fa-whatsapp"></i>
-</a>
-
-<script>
-    // Script para el formulario de newsletter
-    document.addEventListener('DOMContentLoaded', function() {
-        const newsletterForm = document.querySelector('.newsletter-form');
-        if (newsletterForm) {
-            newsletterForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                const input = this.querySelector('.newsletter-input');
-                const button = this.querySelector('.newsletter-btn');
-                
-                if (input.value.trim()) {
-                    const originalText = button.textContent;
-                    button.textContent = '¡Gracias!';
-                    button.style.background = '#4CAF50';
-                    
-                    setTimeout(() => {
-                        button.textContent = originalText;
-                        button.style.background = '';
-                        input.value = '';
-                    }, 3000);
-                }
-            });
-        }
-    });
-</script>
-<!-- FIN DEL FOOTER -->
-  <!-- Todo lo que ya tienes... -->
-    
-    <!-- AÑADE ESTA LÍNEA PARA LOS ICONOS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="./js/contactos.js"></script>
+    <script src="./js/carrito.js"></script>
+    <script src="./js/menu-mobile.js"></script>
 </body>
 </html>

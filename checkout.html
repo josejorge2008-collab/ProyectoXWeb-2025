@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="/">
+    <title>Checkout - Sweet Delights</title>
+    
+    <link rel="stylesheet" href="./css/estilos.css">
+    <link rel="stylesheet" href="./css/checkout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="./img/icono.png">
+</head>
+<body>
+    <header class="header-fixed">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="./index.html">
+                    <img src="./img/icono.png" alt="Logo" width="50">
+                    <span>Sweet Delights</span>
+                </a>
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="./index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="./productos.html"><i class="fas fa-store"></i> Productos</a></li>
+                <li><a href="./checkout.html" class="active"><i class="fas fa-shopping-cart"></i> Carrito</a></li>
+                <li><a href="./ubicacion.html"><i class="fas fa-map-marker-alt"></i> Ubicación</a></li>
+                <li><a href="./contactos.html"><i class="fas fa-phone"></i> Contacto</a></li>
+            </ul>
+            
+            <div class="cart-counter">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cart-count">3</span>
+            </div>
+            
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="checkout-container">
+        <div class="checkout-progress">
+            <div class="progress-step active">
+                <div class="step-number">1</div>
+                <span>Carrito</span>
+            </div>
+            <div class="progress-step active">
+                <div class="step-number">2</div>
+                <span>Pago</span>
+            </div>
+            <div class="progress-step">
+                <div class="step-number">3</div>
+                <span>Confirmación</span>
+            </div>
+        </div>
+
+        <h1><i class="fas fa-shopping-bag"></i> Finalizar Compra</h1>
+        
+        <div class="checkout-grid">
+            <!-- RESUMEN DEL PEDIDO -->
+            <div class="order-summary">
+                <h2><i class="fas fa-receipt"></i> Tu Pedido</h2>
+                
+                <div class="order-items">
+                    <div class="order-item">
+                        <img src="./img/pastel-chocolate.jpg" alt="Pastel">
+                        <div class="item-details">
+                            <h4>Pastel Chocolate Supreme</h4>
+                            <p>Triple capa de chocolate belga</p>
+                            <div class="item-controls">
+                                <button class="qty-btn minus"><i class="fas fa-minus"></i></button>
+                                <span class="qty">1</span>
+                                <button class="qty-btn plus"><i class="fas fa-plus"></i></button>
+                                <span class="item-price">$280.00</span>
+                            </div>
+                        </div>
+                        <button class="remove-item"><i class="fas fa-trash"></i></button>
+                    </div>
+                    
+                    <div class="order-item">
+                        <img src="./img/donas-mixtas.jpg" alt="Donas">
+                        <div class="item-details">
+                            <h4>Donas Glaseadas (6 pz)</h4>
+                            <p>Variedad de sabores</p>
+                            <div class="item-controls">
+                                <button class="qty-btn minus"><i class="fas fa-minus"></i></button>
+                                <span class="qty">1</span>
+                                <button class="qty-btn plus"><i class="fas fa-plus"></i></button>
+                                <span class="item-price">$120.00</span>
+                            </div>
+                        </div>
+                        <button class="remove-item"><i class="fas fa-trash"></i></button>
+                    </div>
+                    
+                    <div class="order-item">
+                        <img src="./img/galletas-chispas.jpg" alt="Galletas">
+                        <div class="item-details">
+                            <h4>Galletas con Chispas</h4>
+                            <p>Pack de 12 unidades</p>
+                            <div class="item-controls">
+                                <button class="qty-btn minus"><i class="fas fa-minus"></i></button>
+                                <span class="qty">2</span>
+                                <button class="qty-btn plus"><i class="fas fa-plus"></i></button>
+                                <span class="item-price">$170.00</span>
+                            </div>
+                        </div>
+                        <button class="remove-item"><i class="fas fa-trash"></i></button>
+                    </div>
+                </div>
+                
+                <div class="price-summary">
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <span id="subtotal">$570.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Envío</span>
+                        <span id="shipping">$35.00</span>
+                    </div>
+                    <div class="summary-row discount">
+                        <span>Descuento</span>
+                        <span id="discount">-$50.00</span>
+                    </div>
+                    <div class="summary-row total">
+                        <strong>Total</strong>
+                        <strong id="total">$555.00</strong>
+                    </div>
+                </div>
+                
+                <div class="discount-code">
+                    <input type="text" placeholder="Código de descuento" id="discount-input">
+                    <button class="btn-apply">Aplicar</button>
+                </div>
+                
+                <div class="delivery-info">
+                    <h3><i class="fas fa-truck"></i> Información de Entrega</h3>
+                    <p><strong>Dirección:</strong> Av. Principal #123, Col. Centro</p>
+                    <p><strong>Hora estimada:</strong> 45-60 minutos</p>
+                    <p><strong>Notas:</strong> Timbrar dos veces</p>
+                </div>
+            </div>
+            
+            <!-- INFORMACIÓN DE PAGO -->
+            <div class="payment-section">
+                <h2><i class="fas fa-credit-card"></i> Método de Pago</h2>
+                
+                <div class="payment-methods">
+                    <div class="method-option active" data-method="qr">
+                        <i class="fas fa-qrcode"></i>
+                        <span>Pago QR</span>
+                    </div>
+                    <div class="method-option" data-method="card">
+                        <i class="fas fa-credit-card"></i>
+                        <span>Tarjeta</span>
+                    </div>
+                    <div class="method-option" data-method="cash">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <span>Efectivo</span>
+                    </div>
+                </div>
+                
+                <div class="qr-payment active">
+                    <div class="qr-container">
+                        <div class="qr-code-box">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://proyectoxweb.netlify.app/confirmacion&monto=555&format=svg&color=ffc8dd&bgcolor=ffffff" 
+                                 alt="QR de Pago" 
+                                 class="qr-code">
+                            <div class="qr-amount">
+                                <span class="amount-label">Monto a pagar:</span>
+                                <span class="amount">$555.00 MXN</span>
+                            </div>
+                        </div>
+                        
+                        <div class="qr-instructions">
+                            <h3><i class="fas fa-mobile-alt"></i> Cómo pagar con QR:</h3>
+                            <ol>
+                                <li>Abre la app de tu banco</li>
+                                <li>Selecciona "Pagar con QR"</li>
+                                <li>Escanea este código</li>
+                                <li>Confirma el pago de <strong>$555.00</strong></li>
+                                <li>Recibirás confirmación automática</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="supported-banks">
+                        <h4><i class="fas fa-university"></i> Bancos compatibles:</h4>
+                        <div class="bank-logos">
+                            <span class="bank">BBVA</span>
+                            <span class="bank">Santander</span>
+                            <span class="bank">Banorte</span>
+                            <span class="bank">HSBC</span>
+                            <span class="bank">Scotia</span>
+                            <span class="bank">Banamex</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="payment-security">
+                    <h3><i class="fas fa-shield-alt"></i> Seguridad Garantizada</h3>
+                    <div class="security-features">
+                        <div class="feature">
+                            <i class="fas fa-lock"></i>
+                            <p>Pago 100% seguro</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-user-shield"></i>
+                            <p>Datos encriptados</p>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-certificate"></i>
+                            <p>Certificado SSL</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="confirm-payment-btn">
+                    <i class="fas fa-lock"></i> Confirmar y Pagar $555.00
+                </button>
+                
+                <div class="guarantees">
+                    <p><i class="fas fa-check-circle"></i> Garantía de satisfacción o devolución</p>
+                    <p><i class="fas fa-clock"></i> Entrega en máximo 60 minutos</p>
+                    <p><i class="fas fa-headset"></i> Soporte durante todo el proceso</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="happy-footer">
+        <div class="footer-content">
+            <p>© 2024 Sweet Delights. Pago seguro y delivery garantizado.</p>
+        </div>
+    </footer>
+
+    <script src="./js/checkout.js"></script>
+    <script src="./js/carrito.js"></script>
+    <script src="./js/menu-mobile.js"></script>
+</body>
+</html>

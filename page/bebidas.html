@@ -3,226 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bebidas - Happy Smile</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <base href="/">
+    <title>Bebidas - Sweet Delights</title>
+    
     <link rel="stylesheet" href="../css/estilos.css">
     <link rel="stylesheet" href="../css/catalogo.css">
-    <link rel="icon" href="../img/icono.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="../img/icono.png">
 </head>
 <body>
     <header class="header-fixed">
-    <nav class="navbar">
-        <div class="logo">
-            <a href="index.html">
-                <img src="img/icono.png" alt="Logo Repostería" width="50">
-                <span>Sweet Delights</span>
-            </a>
-        </div>
-        <ul class="nav-menu">
-            <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
-            <li><a href="productos.html"><i class="fas fa-store"></i> Productos</a></li>
-            <li><a href="checkout.html"><i class="fas fa-shopping-cart"></i> Carrito</a></li>
-            <li><a href="ubicacion.html"><i class="fas fa-map-marker-alt"></i> Ubicación</a></li>
-            <li><a href="contactos.html"><i class="fas fa-phone"></i> Contacto</a></li>
-        </ul>
-        
-        <!-- CONTADOR DEL CARRITO -->
-        <div class="cart-counter">
-            <i class="fas fa-shopping-cart"></i>
-            <span id="cart-count">0</span>
-        </div>
-    </nav>
-</header>
-    <main class="main-catalogo">
-        <section class="hero-producto">
-            <div class="container">
-                <h1>NUESTRAS BEBIDAS</h1>
-                <p>Refrescantes bebidas para acompañar tus postres favoritos</p>
-            </div>
-        </section>
-
-        <section class="productos-grid">
-            <div class="container">
-                <div class="grid-productos">
-                    <!-- Bebida 1 -->
-                    <div class="producto-card">
-                        <div class="producto-imagen">
-                            <img src="../imagenes/bebidas/cafe-latte.jpg" alt="Café Latte">
-                            <span class="badge nuevo">Nuevo</span>
-                        </div>
-                        <div class="producto-info">
-                            <h3>Café Latte</h3>
-                            <p>Suave café con leche vaporizada y espuma cremosa</p>
-                            <div class="producto-precio">$4.50</div>
-                            <button class="btn-carrito">AÑADIR AL CARRITO</button>
-                        </div>
-                    </div>
-
-                    <!-- Bebida 2 -->
-                    <div class="producto-card">
-                        <div class="producto-imagen">
-                            <img src="../imagenes/bebidas/capuchino.jpg" alt="Capuchino">
-                            <span class="badge popular">Popular</span>
-                        </div>
-                        <div class="producto-info">
-                            <h3>Capuchino Clásico</h3>
-                            <p>Balance perfecto entre espresso, leche y espuma</p>
-                            <div class="producto-precio">$4.00</div>
-                            <button class="btn-carrito">AÑADIR AL CARRITO</button>
-                        </div>
-                    </div>
-
-                    <!-- Bebida 3 -->
-                    <div class="producto-card">
-                        <div class="producto-imagen">
-                            <img src="../imagenes/bebidas/chocolate-caliente.jpg" alt="Té Verde">
-                        </div>
-                        <div class="producto-info">
-                            <h3>Té Verde Matcha</h3>
-                            <p>Té verde japonés batido tradicionalmente</p>
-                            <div class="producto-precio">$5.00</div>
-                            <button class="btn-carrito">AÑADIR AL CARRITO</button>
-                        </div>
-                    </div>
-
-                    <!-- Bebida 4 -->
-                    <div class="producto-card">
-                        <div class="producto-imagen">
-                            <img src="../imagenes/bebidas/chocolate-caliente.jpg" alt="Smoothie de Frutas">
-                            <span class="badge oferta">Oferta</span>
-                        </div>
-                        <div class="producto-info">
-                            <h3>Smoothie Tropical</h3>
-                            <p>Mezcla de mango, piña y banana con yogurt</p>
-                            <div class="producto-precio">
-                                <span class="precio-original">$6.50</span>
-                                <span class="precio-oferta">$5.25</span>
-                            </div>
-                            <button class="btn-carrito">AÑADIR AL CARRITO</button>
-                        </div>
-                    </div>
-
-                    <!-- Bebida 5 -->
-                    <div class="producto-card">
-                        <div class="producto-imagen">
-                            <img src="../imagenes/bebidas/chocolate-caliente.jpg" alt="Chocolate Caliente">
-                        </div>
-                        <div class="producto-info">
-                            <h3>Chocolate Caliente</h3>
-                            <p>Creemos chocolate belga con malvaviscos</p>
-                            <div class="producto-precio">$4.75</div>
-                            <button class="btn-carrito">AÑADIR AL CARRITO</button>
-                        </div>
-                    </div>
-
-                    <!-- Bebida 6 -->
-                    <div class="producto-card">
-                        <div class="producto-imagen">
-                            <img src="../imagenes/bebidas/limonada.jpg" alt="Limonada Fresca">
-                        </div>
-                        <div class="producto-info">
-                            <h3>Limonada de Fresa</h3>
-                            <p>Refrescante limonada con puré de fresas naturales</p>
-                            <div class="producto-precio">$3.50</div>
-                            <button class="btn-carrito">AÑADIR AL CARRITO</button>
-                        </div>
-                    </div>
-
-                    <!-- Bebida 7 -->
-                    <div class="producto-card">
-                        <div class="producto-imagen">
-                            <img src="../imagenes/bebidas/jugo-naranja.jpg" alt="Jugo de Naranja">
-                        </div>
-                        <div class="producto-info">
-                            <h3>Jugo de Naranja Natural</h3>
-                            <p>Recién exprimido, fuente de vitamina C</p>
-                            <div class="producto-precio">$3.00</div>
-                            <button class="btn-carrito">AÑADIR AL CARRITO</button>
-                        </div>
-                    </div>
-
-                    <!-- Bebida 8 -->
-                    <div class="producto-card">
-                        <div class="producto-imagen">
-                            <img src="../imagenes/bebidas/frappuccino.jpg" alt="Frappuccino">
-                        </div>
-                        <div class="producto-info">
-                            <h3>Frappuccino de Caramelo</h3>
-                            <p>Bebida fría con café, hielo y salsa de caramelo</p>
-                            <div class="producto-precio">$5.50</div>
-                            <button class="btn-carrito">AÑADIR AL CARRITO</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer Profesional -->
-    <footer class="footer-profesional">
-        <div class="footer-container">
-            <div class="footer-content">
-                <div class="footer-section footer-contact">
-                    <h3>Contacto</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Medellín, Antioquia, Colombia</p>
-                    <p><i class="fas fa-phone"></i> +57 321 423 9806</p>
-                    <p><i class="fas fa-envelope"></i> info@happysmile.com</p>
-                    <p><i class="fas fa-clock"></i> Lunes a Sábado: 8:00 AM - 8:00 PM</p>
-                    
-                    <div class="footer-social">
-                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                
-                <div class="footer-section footer-links">
-                    <h3>Enlaces Rápidos</h3>
-                    <ul>
-                        <li><a href="../index.html">Inicio</a></li>
-                        <li><a href="pasteles.html">Pasteles</a></li>
-                        <li><a href="donas.html">Donas</a></li>
-                        <li><a href="bebidas.html">Bebidas</a></li>
-                        <li><a href="galletas.html">Galletas</a></li>
-                        <li><a href="../contactos.html">Contactos</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section footer-newsletter">
-                    <h3>Newsletter</h3>
-                    <p>Suscríbete para recibir ofertas exclusivas</p>
-                    <form class="newsletter-form">
-                        <input type="email" class="newsletter-input" placeholder="Tu correo electrónico" required>
-                        <button type="submit" class="newsletter-btn">Suscribir</button>
-                    </form>
-                </div>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../img/icono.png" alt="Logo" width="50">
+                    <span>Sweet Delights</span>
+                </a>
             </div>
             
-            <div class="footer-bottom">
-                <div class="footer-logo">
-                    <span class="footer-logo-text">Happy Smile</span>
+            <ul class="nav-menu">
+                <li><a href="../index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="../productos.html"><i class="fas fa-store"></i> Productos</a></li>
+                <li><a href="../checkout.html"><i class="fas fa-shopping-cart"></i> Carrito</a></li>
+                <li><a href="../ubicacion.html"><i class="fas fa-map-marker-alt"></i> Ubicación</a></li>
+                <li><a href="../contactos.html"><i class="fas fa-phone"></i> Contacto</a></li>
+            </ul>
+            
+            <div class="cart-counter">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cart-count">0</span>
+            </div>
+            
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="categoria-container">
+        <div class="categoria-header">
+            <h1><i class="fas fa-coffee"></i> Nuestras Bebidas</h1>
+            <p>El complemento perfecto para tus dulces</p>
+        </div>
+        
+        <div class="productos-grid">
+            <div class="producto-card">
+                <img src="../img/cafe-latte.jpg" alt="Café Latte">
+                <h3>Café Latte</h3>
+                <p>Café espresso con leche vaporizada al vapor</p>
+                <div class="producto-footer">
+                    <span class="precio">$45</span>
+                    <span class="tamano">Mediano 12oz</span>
                 </div>
-                
-                <div class="footer-legal">
-                    <a href="#">Política de Privacidad</a>
-                    <a href="#">Términos y Condiciones</a>
-                    <a href="#">Política de Cookies</a>
+                <button class="btn-add-cart" data-id="401">Añadir al Carrito</button>
+            </div>
+            
+            <div class="producto-card">
+                <img src="../img/capuchino.jpg" alt="Capuchino">
+                <h3>Capuchino</h3>
+                <p>Espresso, leche vaporizada y espuma cremosa</p>
+                <div class="producto-footer">
+                    <span class="precio">$50</span>
+                    <span class="tamano">Mediano 12oz</span>
                 </div>
-                
-                <div class="footer-copyright">
-                    © 2025 Happy Smile. Todos los derechos reservados.
+                <button class="btn-add-cart" data-id="402">Añadir al Carrito</button>
+            </div>
+            
+            <div class="producto-card">
+                <img src="../img/chocolate-caliente.jpg" alt="Chocolate Caliente">
+                <h3>Chocolate Belga</h3>
+                <p>Chocolate oscuro belga con malvaviscos</p>
+                <div class="producto-footer">
+                    <span class="precio">$55</span>
+                    <span class="tamano">Grande 16oz</span>
                 </div>
+                <button class="btn-add-cart" data-id="403">Añadir al Carrito</button>
+            </div>
+            
+            <div class="producto-card">
+                <img src="../img/te-chai.jpg" alt="Té Chai">
+                <h3>Té Chai Latte</h3>
+                <p>Mezcla de especias con leche vaporizada</p>
+                <div class="producto-footer">
+                    <span class="precio">$48</span>
+                    <span class="tamano">Mediano 12oz</span>
+                </div>
+                <button class="btn-add-cart" data-id="404">Añadir al Carrito</button>
+            </div>
+            
+            <div class="producto-card">
+                <img src="../img/frappuccino.jpg" alt="Frappuccino">
+                <h3>Frappuccino</h3>
+                <p>Bebida fría con café, hielo y crema batida</p>
+                <div class="producto-footer">
+                    <span class="precio">$60</span>
+                    <span class="tamano">Grande 16oz</span>
+                </div>
+                <button class="btn-add-cart" data-id="405">Añadir al Carrito</button>
+            </div>
+            
+            <div class="producto-card">
+                <img src="../img/limonada.jpg" alt="Limonada">
+                <h3>Limonada Artesanal</h3>
+                <p>Limonada natural con hierbabuena o frutos rojos</p>
+                <div class="producto-footer">
+                    <span class="precio">$40</span>
+                    <span class="tamano">Grande 16oz</span>
+                </div>
+                <button class="btn-add-cart" data-id="406">Añadir al Carrito</button>
             </div>
         </div>
-    </footer>
-    
-    <a href="https://wa.me/573214239806" class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+        
+        <div class="categoria-info">
+            <h3><i class="fas fa-mug-hot"></i> Paquetes Combinados</h3>
+            <ul>
+                <li><strong>Combo Desayuno:</strong> 1 pastel individual + café = $90</li>
+                <li><strong>Combo Merienda:</strong> 3 donas + 2 bebidas = $180</li>
+                <li><strong>Combo Oficina:</strong> 12 galletas + 4 cafés = $220</li>
+                <li><strong>Combo Fiesta:</strong> 1 pastel + 6 bebidas = $450</li>
+                <li>Todas las bebidas disponibles calientes o frías</li>
+                <li>Opciones de leche: Entera, deslactosada, almendra, soya</li>
+            </ul>
+        </div>
+    </main>
 
-    <script src="../js/JS catalogo.js"></script>
-    <script src="../js/footer-scripts.js"></script>
+    <footer class="happy-footer">
+        <div class="footer-content">
+            <p>© 2024 Sweet Delights. Bebidas para endulzar tu día.</p>
+        </div>
+    </footer>
+
+    <script src="../js/catalogo.js"></script>
+    <script src="../js/carrito.js"></script>
+    <script src="../js/menu-mobile.js"></script>
 </body>
 </html>

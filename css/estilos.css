@@ -1,4 +1,23 @@
-/* Reset y estilos base - Happy Smile */
+/* estilos.css - Estilos base para todo el sitio */
+
+:root {
+    --rosa: #ffc8dd;
+    --rosa-hover: #ff9ebb;
+    --azul: #a2d2ff;
+    --azul-hover: #7bb5ff;
+    --verde: #bde0fe;
+    --amarillo: #ffd6ff;
+    --texto: #333;
+    --texto-claro: #666;
+    --fondo: #fff9fc;
+    --blanco: #ffffff;
+    --border: #e0e0e0;
+    --sombra: rgba(0, 0, 0, 0.1);
+    --exito: #4CAF50;
+    --error: #F44336;
+}
+
+/* RESET Y BASE */
 * {
     margin: 0;
     padding: 0;
@@ -6,365 +25,334 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--fondo);
+    color: var(--texto);
     line-height: 1.6;
-    color: #333;
-    background-color: #f8f9fa;
+    padding-top: 100px; /* Para header fijo */
 }
 
-.container {
+/* HEADER FIJADO CORREGIDO */
+.header-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--blanco);
+    box-shadow: 0 2px 15px var(--sombra);
+    z-index: 1000;
+    padding: 15px 0;
+}
+
+.navbar {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 15px;
-}
-
-/* Header y Navegación */
-.header {
-    background: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    backdrop-filter: blur(10px);
-}
-
-.nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.logo h2 {
-    color: #667eea;
-    font-size: 1.8rem;
-    font-weight: 700;
-    letter-spacing: 1px;
+    padding: 0 20px;
 }
 
 .logo a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     text-decoration: none;
-    color: inherit;
+    color: var(--texto);
+    font-weight: 700;
+    font-size: 1.2rem;
 }
 
+.logo img {
+    border-radius: 50%;
+}
+
+/* MENÚ PRINCIPAL */
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: 1.5rem;
+    gap: 30px;
 }
 
 .nav-menu a {
     text-decoration: none;
-    color: #555;
+    color: var(--texto);
     font-weight: 500;
-    transition: all 0.3s ease;
-    padding: 0.5rem 1rem;
+    padding: 8px 15px;
     border-radius: 20px;
-    font-size: 0.9rem;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
-.nav-menu a.active,
-.nav-menu a:hover {
-    color: #667eea;
-    background: rgba(102, 126, 234, 0.1);
+.nav-menu a:hover,
+.nav-menu a.active {
+    background-color: var(--rosa);
+    color: var(--blanco);
 }
 
-/* Footer */
-.footer {
-    background: #2c3e50;
-    color: white;
-    text-align: center;
-    padding: 1.5rem 0;
-    margin-top: 3rem;
+/* CARRITO HEADER */
+.cart-counter {
+    position: relative;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--rosa);
 }
 
-.footer p {
-    opacity: 0.8;
-    font-size: 0.9rem;
+#cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: var(--azul);
+    color: var(--blanco);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .nav {
-        flex-direction: column;
-        gap: 1rem;
-        padding: 1rem;
-    }
-    
-    .nav-menu {
-        gap: 0.8rem;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
-    .nav-menu a {
-        padding: 0.4rem 0.8rem;
-        font-size: 0.8rem;
-    }
-    
-    .logo h2 {
-        font-size: 1.5rem;
-    }
+/* HAMBURGUESA MÓVIL */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 4px;
 }
 
-/* FOOTER PROFESIONAL HAPPY SMILE - AÑADE ESTOS ESTILOS */
-.footer-profesional {
-    background: #2c3e50;
-    color: white;
-    padding: 50px 0 20px;
-    margin-top: 40px;
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--texto);
+    transition: 0.3s;
 }
 
-.footer-container {
+/* CONTENEDORES PRINCIPALES */
+.container, 
+.catalogo-container,
+.ubicacion-container,
+.contactos-container,
+.checkout-container {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 30px auto;
     padding: 0 20px;
 }
 
-.footer-content {
+/* TÍTULOS */
+h1 {
+    color: var(--texto);
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+}
+
+h2 {
+    color: var(--texto);
+    margin: 30px 0 20px;
+    font-size: 2rem;
+}
+
+h3 {
+    color: var(--texto);
+    margin: 20px 0 15px;
+    font-size: 1.5rem;
+}
+
+/* BOTONES GENERALES */
+button, .btn {
+    background-color: var(--rosa);
+    color: var(--blanco);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+}
+
+button:hover, .btn:hover {
+    background-color: var(--rosa-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 200, 221, 0.4);
+}
+
+.btn-hero {
+    background-color: var(--azul);
+    font-size: 1.1rem;
+    padding: 15px 30px;
+}
+
+.btn-hero:hover {
+    background-color: var(--azul-hover);
+}
+
+/* TARJETAS DE PRODUCTO */
+.producto-card {
+    background: var(--blanco);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px var(--sombra);
+    transition: transform 0.3s;
+}
+
+.producto-card:hover {
+    transform: translateY(-10px);
+}
+
+.producto-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.producto-card h3 {
+    padding: 15px 15px 5px;
+    font-size: 1.2rem;
+}
+
+.producto-card p {
+    padding: 0 15px;
+    color: var(--texto-claro);
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.precio {
+    display: block;
+    padding: 0 15px 15px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--rosa);
+}
+
+.btn-add-cart {
+    width: calc(100% - 30px);
+    margin: 0 15px 15px;
+}
+
+/* GRIDS */
+.categorias-grid,
+.productos-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
-    margin-bottom: 40px;
+    margin: 30px 0;
+}
+
+/* FOOTER BASE */
+.happy-footer {
+    background: linear-gradient(135deg, var(--rosa), var(--azul));
+    color: var(--blanco);
+    padding: 40px 20px;
+    margin-top: 50px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
 }
 
 .footer-section h3 {
-    color: #667eea;
-    font-size: 1.3rem;
-    margin-bottom: 20px;
-    position: relative;
-    padding-bottom: 10px;
-}
-
-.footer-section h3::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 50px;
-    height: 2px;
-    background: #667eea;
-}
-
-.footer-contact p {
+    color: var(--blanco);
     margin-bottom: 15px;
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
 }
 
-.footer-contact i {
-    color: #667eea;
-    margin-top: 4px;
+.footer-section p {
+    margin-bottom: 10px;
+    opacity: 0.9;
 }
 
-.footer-links ul {
-    list-style: none;
-}
-
-.footer-links li {
-    margin-bottom: 12px;
-}
-
-.footer-links a {
-    color: #ecf0f1;
-    text-decoration: none;
-    transition: color 0.3s, padding-left 0.3s;
-}
-
-.footer-links a:hover {
-    color: #667eea;
-    padding-left: 5px;
-}
-
-.footer-social {
+.social-icons {
     display: flex;
     gap: 15px;
-    margin-top: 20px;
+    margin-top: 15px;
 }
 
-.social-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    color: white;
-    text-decoration: none;
-    transition: all 0.3s;
+.social-icons a {
+    color: var(--blanco);
+    font-size: 1.5rem;
+    transition: opacity 0.3s;
 }
 
-.social-icon:hover {
-    background: #667eea;
-    transform: translateY(-3px);
-}
-
-.footer-newsletter p {
-    margin-bottom: 15px;
-    color: #bdc3c7;
-}
-
-.newsletter-form {
-    display: flex;
-    gap: 10px;
-}
-
-.newsletter-input {
-    flex: 1;
-    padding: 12px 15px;
-    border: none;
-    border-radius: 5px;
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
-}
-
-.newsletter-input::placeholder {
-    color: #bdc3c7;
-}
-
-.newsletter-btn {
-    background: #667eea;
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-.newsletter-btn:hover {
-    background: #5a6fd8;
+.social-icons a:hover {
+    opacity: 0.8;
 }
 
 .footer-bottom {
-    border-top: 1px solid #34495e;
+    max-width: 1200px;
+    margin: 30px auto 0;
     padding-top: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-}
-
-.footer-logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.footer-logo-text {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #667eea;
-}
-
-.footer-legal {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.footer-legal a {
-    color: #bdc3c7;
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: color 0.3s;
-}
-
-.footer-legal a:hover {
-    color: #667eea;
-}
-
-.footer-copyright {
-    color: #bdc3c7;
-    font-size: 0.9rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
     text-align: center;
-    width: 100%;
-    margin-top: 10px;
+    opacity: 0.8;
 }
 
-/* WhatsApp Floating Button */
-.whatsapp-float {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background: #25D366;
-    color: white;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.8rem;
-    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-    z-index: 1000;
-    transition: all 0.3s;
-    text-decoration: none;
-}
-
-.whatsapp-float:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
-}
-
-/* Responsive */
+/* RESPONSIVE */
 @media (max-width: 768px) {
-    .footer-content {
+    body {
+        padding-top: 80px;
+    }
+    
+    .hamburger {
+        display: flex;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background-color: var(--blanco);
+        flex-direction: column;
+        align-items: center;
+        padding-top: 40px;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .nav-menu li {
+        margin: 15px 0;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    .categorias-grid,
+    .productos-grid {
         grid-template-columns: 1fr;
     }
-    
-    .newsletter-form {
-        flex-direction: column;
-    }
-    
-    .footer-bottom {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .footer-legal {
-        justify-content: center;
-    }
-}
-/* ===== CORRECCIONES CRÍTICAS - HEADER ===== */
-
-/* HEADER FIJO CON Z-INDEX */
-header, .header, .navbar {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    z-index: 1000 !important;
-    background-color: white !important;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1) !important;
 }
 
-/* ESPACIO PARA EL HEADER FIJO */
-body {
-    padding-top: 100px !important;
-    margin: 0 !important;
+/* ANIMACIONES */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-main, .contenido, .container, section {
-    padding-top: 20px !important;
+.fade-in {
+    animation: fadeIn 0.5s ease;
 }
 
-/* ===== CORRECCIÓN IMÁGENES RESPONSIVE ===== */
-img {
-    max-width: 100% !important;
-    height: auto !important;
-    display: block;
-}
-
-/* ===== CORRECCIÓN FOOTER ===== */
-footer {
-    position: relative !important;
-    z-index: 1 !important;
-    margin-top: auto !important;
-}
+/* UTILIDADES */
+.text-center { text-align: center; }
+.mt-20 { margin-top: 20px; }
+.mb-20 { margin-bottom: 20px; }
+.p-20 { padding: 20px; }
